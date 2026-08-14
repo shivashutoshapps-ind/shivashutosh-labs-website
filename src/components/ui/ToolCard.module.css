@@ -1,0 +1,114 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  text-decoration: none;
+  color: var(--color-text-primary);
+  transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+  cursor: pointer;
+  min-height: 180px;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.cardDisabled {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  opacity: 0.75;
+  cursor: default;
+  min-height: 180px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.iconContainer {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconContainerPurple { background-color: var(--color-cat-purple); }
+.iconContainerRed { background-color: var(--color-cat-red); }
+.iconContainerBlue { background-color: var(--color-cat-blue); }
+.iconContainerOrange { background-color: var(--color-cat-orange); }
+.iconContainerGreen { background-color: var(--color-cat-green); }
+
+.iconEmoji {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.content {
+  flex: 1;
+}
+
+.titleHi {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  font-family: var(--font-devanagari);
+  line-height: 1.3;
+}
+
+.titleEn {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-2);
+}
+
+.desc {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  font-family: var(--font-devanagari);
+  margin: 0;
+  max-width: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.action {
+  margin-top: auto;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.actionText {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-family: var(--font-devanagari);
+}

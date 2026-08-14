@@ -1,0 +1,115 @@
+.hero {
+  background: linear-gradient(135deg, #0A1628 0%, #0E2040 100%);
+  padding: var(--space-12) var(--space-4) var(--space-10);
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 60% at 10% 50%, color-mix(in srgb, var(--cat-color, #2563EB) 15%, transparent) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.heroTitle {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: #fff;
+  font-family: var(--font-devanagari);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.heroTitleEn {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.heroDesc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  font-family: var(--font-devanagari);
+  line-height: 1.7;
+  max-width: 56ch;
+  margin: var(--space-2) 0 0;
+}
+
+.heroDescEn {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0;
+}
+
+.heroExtra {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.6);
+  font-family: var(--font-devanagari);
+  line-height: 1.6;
+  border-left: 2px solid rgba(255,255,255,0.2);
+  padding-left: var(--space-3);
+  margin: var(--space-2) 0 0;
+  max-width: none;
+}
+
+.toolsSection {
+  padding: var(--space-12) 0;
+}
+
+.faqSection {
+  padding: var(--space-12) 0;
+  background: var(--color-surface-2);
+}
+
+.backSection {
+  padding: var(--space-6) 0 var(--space-12);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .container { padding: 0 var(--space-6); }
+}
+
+.sectionTitle {
+  font-size: 1.375rem;
+  font-weight: 700;
+  font-family: var(--font-devanagari);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.faqWrapper {
+  max-width: 720px;
+}
+
+.empty {
+  text-align: center;
+  padding: var(--space-12) 0;
+  color: var(--color-text-muted);
+}
+
+.empty p {
+  margin-bottom: var(--space-2);
+  max-width: none;
+}

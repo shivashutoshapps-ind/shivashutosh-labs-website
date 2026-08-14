@@ -1,0 +1,87 @@
+.subtitle {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-8);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
+}
+
+.card h3 {
+  margin: var(--space-4) 0 var(--space-2);
+  font-size: 1.1rem;
+  color: var(--color-text-primary);
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.emailBlock {
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  background: var(--color-surface-2);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+}
+
+.emailBlock p {
+  margin: 0 0 var(--space-2);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.emailBlock code {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-surface-3);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-full);
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+
+/* Icon Containers */
+.iconContainerPurple, .iconContainerRed, .iconContainerBlue, .iconContainerGreen {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconContainerPurple { background-color: var(--color-cat-purple); }
+.iconContainerRed { background-color: var(--color-cat-red); }
+.iconContainerBlue { background-color: var(--color-cat-blue); }
+.iconContainerGreen { background-color: var(--color-cat-green); }
+
+.iconEmoji {
+  font-size: 1.5rem;
+  line-height: 1;
+}

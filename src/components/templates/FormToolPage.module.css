@@ -1,0 +1,240 @@
+/* Inherits most structure from ToolPage.module.css — unique to form tools */
+
+.page {
+  background: var(--color-bg);
+  min-height: 60vh;
+  padding: var(--space-8) 0 var(--space-16);
+}
+
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+@media (min-width: 640px) {
+  .container { padding: 0 var(--space-6); }
+}
+
+.contextBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: rgba(37,99,235,0.06);
+  border: 1px solid rgba(37,99,235,0.2);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--color-primary);
+}
+
+.contextIcon { font-size: 1.5rem; flex-shrink: 0; }
+
+.contextTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-family: var(--font-devanagari);
+  margin-bottom: var(--space-1);
+}
+
+.contextText {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-family: var(--font-devanagari);
+  margin: 0;
+  max-width: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.headerMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.categoryTag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-family: var(--font-devanagari);
+}
+
+.categoryTag:hover { text-decoration: underline; }
+
+.title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  font-family: var(--font-devanagari);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.titleEn {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  font-family: var(--font-devanagari);
+  margin: var(--space-2) 0 0;
+  max-width: none;
+}
+
+.descriptionEn {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: var(--space-1) 0 0;
+  max-width: none;
+}
+
+.toolArea {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+}
+
+.comingSoon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-16) var(--space-6);
+  gap: var(--space-4);
+}
+
+.comingSoonIcon { font-size: 3.5rem; }
+
+.comingSoonTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-devanagari);
+}
+
+.comingSoonText {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  font-family: var(--font-devanagari);
+  line-height: 1.7;
+  max-width: 44ch;
+  margin: 0;
+}
+
+.comingSoonSubText {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 44ch;
+  margin: 0;
+}
+
+.comingSoonActions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.toolInterface {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  font-family: var(--font-devanagari);
+}
+
+.usageNote {}
+
+.usageList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 0;
+  margin: 0;
+}
+
+.usageList li {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  font-family: var(--font-devanagari);
+  line-height: 1.6;
+}
+
+.howTo {}
+
+.howToList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: 0;
+  margin: 0;
+}
+
+.howToStep {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.howToNumber {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.howToStep strong {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-family: var(--font-devanagari);
+  margin-bottom: var(--space-1);
+}
+
+.howToStep p {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-family: var(--font-devanagari);
+  line-height: 1.6;
+  margin: 0;
+  max-width: none;
+}
+
+.faq {}
+.related {}

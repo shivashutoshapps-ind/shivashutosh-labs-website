@@ -1,0 +1,74 @@
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  text-decoration: none;
+  color: var(--color-text-primary);
+  transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.categoryCard:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  border-color: var(--color-accent);
+  text-decoration: none;
+}
+
+.categoryCard:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.categoryIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.categoryContent {
+  flex: 1;
+}
+
+.categoryTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  font-family: var(--font-devanagari);
+}
+
+.categoryTitleEn {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-2);
+}
+
+.categoryDesc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  font-family: var(--font-devanagari);
+  margin: 0;
+  max-width: none;
+}
+
+.categoryArrow {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  transition: transform var(--transition-base);
+}
+
+.categoryCard:hover .categoryArrow {
+  transform: translateX(4px);
+}

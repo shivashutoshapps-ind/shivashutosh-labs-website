@@ -1,0 +1,241 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 22, 40, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  position: relative;
+}
+
+/* ─── Logo ─────────────────────────────────────────────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.logoIcon {
+  flex-shrink: 0;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logoMain {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.logoSub {
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--color-primary-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ─── Desktop Nav ───────────────────────────────────────────────────────────── */
+.nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background 0.15s ease;
+  gap: 2px;
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.navLink:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.navHindi {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  font-family: var(--font-devanagari);
+}
+
+.navEnglish {
+  font-size: 0.625rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.03em;
+}
+
+/* ─── Mobile Menu ───────────────────────────────────────────────────────────── */
+.menuToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background 0.15s ease;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.menuToggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.menuToggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .menuToggle {
+    display: none;
+  }
+}
+
+.menuIcon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 22px;
+}
+
+.menuIcon span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Hamburger → X animation when open */
+.menuToggleOpen .menuIcon span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menuToggleOpen .menuIcon span:nth-child(2) {
+  opacity: 0;
+}
+.menuToggleOpen .menuIcon span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile drawer */
+.mobileNav {
+  display: none;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: rgba(10, 22, 40, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.mobileNavOpen {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .mobileNav {
+    display: none !important;
+  }
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-2);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.15s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobileNavLink:hover,
+.mobileNavLink:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.mobileNavLink:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.mobileNavLink span:first-child {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-devanagari);
+}
+
+.mobileNavEnglish {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
+}
