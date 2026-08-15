@@ -8,7 +8,7 @@
  * - Injects skip-nav for accessibility
  * - Provides WebSite + Organization JSON-LD
  */
-import { Inter, Noto_Sans_Devanagari } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import StructuredData, { buildWebSiteSchema, buildOrganizationSchema } from '@/components/seo/StructuredData';
@@ -18,13 +18,6 @@ import '@/styles/globals.css';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  display: 'swap',
-  weight: ['400', '500', '600', '700', '800'],
-});
-
-const notoDevanagari = Noto_Sans_Devanagari({
-  subsets: ['devanagari'],
-  variable: '--font-devanagari',
   display: 'swap',
   weight: ['400', '500', '600', '700', '800'],
 });
@@ -69,7 +62,7 @@ export default function RootLayout({ children }) {
     <html
       lang="hi"
       dir="ltr"
-      className={`${inter.variable} ${notoDevanagari.variable}`}
+      className={`${inter.variable}`}
     >
       <head>
         {/* Preconnect to Google Fonts CDN for performance */}

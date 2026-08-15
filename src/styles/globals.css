@@ -58,7 +58,7 @@
 
   /* Typography */
   --font-sans:              'Inter', system-ui, -apple-system, sans-serif;
-  --font-devanagari:        'Noto Sans Devanagari', 'Inter', system-ui, sans-serif;
+  --font-devanagari:        'Kohinoor Devanagari', 'Mukta', 'Nirmala UI', 'Mangal', 'Inter', system-ui, sans-serif;
 
   /* Spacing (8px grid) */
   --space-1:   0.25rem;   /* 4px */
