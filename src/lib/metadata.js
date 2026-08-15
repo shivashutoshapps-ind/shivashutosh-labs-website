@@ -12,10 +12,14 @@ const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.png`;
 
 /**
  * Build the base metadata object shared by all pages.
+ * Accepts overrides for static pages (about, privacy, etc.)
+ * @param {Object} [overrides]
  * @returns {import('next').Metadata}
  */
-export function buildBaseMetadata() {
-  return {
+export function buildBaseMetadata(overrides = {}) {
+  const { title, description, path, keywords } = overrides;
+  
+  const base = {
     metadataBase: new URL(SITE_URL),
     applicationName: SITE_NAME,
     authors: [{ name: 'Shivashutosh AI Labs' }],
@@ -28,6 +32,36 @@ export function buildBaseMetadata() {
       googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
     },
   };
+
+  if (title) base.title = title;
+  if (description) base.description = description;
+  if (keywords) base.keywords = keywords;
+
+  if (path) {
+    const canonicalUrl = `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
+    base.alternates = { canonical: canonicalUrl };
+    
+    if (title && description) {
+      base.openGraph = {
+        title,
+        description,
+        url: canonicalUrl,
+        siteName: BRAND_FULL,
+        locale: 'hi_IN',
+        alternateLocale: 'en_IN',
+        type: 'website',
+        images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: title }],
+      };
+      base.twitter = {
+        card: 'summary_large_image',
+        title,
+        description,
+        images: [DEFAULT_OG_IMAGE],
+      };
+    }
+  }
+
+  return base;
 }
 
 /**

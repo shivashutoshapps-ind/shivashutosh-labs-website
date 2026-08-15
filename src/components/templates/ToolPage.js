@@ -13,6 +13,8 @@ import SplitPdfTool from '@/components/tools/SplitPdfTool';
 import PdfToJpgTool from '@/components/tools/PdfToJpgTool';
 import RotatePdfTool from '@/components/tools/RotatePdfTool';
 import WatermarkPdfTool from '@/components/tools/WatermarkPdfTool';
+import AddPageNumbersTool from '@/components/tools/AddPageNumbersTool';
+import PdfEditorTool from '@/components/tools/PdfEditorTool';
 import FAQAccordion from '@/components/ui/FAQAccordion';
 import RelatedTools from '@/components/ui/RelatedTools';
 import StructuredData, {
@@ -120,7 +122,7 @@ export default function ToolPageTemplate({ tool, category, faqs }) {
               </div>
             ) : (
               <div className={styles.toolInterface}>
-                {tool.slug === 'jpg-to-pdf' ? (
+                {tool.slug === 'jpg-to-pdf' || tool.slug === 'image-to-pdf' ? (
                   <JpgToPdfTool />
                 ) : tool.slug === 'compress-pdf' ? (
                   <CompressPdfTool />
@@ -134,8 +136,12 @@ export default function ToolPageTemplate({ tool, category, faqs }) {
                   <RotatePdfTool />
                 ) : tool.slug === 'watermark-pdf' ? (
                   <WatermarkPdfTool />
+                ) : tool.slug === 'add-page-numbers' ? (
+                  <AddPageNumbersTool />
+                ) : tool.slug === 'pdf-editor' ? (
+                  <PdfEditorTool />
                 ) : (
-                  <p className="sr-only">Tool interface will appear here.</p>
+                  <div className={styles.comingSoonBox}>Tool interface will appear here.</div>
                 )}
               </div>
             )}

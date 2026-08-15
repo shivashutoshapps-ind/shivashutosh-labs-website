@@ -352,6 +352,126 @@ export const categoryFAQs = {
       aEn: 'Most government portals accept JPG for photos and PNG for signatures.',
     },
   ],
+  'photo-50kb': [
+    {
+      q: 'फोटो 50KB से कम क्यों करनी होती है?',
+      a: 'कई ऑनलाइन आवेदन पोर्टल फोटो के लिए अधिकतम 50KB की सीमा रखते हैं। यदि आपकी फोटो इससे बड़ी है तो फॉर्म सबमिट नहीं होगा। यह टूल आपकी फोटो को 50KB से कम करने में मदद करता है।',
+      qEn: 'Why does a photo need to be under 50KB?',
+      aEn: 'Many online application portals set a maximum of 50KB for photos. If your photo exceeds this, the form will not submit. This tool compresses your photo to under 50KB.',
+    },
+    {
+      q: '50KB फोटो में चेहरा साफ दिखेगा?',
+      a: '50KB में पासपोर्ट-साइज़ फोटो के लिए पर्याप्त गुणवत्ता बनी रह सकती है। यदि मूल फोटो बहुत बड़ी थी तो थोड़ी गुणवत्ता कम हो सकती है।',
+      qEn: 'Will the face be clearly visible in a 50KB photo?',
+      aEn: 'At 50KB, sufficient quality can be retained for passport-size photos. If the original was very large, some quality reduction may occur.',
+    },
+    {
+      q: 'परीक्षा या नौकरी आवेदन के लिए 50KB फोटो कैसे बनाएं?',
+      a: 'अपनी JPG या PNG फोटो यहाँ अपलोड करें। टूल उसे 50KB से कम करने की कोशिश करेगा। प्रोसेस होने के बाद डाउनलोड करें और फॉर्म में अपलोड करें।',
+      qEn: 'How to create a 50KB photo for an exam or job application?',
+      aEn: 'Upload your JPG or PNG photo here. The tool will attempt to compress it below 50KB. After processing, download and upload it in your application form.',
+    },
+  ],
+  'photo-100kb': [
+    {
+      q: '100KB फोटो की ज़रूरत कब होती है?',
+      a: 'कुछ कॉलेज एडमिशन, रजिस्ट्रेशन और ऑनलाइन पोर्टल फोटो के लिए 100KB तक की अनुमति देते हैं। अपने आवेदन की शर्तें ज़रूर जाँचें क्योंकि हर पोर्टल की सीमा अलग होती है।',
+      qEn: 'When is a 100KB photo required?',
+      aEn: 'Some college admission, registration, and online portals allow photos up to 100KB. Always verify requirements as each portal may have different limits.',
+    },
+    {
+      q: '100KB और 50KB फोटो की गुणवत्ता में क्या अंतर है?',
+      a: '100KB की फाइल में 50KB की तुलना में बेहतर गुणवत्ता रहती है क्योंकि compression कम लगती है। यदि पोर्टल में 100KB की अनुमति है तो इस विकल्प का उपयोग करें।',
+      qEn: 'What is the quality difference between a 100KB and 50KB photo?',
+      aEn: 'A 100KB file retains better quality than 50KB because less compression is applied. Use this option whenever your portal allows 100KB uploads.',
+    },
+    {
+      q: 'क्या यह टूल exactly 100KB की फाइल बनाता है?',
+      a: 'यह टूल फाइल को 100KB से कम रखने की कोशिश करता है। सटीक परिणाम मूल फोटो की जटिलता पर निर्भर करता है — आउटपुट 100KB के आसपास या उससे कम होगा।',
+      qEn: 'Does this tool create a file of exactly 100KB?',
+      aEn: 'This tool attempts to keep the file under 100KB. The exact result depends on your original photo complexity — the output will be at or below 100KB.',
+    },
+  ],
+  'photo-200kb': [
+    {
+      q: '200KB फोटो का उपयोग कब करना चाहिए?',
+      a: 'जब कोई पोर्टल 200KB तक की फोटो स्वीकार करे — जैसे कुछ प्रोफेशनल या उच्च-शिक्षा संस्थान — तब 200KB चुनना बेहतर होता है क्योंकि गुणवत्ता अधिक बनी रहती है।',
+      qEn: 'When should I use a 200KB photo?',
+      aEn: 'When a portal accepts photos up to 200KB — such as some professional or higher-education institutions — choosing 200KB is better as more quality is preserved.',
+    },
+    {
+      q: '200KB फोटो में गुणवत्ता 50KB से कितनी बेहतर होती है?',
+      a: '200KB की फाइल में 50KB की तुलना में काफी बेहतर क्वालिटी होती है क्योंकि compression बहुत कम होती है। यदि आपके फॉर्म में यह सीमा उपलब्ध है तो इसका उपयोग करें।',
+      qEn: 'How much better is the quality of a 200KB photo compared to 50KB?',
+      aEn: 'A 200KB file has significantly better quality than 50KB because far less compression is applied. Use this option if your form allows it.',
+    },
+    {
+      q: 'क्या 200KB फाइल सभी फॉर्म में काम करेगी?',
+      a: 'नहीं। यदि किसी फॉर्म में अधिकतम 20KB, 50KB या 100KB की सीमा है तो 200KB की फाइल अपलोड नहीं होगी। हमेशा अपने आवेदन की सीमा पहले जाँचें।',
+      qEn: 'Will a 200KB file work for all forms?',
+      aEn: 'No. If a form has a limit of 20KB, 50KB, or 100KB, a 200KB file will not upload. Always check the file-size requirements of your application first.',
+    },
+  ],
+  'pdf-100kb': [
+    {
+      q: 'PDF को 100KB से कम क्यों करना पड़ता है?',
+      a: 'कई ऑनलाइन सरकारी पोर्टल PDF अपलोड के लिए 100KB की सीमा रखते हैं। यदि PDF इससे बड़ी है तो अपलोड विफल हो जाता है और आवेदन पूरा नहीं होता।',
+      qEn: 'Why does a PDF need to be under 100KB?',
+      aEn: 'Many online government portals set a 100KB limit for PDF uploads. If the PDF exceeds this, the upload fails and the application cannot be completed.',
+    },
+    {
+      q: '100KB compress PDF में text selectable रहता है?',
+      a: 'यह टूल PDF को rasterized इमेज-फॉर्म में प्रोसेस करता है। अत्यधिक compression के कारण selectable या searchable text संरक्षित नहीं होता — यह केवल visual सामग्री के लिए उपयुक्त है।',
+      qEn: 'Does selectable text remain in a 100KB compressed PDF?',
+      aEn: 'This tool processes PDFs in rasterized image form. Due to heavy compression, selectable or searchable text is not preserved — it is suitable only for visual content submission.',
+    },
+    {
+      q: 'इमेज-वाली PDF को 100KB में compress करने पर क्या होता है?',
+      a: 'इमेज-भारी PDF को 100KB तक compress करने पर इमेज की गुणवत्ता काफी कम हो सकती है। केवल टेक्स्ट वाली या कम पेजों वाली PDF इस target पर बेहतर परिणाम देती है।',
+      qEn: 'What happens when an image-heavy PDF is compressed to 100KB?',
+      aEn: 'Compressing an image-heavy PDF to 100KB may significantly reduce image quality. PDFs with only text or fewer pages produce better results at this target.',
+    },
+  ],
+  'pdf-200kb': [
+    {
+      q: 'PDF को 200KB से कम कब करना चाहिए?',
+      a: 'जब किसी पोर्टल की PDF सीमा 200KB हो — जैसे कुछ विश्वविद्यालय और भर्ती पोर्टल। 200KB पर 100KB की तुलना में बेहतर गुणवत्ता के साथ अधिक content रखा जा सकता है।',
+      qEn: 'When should I compress a PDF to under 200KB?',
+      aEn: 'When a portal has a 200KB PDF limit — such as some university and recruitment portals. At 200KB, more content can be included with better quality than at 100KB.',
+    },
+    {
+      q: '200KB PDF में इमेज और text की स्थिति क्या होती है?',
+      a: '200KB पर इमेज-आधारित PDF की दृश्य गुणवत्ता 100KB से बेहतर होती है। यह टूल PDF को rasterized फॉर्म में प्रोसेस करता है, इसलिए selectable text संरक्षित नहीं होता।',
+      qEn: 'What is the state of images and text in a 200KB PDF?',
+      aEn: 'At 200KB, the visual quality is better than at 100KB. Since this tool processes PDFs in rasterized form, selectable text is not preserved.',
+    },
+    {
+      q: 'यह टूल 200KB target कैसे achieve करता है?',
+      a: 'टूल PDF के हर पेज को इमेज में बदलता है और quality को तब तक adjust करता है जब तक final PDF 200KB की सीमा में न आ जाए। परिणाम मूल PDF की सामग्री पर निर्भर करता है।',
+      qEn: 'How does this tool achieve the 200KB target?',
+      aEn: 'The tool converts each PDF page into an image and adjusts quality until the final PDF falls within the 200KB limit. The result depends on the original PDF content.',
+    },
+  ],
+  'pdf-500kb': [
+    {
+      q: 'PDF 500KB की सीमा कब लागू होती है?',
+      a: 'स्कैन किए गए दस्तावेज़, सर्टिफिकेट और मार्कशीट जैसी इमेज-भारी PDF के लिए कई पोर्टल 500KB तक की अनुमति देते हैं। 500KB पर 100KB या 200KB की तुलना में बेहतर पठनीयता मिलती है।',
+      qEn: 'When does a 500KB PDF limit apply?',
+      aEn: 'Many portals allow up to 500KB for image-heavy PDFs like scanned documents, certificates, and marksheets. At 500KB, readability is better than at 100KB or 200KB.',
+    },
+    {
+      q: 'स्कैन किए दस्तावेज़ को 500KB में convert करने पर text दिखेगा?',
+      a: 'स्कैन की गई फाइलें पहले से ही इमेज-फॉर्म में होती हैं, इसलिए 500KB पर दृश्य गुणवत्ता अच्छी रहती है। ध्यान दें कि selectable या searchable text नहीं बनता — केवल visual representation होती है।',
+      qEn: 'Will text be visible in scanned documents converted to 500KB?',
+      aEn: 'Scanned files are already in image form, so visual quality remains good at 500KB. Note that selectable or searchable text is not produced — only a visual representation.',
+    },
+    {
+      q: 'PDF को 100KB या 200KB की बजाय 500KB क्यों चुनें?',
+      a: 'यदि आपका पोर्टल 500KB तक स्वीकार करता है और PDF में कई पेज या अधिक इमेज हैं, तो 500KB बेहतर विकल्प है — पठनीयता अधिक होती है और अपलोड भी सफल होता है।',
+      qEn: 'Why choose 500KB instead of 100KB or 200KB for a PDF?',
+      aEn: 'If your portal accepts up to 500KB and the PDF has many pages or images, 500KB is preferable — it preserves better readability while ensuring a successful upload.',
+    },
+  ],
 };
 
 /**

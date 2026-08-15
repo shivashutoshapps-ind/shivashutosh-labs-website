@@ -105,7 +105,9 @@
   font-weight: 600;
   font-size: 0.9375rem;
   color: var(--color-text-primary);
-  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   max-width: 60%;
   text-align: right;
 }

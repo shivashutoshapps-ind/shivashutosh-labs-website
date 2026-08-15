@@ -109,23 +109,33 @@
 
 .removeBtn {
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.removeIcon {
   background: rgba(0,0,0,0.6);
   color: white;
-  border: none;
   border-radius: 50%;
   width: 24px;
   height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   font-size: 0.75rem;
   transition: background 0.2s;
 }
 
-.removeBtn:hover, .removeBtn:focus-visible {
+.removeBtn:hover .removeIcon, .removeBtn:focus-visible .removeIcon {
   background: #DC2626; /* Red 600 */
 }
 

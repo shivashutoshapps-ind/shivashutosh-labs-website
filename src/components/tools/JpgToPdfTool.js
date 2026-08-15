@@ -5,6 +5,7 @@ import { PDFDocument, PageSizes } from 'pdf-lib';
 import styles from './JpgToPdfTool.module.css';
 
 const PAGE_SIZE_OPTIONS = {
+  'A4 (Auto)': 'A4_Auto',
   A4: [PageSizes.A4[0], PageSizes.A4[1]],
   'A4 Landscape': [PageSizes.A4[1], PageSizes.A4[0]],
   Letter: [PageSizes.Letter[0], PageSizes.Letter[1]],
@@ -24,7 +25,7 @@ const FIT_OPTIONS = {
 
 export default function JpgToPdfTool() {
   const [images, setImages] = useState([]);
-  const [pageSize, setPageSize] = useState('A4');
+  const [pageSize, setPageSize] = useState('A4 (Auto)');
   const [margin, setMargin] = useState('Small');
   const [fitOption, setFitOption] = useState('Fit to Page');
   
@@ -48,11 +49,11 @@ export default function JpgToPdfTool() {
     
     const validFiles = Array.from(files).filter(file => {
       const type = file.type;
-      return type === 'image/jpeg' || type === 'image/png';
+      return type === 'image/jpeg' || type === 'image/png' || type === 'image/webp';
     });
 
     if (validFiles.length < files.length) {
-      setError('कुछ फाइलें समर्थित नहीं हैं। कृपया केवल JPG या PNG चुनें।');
+      setError('कुछ फाइलें समर्थित नहीं हैं। कृपया केवल JPG, PNG या WebP चुनें।');
     }
 
     if (validFiles.length === 0) return;
@@ -120,6 +121,23 @@ export default function JpgToPdfTool() {
             pdfImage = await pdfDoc.embedJpg(imageBytes);
           } else if (imgData.file.type === 'image/png') {
             pdfImage = await pdfDoc.embedPng(imageBytes);
+          } else if (imgData.file.type === 'image/webp') {
+            const imgBitmap = await createImageBitmap(new Blob([imageBytes], { type: 'image/webp' }));
+            const canvas = document.createElement('canvas');
+            canvas.width = imgBitmap.width;
+            canvas.height = imgBitmap.height;
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#FFFFFF'; // Fill white for transparent WebP
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(imgBitmap, 0, 0);
+            
+            const jpgBlob = await new Promise(res => canvas.toBlob(res, 'image/jpeg', 0.92));
+            const jpgBytes = await jpgBlob.arrayBuffer();
+            pdfImage = await pdfDoc.embedJpg(jpgBytes);
+            canvas.width = 0;
+            canvas.height = 0;
+            imgBitmap.close();
           } else {
             continue;
           }
@@ -131,12 +149,16 @@ export default function JpgToPdfTool() {
         if (pageSize === 'Original') {
           pageWidth = pdfImage.width;
           pageHeight = pdfImage.height;
+        } else if (pageSize === 'A4 (Auto)') {
+          const isLandscape = pdfImage.width > pdfImage.height;
+          pageWidth = isLandscape ? PageSizes.A4[1] : PageSizes.A4[0];
+          pageHeight = isLandscape ? PageSizes.A4[0] : PageSizes.A4[1];
         } else {
           [pageWidth, pageHeight] = PAGE_SIZE_OPTIONS[pageSize];
         }
 
         const page = pdfDoc.addPage([pageWidth, pageHeight]);
-        const m = MARGINS[margin];
+        const m = MARGIN_OPTIONS[margin] || 0;
         
         const maxWidth = Math.max(1, pageWidth - m * 2);
         const maxHeight = Math.max(1, pageHeight - m * 2);
@@ -220,14 +242,14 @@ export default function JpgToPdfTool() {
             type="file"
             ref={fileInputRef}
             onChange={(e) => handleFiles(e.target.files)}
-            accept="image/jpeg,image/png"
+            accept="image/jpeg,image/png,image/webp"
             multiple
             className={styles.fileInput}
             aria-hidden="true"
           />
           <span className={styles.uploadIcon} aria-hidden="true">🖼️</span>
           <p className={styles.uploadText} lang="hi">एक या अधिक फोटो चुनें और PDF बनाएं</p>
-          <p className={styles.uploadSubText}>JPG, JPEG, PNG (Drag & Drop Supported)</p>
+          <p className={styles.uploadSubText}>JPG, PNG, WebP (Drag & Drop Supported)</p>
           <button className="btn btn--primary" tabIndex={-1}>फोटो चुनें</button>
         </div>
       ) : (
@@ -251,7 +273,7 @@ export default function JpgToPdfTool() {
                     aria-label={`${img.name} को हटाएं`}
                     disabled={isProcessing}
                   >
-                    ✕
+                    <span className={styles.removeIcon}>✕</span>
                   </button>
                 </div>
               ))}
@@ -268,7 +290,7 @@ export default function JpgToPdfTool() {
                   type="file"
                   ref={addMoreInputRef}
                   onChange={(e) => handleFiles(e.target.files)}
-                  accept="image/jpeg,image/png"
+                  accept="image/jpeg,image/png,image/webp"
                   multiple
                   className={styles.fileInput}
                   disabled={isProcessing}
@@ -304,7 +326,7 @@ export default function JpgToPdfTool() {
                 onChange={(e) => { setMargin(e.target.value); setPdfResult(null); }}
                 disabled={isProcessing}
               >
-                {Object.keys(MARGINS).map(opt => (
+                {Object.keys(MARGIN_OPTIONS).map(opt => (
                   <option key={opt} value={opt}>{opt}</option>
                 ))}
               </select>
@@ -344,7 +366,7 @@ export default function JpgToPdfTool() {
                 </div>
                 <a 
                   href={pdfResult.url} 
-                  download="jpg-to-pdf.pdf"
+                  download="images-to-pdf.pdf"
                   className="btn btn--accent btn--lg"
                   style={{ width: '100%', marginTop: 'var(--space-2)' }}
                 >

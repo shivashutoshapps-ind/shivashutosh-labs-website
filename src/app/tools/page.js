@@ -2,10 +2,13 @@ import Link from 'next/link';
 import { categories } from '@/data/categories';
 import styles from './page.module.css';
 
-export const metadata = {
+import { buildBaseMetadata } from '@/lib/metadata';
+
+export const metadata = buildBaseMetadata({
   title: 'सभी टूल्स (All Tools) | Shivashutosh Labs',
   description: 'Shivashutosh Labs के सभी उपयोगी टूल्स — PDF, इमेज, फॉर्म, और छात्र टूल्स। All utility tools in one place.',
-};
+  path: '/tools',
+});
 
 export default function ToolsPage() {
   return (

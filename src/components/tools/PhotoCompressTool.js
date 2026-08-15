@@ -165,7 +165,7 @@ export default function PhotoCompressTool({ defaultTarget = 20 }) {
             
             <p className={styles.settingsTitle} lang="hi">लक्ष्य आकार (Target Size):</p>
             <div className={styles.targetSelector} role="radiogroup" aria-label="Target Size Selection">
-              {[20, 30, 50, 100].map(kb => (
+              {[20, 50, 100, 200].map(kb => (
                 <div key={kb}>
                   <input
                     type="radio"

@@ -7,6 +7,10 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/layout/Breadcrumb';
 import PhotoCompressTool from '@/components/tools/PhotoCompressTool';
 import SignatureCompressTool from '@/components/tools/SignatureCompressTool';
+import TargetPdfCompressTool from '@/components/tools/TargetPdfCompressTool';
+import ImageCompressorTool from '@/components/tools/ImageCompressorTool';
+import ResizeImageTool from '@/components/tools/ResizeImageTool';
+import CropImageTool from '@/components/tools/CropImageTool';
 import FAQAccordion from '@/components/ui/FAQAccordion';
 import RelatedTools from '@/components/ui/RelatedTools';
 import StructuredData, {
@@ -129,6 +133,14 @@ export default function FormToolPageTemplate({ tool, category, faqs }) {
                   <PhotoCompressTool defaultTarget={parseInt(tool.slug.replace(/\D/g, '')) || 20} />
                 ) : tool.slug.startsWith('signature-') ? (
                   <SignatureCompressTool defaultTarget={parseInt(tool.slug.replace(/\D/g, '')) || 20} />
+                ) : tool.slug === 'image-compressor' ? (
+                  <ImageCompressorTool />
+                ) : tool.slug === 'resize-image' ? (
+                  <ResizeImageTool />
+                ) : tool.slug === 'crop-image' ? (
+                  <CropImageTool />
+                ) : tool.slug.startsWith('pdf-') ? (
+                  <TargetPdfCompressTool defaultTarget={parseInt(tool.slug.replace(/\D/g, '')) || 100} />
                 ) : (
                   <p className="sr-only">Tool interface area.</p>
                 )}
