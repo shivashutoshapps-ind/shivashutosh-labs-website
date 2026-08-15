@@ -25,8 +25,9 @@ import StructuredData, {
 } from '@/components/seo/StructuredData';
 import { getRelatedTools, TOOL_STATUS } from '@/data/tools';
 import styles from './ToolPage.module.css';
+import { siteConfig } from '@/lib/metadata';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const SITE_URL = siteConfig.siteUrl;
 
 /** Default how-to steps used when tool-specific steps not provided */
 const defaultHowToSteps = (toolTitleHi) => [

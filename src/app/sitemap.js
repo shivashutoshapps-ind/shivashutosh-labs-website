@@ -5,11 +5,12 @@
  * Covers: homepage, all category pages, all tool pages.
  * Priority and changeFrequency assigned based on page importance.
  */
+import { siteConfig } from '@/lib/metadata';
 import { getAllToolSlugs } from '@/data/tools';
 import { categories } from '@/data/categories';
 
 export default function sitemap() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const siteUrl = siteConfig.siteUrl;
   const now = new Date().toISOString();
 
   // Homepage

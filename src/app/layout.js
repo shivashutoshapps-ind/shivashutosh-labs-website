@@ -22,9 +22,11 @@ const inter = Inter({
   weight: ['400', '500', '600', '700', '800'],
 });
 
+import { siteConfig } from '@/lib/metadata';
+
 // ─── Default Metadata ─────────────────────────────────────────────────────────
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  metadataBase: new URL(siteConfig.siteUrl),
   title: {
     template: '%s | Shivashutosh Labs',
     default: 'Shivashutosh Labs – Free PDF, Image & Form Tools | मुफ़्त PDF टूल्स',
@@ -56,7 +58,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
   return (
     <html

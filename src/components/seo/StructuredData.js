@@ -25,8 +25,9 @@ export default function StructuredData({ data }) {
 }
 
 // ─── Schema Builders ───────────────────────────────────────────────────────────
+import { siteConfig } from '@/lib/metadata';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const SITE_URL = siteConfig.siteUrl;
 
 /**
  * WebSite schema for the homepage.

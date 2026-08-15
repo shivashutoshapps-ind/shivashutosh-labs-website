@@ -2,8 +2,10 @@
  * robots.txt generation via Next.js App Router Metadata API
  * Accessible at: /robots.txt
  */
+import { siteConfig } from '@/lib/metadata';
+
 export default function robots() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const siteUrl = siteConfig.siteUrl;
 
   return {
     rules: {

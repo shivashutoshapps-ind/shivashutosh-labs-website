@@ -5,7 +5,8 @@
  * Uses Next.js App Router Metadata API.
  */
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const rawUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
+const SITE_URL = rawUrl.includes('localhost') || !rawUrl ? 'https://shivashutoshlabs.com' : rawUrl;
 const SITE_NAME = 'Shivashutosh Labs';
 const BRAND_FULL = 'Shivashutosh Labs';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.png`;
