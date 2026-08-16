@@ -83,10 +83,10 @@ export function buildFAQSchema(faqs) {
     '@type': 'FAQPage',
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
-      name: faq.qEn || faq.q,
+      name: faq.qEn || faq.q || faq.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: faq.aEn || faq.a,
+        text: faq.aEn || faq.a || faq.answer,
       },
     })),
   };
