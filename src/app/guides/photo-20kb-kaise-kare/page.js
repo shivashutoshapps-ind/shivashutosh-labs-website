@@ -125,6 +125,16 @@ export default function Photo20KBGuide() {
           अगर आपको फोटो को विशेष पिक्सल (जैसे 132x170) में रिसाइज़ करना है या फालतू हिस्सा काटना है, तो हमारे <Link href="/resize-image">Image Resizer</Link> और <Link href="/crop-image">Image Cropper</Link> टूल का उपयोग करें।
         </p>
 
+        <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)' }}>
+          <h3 lang="hi" style={{ fontSize: '1.125rem', marginBottom: 'var(--space-2)' }}>📖 अन्य गाइड पढ़ें</h3>
+          <p lang="hi" style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
+            सरकारी फॉर्म्स की अन्य फोटो रिक्वायरमेंट्स के बारे में जानने के लिए हमारी यह विस्तृत गाइड पढ़ें।
+          </p>
+          <Link href="/guides/sarkari-form-photo-size-kaise-kam-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>
+            सरकारी फॉर्म के लिए फोटो का साइज कैसे कम करें? →
+          </Link>
+        </div>
+
         <h2 lang="hi" style={{ marginTop: 'var(--space-10)' }}>अक्सर पूछे जाने वाले प्रश्न (FAQ)</h2>
         <div style={{ marginBottom: 'var(--space-10)' }}>
           <FAQAccordion faqs={faqs} />
