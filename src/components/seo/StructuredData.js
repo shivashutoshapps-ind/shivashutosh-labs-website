@@ -131,3 +131,33 @@ export function buildSoftwareAppSchema({ name, description, url }) {
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
   };
 }
+
+/**
+ * Article schema for guides and blog posts.
+ * @param {{ title: string, description: string, url: string, image: string, datePublished: string, dateModified: string }} params
+ */
+export function buildArticleSchema({ title, description, url, image, datePublished, dateModified }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description: description,
+    image: image,
+    url: url,
+    datePublished: datePublished,
+    dateModified: dateModified,
+    author: {
+      '@type': 'Organization',
+      name: 'Shivashutosh Labs',
+      url: SITE_URL
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Shivashutosh Labs',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/logo.svg`
+      }
+    }
+  };
+}

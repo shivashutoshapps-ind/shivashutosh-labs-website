@@ -149,6 +149,18 @@ export default function FormToolPageTemplate({ tool, category, faqs }) {
             )}
           </section>
 
+          {tool.slug === 'photo-20kb' && (
+            <div style={{ padding: 'var(--space-4)', background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)' }}>
+              <h3 lang="hi" style={{ fontSize: '1rem', marginBottom: 'var(--space-2)' }}>📸 क्या आपको मदद चाहिए?</h3>
+              <p lang="hi" style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
+                अगर आप जानना चाहते हैं कि मोबाइल से फोटो कैसे compress करें या फॉर्म रिजेक्ट होने से कैसे बचाएं, तो हमारी यह विस्तृत गाइड पढ़ें।
+              </p>
+              <Link href="/guides/photo-20kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>
+                गाइड पढ़ें: फोटो को 20KB में कैसे करें? →
+              </Link>
+            </div>
+          )}
+
           {/* Form-specific note */}
           <div className={styles.usageNote} role="note">
             <h2 className={styles.sectionTitle} lang="hi">📋 किन फॉर्म्स के लिए उपयोगी?</h2>
