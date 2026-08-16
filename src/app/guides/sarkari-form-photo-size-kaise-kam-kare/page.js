@@ -191,6 +191,8 @@ export default function SarkariFormPhotoSizeGuide() {
           </p>
           <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
             <li style={{ marginBottom: 'var(--space-2)' }}><Link href="/guides/photo-20kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>फोटो को 20KB में कैसे करें? →</Link></li>
+            <li style={{ marginBottom: 'var(--space-2)' }}><Link href="/guides/photo-50kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>फोटो को 50KB में कैसे करें? →</Link></li>
+            <li style={{ marginBottom: 'var(--space-2)' }}><Link href="/guides/photo-100kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>फोटो को 100KB में कैसे करें? →</Link></li>
             <li><Link href="/guides/signature-20kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>सिग्नेचर को 20KB में कैसे करें? →</Link></li>
           </ul>
         </div>
