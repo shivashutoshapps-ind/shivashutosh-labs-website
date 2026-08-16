@@ -148,6 +148,18 @@ export default function ToolPageTemplate({ tool, category, faqs }) {
             )}
           </section>
 
+          {tool.slug === 'compress-pdf' && (
+            <div style={{ padding: 'var(--space-4)', background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)', marginTop: 'var(--space-4)' }}>
+              <h3 lang="hi" style={{ fontSize: '1rem', marginBottom: 'var(--space-2)' }}>📄 क्या आपको मदद चाहिए?</h3>
+              <p lang="hi" style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
+                अगर आप जानना चाहते हैं कि मोबाइल से PDF का साइज कैसे कम करें या फॉर्म के लिए PDF कैसे तैयार करें, तो हमारी यह विस्तृत गाइड पढ़ें।
+              </p>
+              <Link href="/guides/pdf-ka-size-kam-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>
+                गाइड पढ़ें: PDF का Size कम कैसे करें? →
+              </Link>
+            </div>
+          )}
+
           {/* Benefits */}
           <section className={styles.benefits} aria-labelledby="benefits-heading">
             <h2 id="benefits-heading" className={styles.sectionTitle} lang="hi">

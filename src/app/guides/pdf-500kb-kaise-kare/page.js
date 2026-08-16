@@ -140,6 +140,7 @@ export default function PDF500KBGuide() {
             अन्य PDF साइज लिमिट्स और रिक्वायरमेंट्स के बारे में जानने के लिए हमारी विस्तृत गाइड्स पढ़ें।
           </p>
           <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
+            <li style={{ marginBottom: 'var(--space-2)' }}><Link href="/guides/pdf-ka-size-kam-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>PDF का Size कम कैसे करें? →</Link></li>
             <li style={{ marginBottom: 'var(--space-2)' }}><Link href="/guides/pdf-100kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>PDF को 100KB में कैसे करें? →</Link></li>
             <li><Link href="/guides/pdf-200kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>PDF को 200KB में कैसे करें? →</Link></li>
           </ul>
