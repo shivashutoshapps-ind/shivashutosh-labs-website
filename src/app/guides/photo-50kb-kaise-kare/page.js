@@ -134,6 +134,7 @@ export default function Photo50KBGuide() {
           <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
             <li style={{ marginBottom: 'var(--space-2)' }}><Link href="/guides/photo-20kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>फोटो को 20KB में कैसे करें? →</Link></li>
             <li style={{ marginBottom: 'var(--space-2)' }}><Link href="/guides/photo-100kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>फोटो को 100KB में कैसे करें? →</Link></li>
+            <li style={{ marginBottom: 'var(--space-2)' }}><Link href="/guides/photo-200kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>फोटो को 200KB में कैसे करें? →</Link></li>
             <li><Link href="/guides/sarkari-form-photo-size-kaise-kam-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>सरकारी फॉर्म के लिए फोटो का साइज कैसे कम करें? →</Link></li>
           </ul>
         </div>

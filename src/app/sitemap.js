@@ -48,6 +48,12 @@ export default function sitemap() {
 
   const staticEntries = [
     {
+      url: `${siteUrl}/guides/photo-200kb-kaise-kare`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${siteUrl}/guides/photo-100kb-kaise-kare`,
       lastModified: now,
       changeFrequency: 'monthly',
