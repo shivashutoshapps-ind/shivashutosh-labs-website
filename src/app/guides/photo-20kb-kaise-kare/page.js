@@ -131,6 +131,7 @@ export default function Photo20KBGuide() {
             सरकारी फॉर्म्स की अन्य फोटो और सिग्नेचर रिक्वायरमेंट्स के बारे में जानने के लिए हमारी विस्तृत गाइड्स पढ़ें।
           </p>
           <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
+            <li style={{ marginBottom: 'var(--space-2)' }}><Link href="/guides/photo-50kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>फोटो को 50KB में कैसे करें? →</Link></li>
             <li style={{ marginBottom: 'var(--space-2)' }}><Link href="/guides/sarkari-form-photo-size-kaise-kam-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>सरकारी फॉर्म के लिए फोटो का साइज कैसे कम करें? →</Link></li>
             <li><Link href="/guides/signature-20kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>सिग्नेचर को 20KB में कैसे करें? →</Link></li>
           </ul>
