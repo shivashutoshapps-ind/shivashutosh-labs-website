@@ -160,6 +160,17 @@ export default function FormToolPageTemplate({ tool, category, faqs }) {
               </Link>
             </div>
           )}
+          {tool.slug === 'pdf-100kb' && (
+            <div style={{ padding: 'var(--space-4)', background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)' }}>
+              <h3 lang="hi" style={{ fontSize: '1rem', marginBottom: 'var(--space-2)' }}>📄 क्या आपको मदद चाहिए?</h3>
+              <p lang="hi" style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
+                अगर आप जानना चाहते हैं कि मोबाइल से PDF का साइज कैसे कम करें या फॉर्म के लिए PDF कैसे तैयार करें, तो हमारी यह विस्तृत गाइड पढ़ें।
+              </p>
+              <Link href="/guides/pdf-100kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>
+                गाइड पढ़ें: PDF को 100KB में कैसे करें? →
+              </Link>
+            </div>
+          )}
 
           {/* Form-specific note */}
           <div className={styles.usageNote} role="note">
