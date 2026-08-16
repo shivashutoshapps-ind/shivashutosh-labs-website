@@ -140,6 +140,7 @@ export default function PDF200KBGuide() {
           </p>
           <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
             <li style={{ marginBottom: 'var(--space-2)' }}><Link href="/guides/pdf-100kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>PDF को 100KB में कैसे करें? →</Link></li>
+            <li style={{ marginBottom: 'var(--space-2)' }}><Link href="/guides/pdf-500kb-kaise-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>PDF को 500KB में कैसे करें? →</Link></li>
             <li><Link href="/guides/sarkari-form-photo-size-kaise-kam-kare" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>सरकारी फॉर्म के लिए फोटो का साइज कैसे कम करें? →</Link></li>
           </ul>
         </div>
