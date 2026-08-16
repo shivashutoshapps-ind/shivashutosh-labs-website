@@ -48,6 +48,12 @@ export default function sitemap() {
 
   const staticEntries = [
     {
+      url: `${siteUrl}/guides/signature-20kb-kaise-kare`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${siteUrl}/guides/sarkari-form-photo-size-kaise-kam-kare`,
       lastModified: now,
       changeFrequency: 'monthly',
