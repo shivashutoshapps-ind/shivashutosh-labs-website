@@ -48,6 +48,12 @@ export default function sitemap() {
 
   const staticEntries = [
     {
+      url: `${siteUrl}/guides/pdf-to-jpg-kaise-kare`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${siteUrl}/guides/jpg-to-pdf-kaise-banaye`,
       lastModified: now,
       changeFrequency: 'monthly',
