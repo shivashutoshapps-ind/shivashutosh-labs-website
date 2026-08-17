@@ -15,6 +15,7 @@ import RotatePdfTool from '@/components/tools/RotatePdfTool';
 import WatermarkPdfTool from '@/components/tools/WatermarkPdfTool';
 import AddPageNumbersTool from '@/components/tools/AddPageNumbersTool';
 import PdfEditorTool from '@/components/tools/PdfEditorTool';
+import PdfToWordTool from '@/components/tools/PdfToWordTool';
 import FAQAccordion from '@/components/ui/FAQAccordion';
 import RelatedTools from '@/components/ui/RelatedTools';
 import StructuredData, {
@@ -141,6 +142,8 @@ export default function ToolPageTemplate({ tool, category, faqs }) {
                   <AddPageNumbersTool />
                 ) : tool.slug === 'pdf-editor' ? (
                   <PdfEditorTool />
+                ) : tool.slug === 'pdf-to-word' ? (
+                  <PdfToWordTool />
                 ) : (
                   <div className={styles.comingSoonBox}>Tool interface will appear here.</div>
                 )}

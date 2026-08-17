@@ -57,8 +57,8 @@ export const tools = [
     descriptionHi: 'PDF दस्तावेज़ को Word फाइल (DOCX) में बदलें। फ़ॉर्मेटिंग सुरक्षित रहती है।',
     category: 'pdf-tools',
     icon: 'pdf-to-word',
-    status: TOOL_STATUS.COMING_SOON,
-    keywords: ['pdf to word', 'pdf to docx', 'convert pdf', 'PDF से Word'],
+    status: TOOL_STATUS.LIVE,
+    keywords: ['pdf to word', 'pdf to docx', 'convert pdf', 'PDF को Word'],
     relatedTools: ['merge-pdf', 'pdf-editor', 'compress-pdf'],
   },
   {
