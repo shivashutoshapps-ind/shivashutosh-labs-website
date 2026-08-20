@@ -15,7 +15,12 @@ import RotatePdfTool from '@/components/tools/RotatePdfTool';
 import WatermarkPdfTool from '@/components/tools/WatermarkPdfTool';
 import AddPageNumbersTool from '@/components/tools/AddPageNumbersTool';
 import PdfEditorTool from '@/components/tools/PdfEditorTool';
-import PdfToWordTool from '@/components/tools/PdfToWordTool';
+import dynamic from 'next/dynamic';
+
+const PdfToWordTool = dynamic(
+  () => import('@/components/tools/PdfToWordTool')
+);
+
 import FAQAccordion from '@/components/ui/FAQAccordion';
 import RelatedTools from '@/components/ui/RelatedTools';
 import StructuredData, {

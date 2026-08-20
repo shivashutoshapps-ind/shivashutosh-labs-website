@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Document, Packer, Paragraph, TextRun, AlignmentType, PageBreak } from 'docx';
 import styles from './PdfToWordTool.module.css';
 
 export default function PdfToWordTool() {
@@ -169,6 +168,9 @@ export default function PdfToWordTool() {
           }
 
           setProgress(75);
+
+          // Dynamically import docx just before generating the document
+          const { Document, Packer, Paragraph, TextRun, AlignmentType, PageBreak } = await import('docx');
 
           // Create the Word document
           const doc = new Document({
