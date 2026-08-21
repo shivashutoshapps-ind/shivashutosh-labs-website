@@ -114,6 +114,12 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
+      url: `${siteUrl}/guides/pdf-to-word-kaise-kare`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${siteUrl}/guides/photo-20kb-kaise-kare`,
       lastModified: now,
       changeFrequency: 'monthly',
