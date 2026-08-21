@@ -114,6 +114,12 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
+      url: `${siteUrl}/guides/document-pdf-size-kaise-kam-kare`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${siteUrl}/guides/sarkari-form-photo-size-kaise-kam-kare`,
       lastModified: now,
       changeFrequency: 'monthly',
