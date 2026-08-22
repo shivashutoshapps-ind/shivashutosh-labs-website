@@ -332,6 +332,25 @@ export const toolFAQs = {
   ],
   'emi-calculator': [
     {
+      q: 'Loan tenure बढ़ाने से EMI पर क्या असर पड़ता है?',
+      a: 'लोन की अवधि (Tenure) बढ़ाने से आपकी Monthly EMI कम हो जाती है, जिससे हर महीने का बोझ घटता है। लेकिन ध्यान रहे, अवधि जितनी लंबी होगी, आपको बैंक को उतना ही ज़्यादा Total Interest (कुल ब्याज) चुकाना पड़ेगा।',
+      qEn: 'How does increasing loan tenure affect EMI?',
+      aEn: 'Increasing the loan tenure reduces your monthly EMI burden. However, a longer tenure means you will end up paying a higher total interest amount to the bank over the life of the loan.',
+    },
+    {
+      q: '0% interest पर EMI कैसे निकलेगी?',
+      a: 'अगर ब्याज दर पूरी तरह से 0% है, तो EMI निकालना बहुत आसान है। आपको बस अपनी कुल लोन राशि को महीनों की संख्या से भाग (divide) देना है। उदाहरण के लिए, 1,20,000 रुपये का 0% लोन 12 महीनों के लिए 10,000 रुपये प्रति महीने की EMI बनेगा।',
+      qEn: 'How is EMI calculated at 0% interest?',
+      aEn: 'If the interest rate is strictly 0%, calculating EMI is simple. Just divide the total loan amount by the number of months. For example, a 1,20,000 loan at 0% for 12 months means an EMI of 10,000 per month.',
+    },
+    {
+      q: 'क्या EMI calculator actual bank EMI के एकदम बराबर होती है?',
+      a: 'यह कैलकुलेटर सटीक गणितीय फ़ॉर्मूले (reducing-balance) का उपयोग करता है। लेकिन आपकी वास्तविक बैंक EMI में प्रोसेसिंग फीस, इंश्योरेंस चार्ज, या अलग राउंडिंग रूल्स शामिल हो सकते हैं, जिससे कुछ रुपयों का अंतर आ सकता है।',
+      qEn: 'Does the EMI calculator exactly match the actual bank EMI?',
+      aEn: 'This calculator uses the exact mathematical reducing-balance formula. However, your actual bank EMI might differ slightly due to processing fees, insurance charges, or specific bank rounding rules.',
+    },
+
+    {
       q: 'EMI à¤•à¥ˆà¤¸à¥‡ Calculate à¤•à¥€ à¤œà¤¾à¤¤à¥€ à¤¹à¥ˆ?',
       a: 'EMI (Equated Monthly Installment) à¤•à¥€ à¤—à¤£à¤¨à¤¾ à¤à¤• à¤—à¤£à¤¿à¤¤à¥€à¤¯ à¤«à¥‰à¤°à¥à¤®à¥‚à¤²à¥‡ à¤¸à¥‡ à¤•à¥€ à¤œà¤¾à¤¤à¥€ à¤¹à¥ˆ: EMI = P Ã— r Ã— (1+r)^n / ((1+r)^n - 1), à¤œà¤¹à¤¾à¤ P à¤²à¥‹à¤¨ à¤°à¤¾à¤¶à¤¿ à¤¹à¥ˆ, r à¤®à¤¾à¤¸à¤¿à¤• à¤¬à¥à¤¯à¤¾à¤œ à¤¦à¤° à¤¹à¥ˆ, à¤”à¤° n à¤®à¤¹à¥€à¤¨à¥‹à¤‚ à¤®à¥‡à¤‚ à¤²à¥‹à¤¨ à¤•à¥€ à¤…à¤µà¤§à¤¿ à¤¹à¥ˆà¥¤',
       qEn: 'How is EMI calculated?',

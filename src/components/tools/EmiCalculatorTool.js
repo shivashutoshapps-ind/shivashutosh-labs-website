@@ -289,6 +289,72 @@ export default function EmiCalculatorTool() {
         <strong>Disclaimer / अस्वीकरण:</strong> These calculations are estimates and provided for general information purposes only. Actual interest rates, processing fees, taxes, and other charges by lenders may vary. Please consult with your financial institution before making any loan decisions. This tool does not provide financial advice.
       </div>
 
-    </div>
+    {/* Search-Intent SEO Content */}
+      <div className={styles.seoContent}>
+        <h2 lang="hi">EMI Calculator क्या है?</h2>
+        <p lang="hi">
+          EMI (Equated Monthly Instalment) एक तय राशि (fixed amount) होती है जिसे आप हर महीने अपने लोन (Loan) को चुकाने के लिए देते हैं। इस EMI में <strong>मूलधन (Principal Amount)</strong> और <strong>ब्याज (Interest)</strong> दोनों शामिल होते हैं।
+        </p>
+
+        <h2 lang="hi">EMI कैसे Calculate करें? (EMI Formula)</h2>
+        <p lang="hi">
+          EMI निकालने के लिए reducing-balance formula का इस्तेमाल किया जाता है:
+        </p>
+        <div className={styles.exampleBox}>
+          <h3>EMI Formula</h3>
+          <p><strong>EMI = [P × r × (1+r)^n] / [(1+r)^n - 1]</strong></p>
+          <ul style={{ marginTop: '0.5rem', marginBottom: '0' }}>
+            <li><strong>P</strong> = Loan Principal (लोन की राशि)</li>
+            <li><strong>r</strong> = Monthly Interest Rate (वार्षिक ब्याज दर ÷ 12 ÷ 100)</li>
+            <li><strong>n</strong> = Tenure in Months (लोन की अवधि महीनों में)</li>
+          </ul>
+        </div>
+
+        <h2 lang="hi">Practical EMI Calculation Example</h2>
+        <div className={styles.exampleBox}>
+          <h3>Example: ₹5 Lakh Loan</h3>
+          <p><strong>Loan Amount:</strong> ₹5,00,000</p>
+          <p><strong>Interest Rate:</strong> 10% (Annual)</p>
+          <p><strong>Tenure:</strong> 5 Years (60 Months)</p>
+          <hr style={{ margin: '0.5rem 0', borderColor: 'var(--color-border)', opacity: 0.5 }} />
+          <p><strong>Monthly EMI:</strong> ₹10,624</p>
+          <p><strong>Total Interest:</strong> ₹1,37,411</p>
+          <p><strong>Total Payment:</strong> ₹6,37,411</p>
+        </div>
+
+        <h2 lang="hi">EMI किन चीज़ों पर निर्भर करती है? (Factors affecting EMI)</h2>
+        <ul lang="hi">
+          <li><strong>Loan Amount (लोन राशि):</strong> लोन जितना ज्यादा होगा, EMI भी उतनी ही ज्यादा होगी।</li>
+          <li><strong>Interest Rate (ब्याज दर):</strong> ब्याज दर बढ़ने से EMI का अमाउंट भी बढ़ जाता है।</li>
+          <li><strong>Loan Tenure (लोन अवधि):</strong> लोन की अवधि (Years/Months) जितनी लंबी होगी, <em>Monthly EMI</em> उतनी ही कम होगी, लेकिन अंत में <em>Total Interest</em> ज़्यादा चुकाना पड़ेगा।</li>
+        </ul>
+
+        <h2 lang="hi">Total Interest (कुल ब्याज) कैसे निकालें?</h2>
+        <p lang="hi">
+          कैलकुलेटर <strong>Total Payment</strong> (Monthly EMI × Number of Months) में से <strong>Principal Amount</strong> (मूल लोन राशि) को घटाकर <strong>Total Interest</strong> निकालता है। लोन की तुलना (compare) करते समय सिर्फ EMI न देखें, Total Interest पर भी ध्यान दें।
+        </p>
+
+        <h2 lang="hi">0% Interest पर EMI कैसे निकलेगी?</h2>
+        <p lang="hi">
+          अगर गणितीय रूप (mathematically) से ब्याज दर (Interest Rate) 0% हो, तो EMI बहुत आसानी से निकलती है:
+          <br/><strong>EMI = Loan Amount ÷ Number of Months</strong>
+          <br/>(उदाहरण: ₹1,20,000 का 0% ब्याज पर 12 महीने के लिए लोन = ₹10,000 हर महीने।)
+        </p>
+
+        <h2 lang="hi">Loan Use Cases (उपयोग)</h2>
+        <ul lang="hi">
+          <li><strong>Personal Loan EMI:</strong> पर्सनल ज़रूरतों के लिए लिए गए लोन की किश्त।</li>
+          <li><strong>Home Loan EMI:</strong> घर खरीदने या बनाने वाले लंबी अवधि के लोन।</li>
+          <li><strong>Car/Vehicle Loan EMI:</strong> वाहन खरीदने के लिए लोन।</li>
+          <li><strong>Education / Business Loan:</strong> पढ़ाई या व्यापार के लिए।</li>
+        </ul>
+
+        <div className={styles.disclaimerBox}>
+          <p lang="hi">
+            <strong>Important Note:</strong> यह EMI calculator अनुमानित गणना (estimation) के लिए है। Actual EMI lender की interest rate, processing fees, insurance, rounding, rate changes (floating rates) और loan terms के कारण अलग हो सकती है। Loan लेने से पहले संबंधित बैंक/lender की official terms और repayment schedule ज़रूर देखें।
+          </p>
+        </div>
+      </div>
+</div>
   );
 }

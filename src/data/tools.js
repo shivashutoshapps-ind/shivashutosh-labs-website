@@ -342,7 +342,7 @@ export const tools = [
   },
   {
     slug: 'emi-calculator',
-    titleEn: 'EMI Calculator',
+    titleEn: 'EMI Calculator (EMI कैलकुलेटर) – Loan EMI & Interest',
     titleHi: 'EMI कैलकुलेटर',
     descriptionEn: 'Free EMI Calculator for India. Calculate monthly loan EMI, total interest and total payment for home, car, personal and other loans.',
     descriptionHi: 'भारत के लिए मुफ़्त EMI कैलकुलेटर। होम, कार, पर्सनल और अन्य लोन के लिए मासिक EMI, कुल ब्याज और कुल भुगतान की गणना करें।',
