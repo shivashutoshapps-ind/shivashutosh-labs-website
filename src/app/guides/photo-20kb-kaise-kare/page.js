@@ -139,6 +139,14 @@ export default function Photo20KBGuide() {
           </ul>
         </div>
 
+
+        <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)' }}>
+          <h3 lang="hi" style={{ fontSize: '1.125rem', marginBottom: 'var(--space-2)' }}>सरकारी फॉर्म के लिए अन्य उपयोगी टूल्स</h3>
+          <ul style={{ listStyleType: 'disc', paddingLeft: 'var(--space-4)', margin: 0, fontSize: '0.95rem' }}>
+            <li style={{ marginBottom: 'var(--space-2)' }}>फॉर्म भरते समय अपनी सटीक उम्र जांचने के लिए <Link href="/age-calculator" style={{ fontWeight: 'bold' }}>Age Calculator</Link> का उपयोग करें।</li>
+            <li>अंकों का प्रतिशत निकालने के लिए <Link href="/percentage-calculator" style={{ fontWeight: 'bold' }}>Percentage Calculator</Link> ट्राई करें।</li>
+          </ul>
+        </div>
         <h2 lang="hi" style={{ marginTop: 'var(--space-10)' }}>अक्सर पूछे जाने वाले प्रश्न (FAQ)</h2>
         <div style={{ marginBottom: 'var(--space-10)' }}>
           <FAQAccordion faqs={faqs} />

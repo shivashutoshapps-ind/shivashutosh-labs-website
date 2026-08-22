@@ -139,6 +139,8 @@ export default function PDFSizeKamKaiseKareGuide() {
           <li><Link href="/split-pdf">Split PDF</Link></li>
           <li><Link href="/pdf-to-jpg">PDF to JPG</Link></li>
           <li><Link href="/jpg-to-pdf">JPG to PDF</Link></li>
+          <li>मार्कशीट का प्रतिशत निकालने के लिए: <Link href="/percentage-calculator">Percentage Calculator</Link></li>
+          <li>सरकारी फॉर्म के लिए उम्र जाँचने के लिए: <Link href="/age-calculator">Age Calculator</Link></li>
         </ul>
 
         <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)' }}>

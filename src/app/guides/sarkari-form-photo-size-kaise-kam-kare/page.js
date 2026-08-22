@@ -184,6 +184,17 @@ export default function SarkariFormPhotoSizeGuide() {
           <li><strong>Internet/browser issue:</strong> कभी-कभी ब्राउज़र की कुकीज़ या धीमे इंटरनेट के कारण अपलोड फेल हो जाता है।</li>
         </ul>
 
+
+        <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)' }}>
+          <h3 lang="hi" style={{ fontSize: '1.125rem', marginBottom: 'var(--space-2)' }}>सरकारी फॉर्म के लिए अन्य उपयोगी टूल्स</h3>
+          <p lang="hi" style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
+            फोटो रिसाइज़ करने के अलावा, फॉर्म भरते समय ये टूल्स भी बहुत काम आते हैं:
+          </p>
+          <ul style={{ listStyleType: 'disc', paddingLeft: 'var(--space-4)', margin: 0, fontSize: '0.95rem' }}>
+            <li style={{ marginBottom: 'var(--space-2)' }}>अगर आपको किसी भर्ती की अंतिम तारीख के अनुसार अपनी उम्र निकालनी है, तो हमारा <Link href="/age-calculator" style={{ fontWeight: 'bold' }}>Age Calculator (उम्र कैलकुलेटर)</Link> उपयोग कर सकते हैं।</li>
+            <li>अगर आपको अपने शैक्षणिक अंकों का प्रतिशत निकालना है, तो <Link href="/percentage-calculator" style={{ fontWeight: 'bold' }}>Percentage Calculator</Link> का इस्तेमाल करें।</li>
+          </ul>
+        </div>
         <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)' }}>
           <h3 lang="hi" style={{ fontSize: '1.125rem', marginBottom: 'var(--space-2)' }}>📖 अन्य गाइड पढ़ें</h3>
           <p lang="hi" style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
