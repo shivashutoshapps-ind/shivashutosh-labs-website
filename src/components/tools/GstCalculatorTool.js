@@ -275,6 +275,71 @@ export default function GstCalculatorTool() {
         </div>
       </div>
 
-    </div>
+    {/* Search-Intent SEO Content */}
+      <div className={styles.seoContent}>
+        <h2 lang="hi">GST Calculator क्या है?</h2>
+        <p lang="hi">
+          GST (Goods and Services Tax) Calculator एक ऐसा टूल है जिसकी मदद से आप किसी भी प्रोडक्ट या सर्विस का Taxable/Base Amount, GST Amount, और Final/Inclusive Amount आसानी से निकाल सकते हैं। 
+        </p>
+        <p lang="hi">
+          आप इस कैलकुलेटर में <strong>Add GST</strong> (टैक्स जोड़ना) या <strong>Remove GST</strong> (टैक्स हटाना) का इस्तेमाल कर सकते हैं।
+        </p>
+
+        <h2 lang="hi">GST कैसे Calculate करें?</h2>
+        <div className={styles.exampleBox}>
+          <h3>Basic Example (Add GST)</h3>
+          <p>Amount = ₹10,000</p>
+          <p>GST Rate = 18%</p>
+          <p><strong>GST Amount</strong> = ₹1,800</p>
+          <p><strong>Total Amount</strong> = ₹11,800</p>
+          <p className={styles.noteHi}>नोट: लागू होने वाला वास्तविक GST रेट प्रोडक्ट/सर्विस के classification (HSN/SAC) और नियमों पर निर्भर करता है। 18% हर जगह लागू नहीं होता।</p>
+        </div>
+
+        <h2 lang="hi">CGST और SGST (Intra-State) कैसे काम करता है?</h2>
+        <p lang="hi">
+          जब आप अपने ही राज्य में (Intra-state) कोई लेन-देन करते हैं, तो GST दो हिस्सों में बंट जाता है: CGST (Central GST) और SGST (State GST)।
+        </p>
+        <div className={styles.exampleBox}>
+          <h3>Intra-State Example</h3>
+          <p>Base Amount = ₹10,000 | GST = 18%</p>
+          <p><strong>CGST</strong> (9%) = ₹900</p>
+          <p><strong>SGST</strong> (9%) = ₹900</p>
+          <p><strong>Total GST</strong> = ₹1,800</p>
+        </div>
+
+        <h2 lang="hi">IGST (Inter-State) क्या है?</h2>
+        <p lang="hi">
+          जब व्यापार एक राज्य से दूसरे राज्य (Inter-state) में होता है, तो वहां CGST/SGST की जगह <strong>IGST (Integrated GST)</strong> लागू होता है।
+        </p>
+        <div className={styles.exampleBox}>
+          <h3>Inter-State Example</h3>
+          <p>Base Amount = ₹10,000 | GST Rate = 18%</p>
+          <p><strong>IGST</strong> = ₹1,800</p>
+          <p><strong>Total Amount</strong> = ₹11,800</p>
+        </div>
+
+        <h2 lang="hi">GST Inclusive और Exclusive में क्या अंतर है?</h2>
+        <p lang="hi">
+          <strong>GST Exclusive:</strong> जब किसी कीमत में GST शामिल नहीं होता है। (जैसे: ₹10,000 + 18% GST = ₹11,800)
+        </p>
+        <p lang="hi">
+          <strong>GST Inclusive:</strong> जब कीमत में GST पहले से ही जुड़ा हो। (जैसे: ₹11,800 including 18% GST). Calculator में <strong>Remove GST mode</strong> से आप GST-inclusive amount से आसानी से base amount निकाल सकते हैं। (Base amount = ₹10,000, GST = ₹1,800)
+        </p>
+
+        <h2 lang="hi">Practical Indian Use Cases (उपयोग)</h2>
+        <ul lang="hi">
+          <li><strong>Invoice preparation:</strong> बिल बनाते समय सही CGST/SGST/IGST ब्रेकअप दिखाना।</li>
+          <li><strong>Small business calculations:</strong> छोटे व्यापारियों के लिए रेट और टैक्स जोड़ना।</li>
+          <li><strong>Shop/Retail pricing:</strong> MRP (Inclusive of all taxes) से बेस प्राइस (Base price) निकालना।</li>
+          <li><strong>Quotation preparation:</strong> ग्राहकों को कोटेशन भेजते समय टैक्स स्पष्ट करना।</li>
+        </ul>
+
+        <div className={styles.disclaimerBox}>
+          <p lang="hi">
+            <strong>Important Note:</strong> सही GST rate goods/services की classification और लागू GST rules पर निर्भर करता है। यह calculator calculation में मदद करता है; filing, classification और tax compliance के लिए official GST guidance या qualified professional की सलाह को अंतिम मानें।
+          </p>
+        </div>
+      </div>
+</div>
   );
 }

@@ -330,7 +330,7 @@ export const tools = [
   // ─── Calculators ───────────────────────────────────────────────────────────
   {
     slug: 'gst-calculator',
-    titleEn: 'GST Calculator',
+    titleEn: 'GST Calculator (GST कैलकुलेटर) – CGST, SGST & IGST',
     titleHi: 'GST कैलकुलेटर',
     descriptionEn: 'Free GST Calculator for India. Calculate GST-inclusive and exclusive prices with CGST, SGST and IGST instantly.',
     descriptionHi: 'भारत में GST की गणना आसानी से करें। CGST, SGST और IGST के साथ मूल्य निकालें।',
