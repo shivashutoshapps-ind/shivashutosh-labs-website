@@ -378,7 +378,7 @@ export const tools = [
   },
   {
     slug: 'sip-calculator',
-    titleEn: 'SIP Calculator',
+    titleEn: 'SIP Calculator (SIP कैलकुलेटर) – Investment & Returns',
     titleHi: 'SIP कैलकुलेटर',
     descriptionEn: 'Free SIP Calculator to estimate your total investment, expected returns and maturity value from monthly SIP investments.',
     descriptionHi: 'SIP (Systematic Investment Plan) से जुड़े निवेश, अनुमानित रिटर्न और मैच्योरिटी वैल्यू की गणना करने के लिए मुफ़्त SIP कैलकुलेटर।',

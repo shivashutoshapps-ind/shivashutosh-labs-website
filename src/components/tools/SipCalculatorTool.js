@@ -354,6 +354,64 @@ export default function SipCalculatorTool() {
           </p>
         </div>
       </div>
-    </div>
+    {/* Search-Intent SEO Content */}
+      <div className={styles.seoContent}>
+        <h2 lang="hi">SIP Calculator क्या है?</h2>
+        <p lang="hi">
+          <strong>SIP (Systematic Investment Plan)</strong> एक ऐसा तरीका है जिसमें आप Mutual Funds या अन्य investment schemes में हर महीने एक निश्चित राशि (fixed amount) निवेश करते हैं। यह कैलकुलेटर आपकी Monthly Investment, Investment Period और Expected Annual Return के आधार पर आपके निवेश की <strong>Estimated Future Value</strong> (भविष्य की अनुमानित वैल्यू) बताता है।
+        </p>
+
+        <h2 lang="hi">SIP कैसे Calculate करें? (SIP Formula)</h2>
+        <p lang="hi">
+          SIP की future value या maturity value आमतौर पर Compound Interest के फॉर्मूले से निकाली जाती है, जिसमें हर महीने निवेश होने वाली राशि (contribution timing) को ध्यान में रखा जाता है। कैलकुलेटर इस फॉर्मूले का उपयोग करता है:
+        </p>
+        <div className={styles.exampleBox}>
+          <h3>SIP Future Value Formula</h3>
+          <p><strong>FV = P × [((1+r)^n − 1) / r] × (1+r)</strong></p>
+          <ul style={{ marginTop: '0.5rem', marginBottom: '0' }}>
+            <li><strong>FV</strong> = Future Value (Maturity Value)</li>
+            <li><strong>P</strong> = Monthly SIP (Investment Amount)</li>
+            <li><strong>r</strong> = Monthly Expected Return Rate (Annual Rate ÷ 12 ÷ 100)</li>
+            <li><strong>n</strong> = Total Number of Months (अवधि महीनों में)</li>
+          </ul>
+        </div>
+
+        <h2 lang="hi">Practical SIP Calculation Example</h2>
+        <div className={styles.exampleBox}>
+          <h3>Example: ₹5,000 Monthly SIP</h3>
+          <p><strong>Monthly Investment:</strong> ₹5,000</p>
+          <p><strong>Investment Period:</strong> 10 Years (120 Months)</p>
+          <p><strong>Expected Annual Return:</strong> 12%</p>
+          <hr style={{ margin: '0.5rem 0', borderColor: 'var(--color-border)', opacity: 0.5 }} />
+          <p><strong>Total Invested Amount:</strong> ₹6,00,000</p>
+          <p><strong>Estimated Returns:</strong> ₹5,61,695</p>
+          <p><strong>Estimated Future Value (Maturity):</strong> ₹11,61,695</p>
+        </div>
+
+        <h2 lang="hi">Total Invested Amount vs Estimated Returns</h2>
+        <p lang="hi">
+          <strong>Total Invested Amount:</strong> यह वह पैसा है जो आप अपनी जेब से हर महीने जमा करते हैं (उदा. ₹5,000 × 120 महीने = ₹6,00,000)।<br/><br/>
+          <strong>Estimated Returns:</strong> यह वह वेल्थ या प्रॉफ़िट है जो आपके निवेश किए गए पैसों पर Compound Interest (चक्रवृद्धि ब्याज) के कारण जुड़ता है। <strong>Total Invested Amount</strong> और <strong>Estimated Returns</strong> को जोड़ने पर कुल <strong>Estimated Future Value</strong> निकलती है।
+        </p>
+
+        <h2 lang="hi">SIP Returns किन चीज़ों पर निर्भर करते हैं? (Factors affecting SIP)</h2>
+        <ul lang="hi">
+          <li><strong>Monthly Investment:</strong> आप हर महीने कितनी राशि निवेश करते हैं।</li>
+          <li><strong>Investment Duration:</strong> आप कितने सालों या महीनों तक लगातार निवेश (Invest) करते रहते हैं।</li>
+          <li><strong>Expected Annual Return:</strong> बाज़ार से मिलने वाले रिटर्न का प्रतिशत जो compounding को प्रभावित करता है।</li>
+        </ul>
+
+        <h2 lang="hi">Longer Investment Period का क्या असर होता है?</h2>
+        <p lang="hi">
+          SIP निवेश में समय सबसे महत्वपूर्ण होता है। <strong>Longer investment period</strong> (ज़्यादा अवधि) का मतलब है कि आपके पैसे को compounding के लिए ज़्यादा समय मिलता है, जिससे आपकी <em>Wealth Creation</em> की संभावना बढ़ सकती है। हालांकि, बाज़ार के रिटर्न्स की कोई गारंटी नहीं होती।
+        </p>
+
+        <div className={styles.disclaimerBox}>
+          <p lang="hi">
+            <strong>Important Note:</strong> SIP calculator में दिखाए गए returns पूरी तरह से अनुमानित (estimated) हैं, guaranteed नहीं। Actual investment returns market performance, scheme, expenses, taxes और अन्य factors के कारण अलग हो सकते हैं। Investment decision लेने से पहले संबंधित scheme documents और official information ज़रूर पढ़ें। यह कैलकुलेटर वित्तीय सलाह (Financial Advice) नहीं देता है।
+          </p>
+        </div>
+      </div>
+</div>
   );
 }
