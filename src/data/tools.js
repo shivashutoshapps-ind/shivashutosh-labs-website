@@ -366,7 +366,7 @@ export const tools = [
   },
   {
     slug: 'percentage-calculator',
-    titleEn: 'Percentage Calculator',
+    titleEn: 'Percentage Calculator (प्रतिशत कैलकुलेटर) – Marks, Increase & Decrease',
     titleHi: 'प्रतिशत कैलकुलेटर',
     descriptionEn: 'Free Percentage Calculator to calculate percentages, percentage increase, decrease, differences and marks percentage quickly and easily.',
     descriptionHi: 'प्रतिशत, प्रतिशत वृद्धि, कमी, अंतर और परीक्षा के अंकों का प्रतिशत जल्दी और आसानी से निकालने के लिए मुफ्त ऑनलाइन कैलकुलेटर।',

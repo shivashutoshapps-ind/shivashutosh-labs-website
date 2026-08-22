@@ -191,61 +191,52 @@ export default function PercentageCalculatorTool() {
         )}
       </div>
 
-      {/* SEO Landing Content */}
-      <div style={{ marginTop: '3rem' }}>
-        <h1 lang="hi" style={{ fontSize: '2rem', marginBottom: '1rem' }}>Percentage Calculator</h1>
-        <h2 lang="hi" style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'var(--color-text-secondary)' }}>प्रतिशत कैलकुलेटर</h2>
-        
-        <div style={{ lineHeight: '1.7', fontSize: '1.05rem', color: 'var(--color-text)' }}>
-          <h3 style={{ marginTop: '2rem', marginBottom: '1rem', fontSize: '1.3rem' }}>1. Percentage Calculator</h3>
-          <p>
-            Welcome to the free online Percentage Calculator by Shivashutosh Labs. This tool helps you quickly calculate percentages, percentage increase/decrease, differences, and marks percentage. Whether you are a student calculating exam marks, or a professional checking a discount, our tool provides exact results instantly without any signup.
-          </p>
+      {/* Search-Intent SEO Content */}
+      <div className={styles.seoContent}>
+        <h2 lang="hi">Percentage Calculator (प्रतिशत कैलकुलेटर) क्या है?</h2>
+        <p lang="hi">
+          यह एक मुफ़्त ऑनलाइन टूल है जो आपको किसी भी संख्या का प्रतिशत (Percentage) निकालने, प्रतिशत बढ़ोतरी (Percentage Increase), प्रतिशत कमी (Percentage Decrease) और परीक्षा के अंकों (Exam Marks) का प्रतिशत आसानी से कैलकुलेट करने में मदद करता है।
+        </p>
 
-          <h3 style={{ marginTop: '2rem', marginBottom: '1rem', fontSize: '1.3rem' }}>2. How to Calculate Percentage</h3>
-          <p>
-            Percentage means &quot;out of 100&quot;. To calculate the percentage of any number, you multiply the number by the percentage rate and divide by 100.
-          </p>
-
-          <h3 style={{ marginTop: '2rem', marginBottom: '1rem', fontSize: '1.3rem' }}>3. Percentage Formula</h3>
-          <p>
-            The basic formula for finding X% of Y is: <strong>Result = (X × Y) / 100</strong>
-          </p>
-
-          <h3 style={{ marginTop: '2rem', marginBottom: '1rem', fontSize: '1.3rem' }}>4. What is X% of Y?</h3>
-          <p>
-            If you want to find out what 20% of 500 is, use Mode 1 in our calculator. (20 × 500) / 100 = 100.
-          </p>
-
-          <h3 style={{ marginTop: '2rem', marginBottom: '1rem', fontSize: '1.3rem' }}>5. How to Find What Percentage X is of Y</h3>
-          <p>
-            To find what percentage 50 is of 200, use Mode 2. Formula: (50 / 200) × 100 = 25%.
-          </p>
-
-          <h3 style={{ marginTop: '2rem', marginBottom: '1rem', fontSize: '1.3rem' }}>6. Percentage Increase</h3>
-          <p>
-            Percentage increase is useful for calculating salary hikes or price inflations. Formula: ((New Value - Original Value) / Original Value) × 100.
-          </p>
-
-          <h3 style={{ marginTop: '2rem', marginBottom: '1rem', fontSize: '1.3rem' }}>7. Percentage Decrease</h3>
-          <p>
-            Percentage decrease helps in finding discount values or price drops. Formula: ((Original Value - New Value) / Original Value) × 100.
-          </p>
-
-          <h3 style={{ marginTop: '2rem', marginBottom: '1rem', fontSize: '1.3rem' }}>8. Percentage Calculator for Exam Marks</h3>
-          <p>
-            If a student scores 420 out of 500: Percentage = (420 / 500) × 100 = 84%. Simply use the &quot;X is what percentage of Y?&quot; mode to find your marks percentage.
-          </p>
-
-          <h3 style={{ marginTop: '2rem', marginBottom: '1rem', fontSize: '1.3rem' }}>9. Real-Life Examples</h3>
-          <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem' }}>
-            <li><strong>Discount percentage:</strong> Find out how much you save during a sale.</li>
-            <li><strong>Salary increase:</strong> Know your precise increment percentage during appraisals.</li>
-            <li><strong>Profit/Loss percentage:</strong> Easily compute your business margins.</li>
-            <li><strong>GST-related calculation:</strong> Quickly figure out the tax portion of a bill.</li>
-          </ul>
-
+        <h2 lang="hi">Exam Marks का Percentage कैसे निकालें?</h2>
+        <p lang="hi">
+          अगर आप छात्र हैं और अपने स्कूल, कॉलेज या बोर्ड परीक्षा (Board Exams) के अंकों का प्रतिशत निकालना चाहते हैं, तो यह बहुत आसान है। जहाँ कुल अंकों और प्राप्त अंकों से सामान्य percentage निकालना हो, आप इस टूल का दूसरा मोड ("X is what percentage of Y?") इस्तेमाल कर सकते हैं।
+        </p>
+        <div className={styles.exampleBox}>
+          <h3>उदाहरण 1: 500 में से 425 अंक</h3>
+          <p>अगर किसी छात्र ने 500 में से 425 अंक प्राप्त किए:</p>
+          <p><strong>Percentage</strong> = (425 ÷ 500) × 100 = <strong>85%</strong></p>
         </div>
+        <div className={styles.exampleBox}>
+          <h3>उदाहरण 2: 600 में से 468 अंक</h3>
+          <p><strong>Percentage</strong> = (468 ÷ 600) × 100 = <strong>78%</strong></p>
+        </div>
+
+        <h2 lang="hi">Practical Percentage Examples</h2>
+        <p lang="hi">दैनिक जीवन में प्रतिशत का उपयोग कई जगह होता है। नीचे कुछ प्रमुख उदाहरण दिए गए हैं:</p>
+        <ul lang="hi">
+          <li><strong>Percentage of a number (किसी संख्या का प्रतिशत):</strong> 500 रुपये का 20% = ₹100</li>
+          <li><strong>Exam marks (अंकों का प्रतिशत):</strong> 425 / 500 = 85%</li>
+          <li><strong>Percentage Increase (प्रतिशत बढ़ोतरी):</strong> ₹500 से बढ़कर ₹600 हो गया। Increase = 20%</li>
+          <li><strong>Percentage Decrease (प्रतिशत कमी):</strong> ₹1,000 से घटकर ₹800 हो गया। Decrease = 20%</li>
+        </ul>
+
+        <h2 lang="hi">Percentage Formulas (प्रतिशत के फॉर्मूले)</h2>
+        <ul lang="hi">
+          <li><strong>Percentage of:</strong> (X ÷ 100) × Y</li>
+          <li><strong>What percentage:</strong> (X ÷ Y) × 100</li>
+          <li><strong>Percentage increase:</strong> ((New − Old) ÷ Old) × 100</li>
+          <li><strong>Percentage decrease:</strong> ((Old − New) ÷ Old) × 100</li>
+          <li><strong>Percentage difference:</strong> |A − B| ÷ ((A + B) ÷ 2) × 100</li>
+        </ul>
+
+        <h2 lang="hi">Government Form / Application Forms</h2>
+        <p lang="hi">
+          प्रतियोगी परीक्षाओं (Competitive Exams), स्कॉलरशिप (Scholarship Forms) और सरकारी फॉर्म भरते समय सही प्रतिशत डालना अनिवार्य होता है। यह कैलकुलेटर सटीक गणना में आपकी मदद करता है।
+        </p>
+        <p lang="hi">
+          <strong>Important Note:</strong> Admission, recruitment, scholarship या institution-specific percentage rules के लिए संबंधित official notification/institution instructions को अंतिम मानें। कुछ संस्थाएं CGPA या विशेष फॉर्मूले का उपयोग करती हैं।
+        </p>
       </div>
     </div>
   );
