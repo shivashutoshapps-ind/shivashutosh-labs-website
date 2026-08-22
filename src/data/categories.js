@@ -69,6 +69,17 @@ export const categories = [
     gradient: 'linear-gradient(135deg, #319795 0%, #2C7A7B 100%)',
     href: '/guides',
   },
+  {
+    slug: 'calculators',
+    titleEn: 'Calculators',
+    titleHi: 'कैलकुलेटर',
+    descriptionEn: 'Free online calculators for GST, EMI, Age, Percentage and more.',
+    descriptionHi: 'GST, EMI, उम्र, प्रतिशत और अन्य के लिए मुफ़्त ऑनलाइन कैलकुलेटर।',
+    icon: 'calculator',
+    color: '#D69E2E',
+    gradient: 'linear-gradient(135deg, #D69E2E 0%, #B7791F 100%)',
+    href: '/calculators',
+  },
 ];
 
 /**

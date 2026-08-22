@@ -20,6 +20,19 @@ import dynamic from 'next/dynamic';
 const PdfToWordTool = dynamic(
   () => import('@/components/tools/PdfToWordTool')
 );
+const GstCalculatorTool = dynamic(
+  () => import('@/components/tools/GstCalculatorTool')
+);
+const EmiCalculatorTool = dynamic(
+  () => import('@/components/tools/EmiCalculatorTool')
+);
+const AgeCalculatorTool = dynamic(
+  () => import('@/components/tools/AgeCalculatorTool')
+);
+const SipCalculatorTool = dynamic(() => import('@/components/tools/SipCalculatorTool'));
+const PercentageCalculatorTool = dynamic(
+  () => import('@/components/tools/PercentageCalculatorTool')
+);
 
 import FAQAccordion from '@/components/ui/FAQAccordion';
 import RelatedTools from '@/components/ui/RelatedTools';
@@ -149,6 +162,16 @@ export default function ToolPageTemplate({ tool, category, faqs }) {
                   <PdfEditorTool />
                 ) : tool.slug === 'pdf-to-word' ? (
                   <PdfToWordTool />
+                ) : tool.slug === 'gst-calculator' ? (
+                  <GstCalculatorTool />
+                ) : tool.slug === 'emi-calculator' ? (
+                  <EmiCalculatorTool />
+                ) : tool.slug === 'age-calculator' ? (
+                  <AgeCalculatorTool />
+                ) : tool.slug === 'sip-calculator' ? (
+                  <SipCalculatorTool />
+                ) : tool.slug === 'percentage-calculator' ? (
+                  <PercentageCalculatorTool />
                 ) : (
                   <div className={styles.comingSoonBox}>Tool interface will appear here.</div>
                 )}

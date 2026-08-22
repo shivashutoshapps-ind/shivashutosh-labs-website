@@ -131,8 +131,28 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ─── Useful Calculators ──────────────────────────────────────────────── */}
+      <section className={`${styles.section} ${styles.sectionAlt}`} aria-labelledby="calculators-heading">
+        <div className="container">
+          <div className="section-header">
+            <p className="section-header__eyebrow">नए टूल्स</p>
+            <h2 id="calculators-heading" className="section-header__title" lang="hi">
+              उपयोगी कैलकुलेटर
+            </h2>
+            <p className="section-header__subtitle">
+              Free online calculators for GST, EMI, Age, and more. Fast, simple, and mobile-friendly.
+            </p>
+          </div>
+          <div className="grid-4">
+            {tools.filter(t => t.category === 'calculators').map((tool) => (
+              <ToolCard key={tool.slug} tool={tool} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── Tool Categories ──────────────────────────────────────────────────── */}
-      <section className={`${styles.section} ${styles.sectionAlt}`} aria-labelledby="categories-heading">
+      <section className={styles.section} aria-labelledby="categories-heading">
         <div className="container">
           <div className="section-header">
             <p className="section-header__eyebrow">सभी टूल्स</p>
