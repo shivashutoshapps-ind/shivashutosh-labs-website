@@ -354,7 +354,7 @@ export const tools = [
   },
   {
     slug: 'age-calculator',
-    titleEn: 'Age Calculator',
+    titleEn: 'Age Calculator (उम्र कैलकुलेटर) – Exact Age in Years, Months, Days',
     titleHi: 'उम्र कैलकुलेटर',
     descriptionEn: 'Free Age Calculator to calculate your exact age in years, months and days from your date of birth. Also find total days and your next birthday.',
     descriptionHi: 'अपनी जन्मतिथि से वर्षों, महीनों और दिनों में सटीक उम्र की गणना करें। अगले जन्मदिन और कुल दिनों की जानकारी भी पाएं।',

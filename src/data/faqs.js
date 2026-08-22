@@ -358,6 +358,12 @@ export const toolFAQs = {
   ],
   'age-calculator': [
     {
+      q: 'सरकारी फॉर्म (Sarkari Form) के लिए उम्र कैसे निकालें?',
+      a: 'सरकारी नौकरियों में अक्सर एक कटऑफ डेट (जैसे 1 अगस्त) दी जाती है। आप "Calculate age on" में वह कटऑफ डेट डालें। यह टूल आपको बता देगा कि उस दिन आप कितने वर्ष, महीने और दिन के होंगे। वास्तविक पात्रता के लिए हमेशा आधिकारिक नोटिफिकेशन चेक करें।',
+      qEn: 'How to calculate age for government forms?',
+      aEn: 'Government jobs often provide a cutoff date. Enter that date in the "Calculate age on" field. The tool will calculate your exact age as of that date. Always refer to the official notification for final eligibility.',
+    },
+    {
       q: 'à¤®à¥ˆà¤‚ à¤…à¤ªà¤¨à¥€ à¤¸à¤Ÿà¥€à¤• à¤‰à¤®à¥à¤° à¤•à¥ˆà¤¸à¥‡ à¤œà¤¾à¤¨ à¤¸à¤•à¤¤à¤¾ à¤¹à¥‚à¤?',
       a: 'à¤¬à¤¸ à¤…à¤ªà¤¨à¥€ à¤œà¤¨à¥à¤® à¤¤à¤¿à¤¥à¤¿ (Date of Birth) à¤¦à¤°à¥à¤œ à¤•à¤°à¥‡à¤‚à¥¤ à¤¯à¤¹ à¤•à¥ˆà¤²à¤•à¥à¤²à¥‡à¤Ÿà¤° à¤¤à¥à¤°à¤‚à¤¤ à¤†à¤ªà¤•à¥€ à¤¸à¤Ÿà¥€à¤• à¤‰à¤®à¥à¤° à¤µà¤°à¥à¤·à¥‹à¤‚, à¤®à¤¹à¥€à¤¨à¥‹à¤‚ à¤”à¤° à¤¦à¤¿à¤¨à¥‹à¤‚ à¤®à¥‡à¤‚ à¤¬à¤¤à¤¾ à¤¦à¥‡à¤—à¤¾à¥¤',
       qEn: 'How do I calculate my exact age?',

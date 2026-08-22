@@ -289,6 +289,51 @@ export default function AgeCalculatorTool() {
         </div>
       )}
 
+
+      {/* Search-Intent SEO Content */}
+      <div className={styles.seoContent}>
+        <h2 lang="hi">Age Calculator क्या है? (What is Age Calculator?)</h2>
+        <p lang="hi">
+          Age Calculator एक बहुत ही उपयोगी ऑनलाइन टूल है, जिससे आप अपनी जन्म तारीख (Date of Birth) डालकर अपनी सटीक उम्र निकाल सकते हैं। यह टूल आपको Years (वर्ष), Months (महीने) और Days (दिन) में Exact Age बताता है। इसके अलावा, आप कुल दिन (Total Days), सप्ताह और अगले जन्मदिन (Next Birthday) की जानकारी भी मुफ्त में प्राप्त कर सकते हैं।
+        </p>
+
+        <h2 lang="hi">जन्म तारीख से उम्र कैसे निकालें?</h2>
+        <p lang="hi">
+          अपनी उम्र (Umar) निकालने के लिए आपको किसी डायरी या पेन की जरूरत नहीं है:
+        </p>
+        <ul lang="hi">
+          <li><strong>Date of Birth:</strong> ऊपर दिए गए बॉक्स में अपनी जन्म तिथि चुनें।</li>
+          <li><strong>Calculate Age On:</strong> आप आज की तारीख या भविष्य की कोई भी तारीख (Specific Date) चुन सकते हैं।</li>
+          <li><strong>Calculate:</strong> बटन दबाते ही आपको अपनी सटीक उम्र (Exact Age) मिल जाएगी।</li>
+        </ul>
+
+        <h2 lang="hi">Government Job / Form में Age Calculation</h2>
+        <p lang="hi">
+          सरकारी नौकरी (Sarkari Job) या प्रतियोगी परीक्षा (SSC, UPSC, Railway, Police, Army) के फॉर्म भरते समय उम्मीदवारों को एक कटऑफ तारीख (Cutoff Date) दी जाती है (जैसे 1 जनवरी या 1 जुलाई)। आपको यह जांचना होता है कि उस विशेष तारीख पर आपकी उम्र कितनी है।
+        </p>
+        <p lang="hi">
+          <strong>Important Note:</strong> यह calculator आपकी age calculation में मदद करता है। सरकारी भर्ती में eligibility, cutoff date और age relaxation के लिए संबंधित official notification को अंतिम मानें।
+        </p>
+
+        <h2 lang="hi">Age as on a Specific Date (किसी तारीख पर उम्र)</h2>
+        <p lang="hi">
+          कई बार स्कूलों में एडमिशन के लिए भी 31 मार्च तक उम्र जांची जाती है। आप "Calculate Age On" विकल्प में उस कटऑफ डेट को डालकर आसानी से अपनी उम्र चेक कर सकते हैं।
+        </p>
+        
+        <div className={styles.exampleBox}>
+          <h3>Age Calculation Example (उदाहरण)</h3>
+          <p><strong>Date of Birth:</strong> 15 August 2000</p>
+          <p><strong>Age on:</strong> 22 August 2026</p>
+          <p><strong>Result:</strong> 26 Years, 0 Months, 7 Days</p>
+          <p lang="hi" style={{ fontSize: '0.85rem', marginTop: 'var(--space-2)' }}>इस उदाहरण में देखा जा सकता है कि यह टूल 22 अगस्त 2026 तक व्यक्ति की उम्र ठीक 26 साल और 7 दिन बता रहा है।</p>
+        </div>
+
+        <h2 lang="hi">Leap Year / 29 February (लीप ईयर कैलकुलेशन)</h2>
+        <p lang="hi">
+          उम्र निकालते समय महीनों के अलग-अलग दिन (28, 29, 30 या 31) कन्फ्यूजन पैदा करते हैं। हमारा Age Calculator पूरी तरह से कैलेंडर नियमों पर आधारित है। यदि आपका जन्म 29 फरवरी (Leap Year) को हुआ है, तो सामान्य वर्षों में टूल आपके जन्मदिन को सही तरीके से एडजस्ट (1 मार्च) कर लेता है।
+        </p>
+      </div>
+
     </div>
   );
 }
