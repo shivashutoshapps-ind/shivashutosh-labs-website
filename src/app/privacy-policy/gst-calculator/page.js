@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { buildBaseMetadata } from '@/lib/metadata';
 
 export const metadata = buildBaseMetadata({
-  title: 'GST Calculator — Privacy Policy | Shivashutosh Labs',
+  title: 'GST Calculator — Privacy Policy',
   description: 'Official Privacy Policy for GST Calculator V1 by Shivashutosh AI Labs. GST Calculator is a 100% offline, private mobile app with zero ads, zero analytics, and zero data tracking.',
   path: '/privacy-policy/gst-calculator',
 });
