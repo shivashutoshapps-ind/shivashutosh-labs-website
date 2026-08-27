@@ -156,6 +156,12 @@ export default function sitemap() {
       priority: 0.5,
     },
     {
+      url: `${siteUrl}/privacy-policy/gst-calculator`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: `${siteUrl}/terms`,
       lastModified: now,
       changeFrequency: 'monthly',
