@@ -1,0 +1,270 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  font-family: inherit;
+}
+
+.topBar {
+  background: linear-gradient(90deg, #065F46 0%, #047857 50%, #0D9488 100%);
+  color: #ECFDF5;
+  font-size: 0.825rem;
+  padding: 0.35rem 1rem;
+}
+
+.topBarInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topBarTagline {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.topBarContact {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.topBarPhone {
+  color: #FEF08A;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.topBarPhone:hover {
+  text-decoration: underline;
+}
+
+.mainNav {
+  background: #ffffff;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logoBadge {
+  background: #FEF3C7;
+  border: 1px solid #FDE68A;
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);
+}
+
+.brandInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.2;
+}
+
+.brandSub {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #0284C7;
+}
+
+.desktopNav {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .desktopNav {
+    display: block;
+  }
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #334155;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.15s ease;
+  padding: 0.4rem 0.2rem;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #059669;
+}
+
+.headerCtaWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.callNowBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: #ffffff;
+  padding: 0.55rem 1.1rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.callNowBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.35);
+  color: #ffffff;
+}
+
+.menuToggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 6px;
+  gap: 5px;
+}
+
+@media (min-width: 992px) {
+  .menuToggle {
+    display: none;
+  }
+}
+
+.menuBar {
+  width: 22px;
+  height: 2px;
+  background-color: #1E293B;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.barOpen1 {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.barOpen2 {
+  opacity: 0;
+}
+
+.barOpen3 {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobileDrawer {
+  display: none;
+  background-color: #ffffff;
+  border-bottom: 1px solid #E2E8F0;
+  padding: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.mobileDrawerOpen {
+  display: block;
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mobileNavLink {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1E293B;
+  text-decoration: none;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.mobileCtaItem {
+  margin-top: 0.5rem;
+}
+
+.mobileCallBtn {
+  display: block;
+  text-align: center;
+  background: #059669;
+  color: #ffffff;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .topBarTagline {
+    font-size: 0.75rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .brandTitle {
+    font-size: 1rem;
+  }
+  .callNowBtn span {
+    display: none;
+  }
+  .callNowBtn {
+    padding: 0.55rem;
+  }
+}

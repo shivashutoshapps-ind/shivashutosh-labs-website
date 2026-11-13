@@ -1,0 +1,470 @@
+.section {
+  padding: 4.5rem 1rem;
+  background: linear-gradient(180deg, #F8FAFC 0%, #EFF6FF 100%);
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.badge {
+  display: inline-block;
+  background: #DCFCE7;
+  color: #166534;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+  border: 1px solid #BBF7D0;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.3;
+  margin: 0 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 2.5rem;
+  }
+}
+
+.subtext {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.subtext strong {
+  color: #0284C7;
+}
+
+.formCard {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #E2E8F0;
+}
+
+@media (min-width: 768px) {
+  .formCard {
+    padding: 3rem 2.5rem;
+  }
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .formGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: #1E293B;
+}
+
+.required {
+  color: #DC2626;
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #0F172A;
+  background-color: #F8FAFC;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #0284C7;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+.inputError {
+  border-color: #EF4444 !important;
+  background-color: #FEF2F2 !important;
+}
+
+.mobileInputWrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #F8FAFC;
+}
+
+.countryCode {
+  background: #E2E8F0;
+  color: #475569;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 0.9rem;
+  border-right: 1px solid #CBD5E1;
+}
+
+.inputMobile {
+  border: none;
+  background: transparent;
+}
+
+.inputMobile:focus {
+  box-shadow: none;
+}
+
+.formSection {
+  margin-bottom: 1.5rem;
+}
+
+.sectionLabel {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 0.65rem;
+}
+
+.radioPills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+@media (min-width: 600px) {
+  .radioPills {
+    flex-direction: row;
+  }
+}
+
+.radioGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+}
+
+@media (min-width: 600px) {
+  .radioGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .radioGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.radioPill {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.radioPill:hover {
+  background: #F1F5F9;
+  border-color: #CBD5E1;
+}
+
+.radioPillActive {
+  background: #EFF6FF !important;
+  border-color: #0284C7 !important;
+  color: #0369A1 !important;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.1);
+}
+
+.radioPill input[type='radio'] {
+  accent-color: #0284C7;
+  width: 17px;
+  height: 17px;
+}
+
+.consentWrap {
+  margin: 1.5rem 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid #E2E8F0;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: #334155;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: #059669;
+  flex-shrink: 0;
+}
+
+.privacyNote {
+  font-size: 0.75rem;
+  color: #64748B;
+  margin: 0.65rem 0 0 1.9rem;
+}
+
+.errorText {
+  font-size: 0.8rem;
+  color: #DC2626;
+  font-weight: 600;
+}
+
+.errorAlert {
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  color: #991B1B;
+  border-radius: 10px;
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.errorWhatsappLink {
+  color: #047857;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.submitWrap {
+  margin-top: 1.75rem;
+}
+
+.submitBtn {
+  width: 100%;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: #ffffff;
+  border: none;
+  padding: 1.15rem 1.75rem;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(5, 150, 105, 0.45);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loadingSpinnerWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.whatsappFallbackWrap {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  color: #64748B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.whatsappFallbackLink {
+  color: #059669;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.whatsappFallbackLink:hover {
+  text-decoration: underline;
+}
+
+/* Success State */
+.successState {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  background: #DCFCE7;
+  color: #16A34A;
+  font-size: 2rem;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  border: 3px solid #BBF7D0;
+}
+
+.successTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 0.5rem;
+}
+
+.successMsg {
+  font-size: 1.05rem;
+  color: #475569;
+  margin: 0 0 1.25rem;
+}
+
+.leadIdBadge {
+  display: inline-block;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #334155;
+  margin-bottom: 1.5rem;
+}
+
+.nextStepsBox {
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  max-width: 640px;
+  margin: 0 auto 2rem;
+}
+
+.nextStepsBox h4 {
+  margin: 0 0 0.65rem;
+  font-size: 1rem;
+  color: #166534;
+}
+
+.nextStepsBox ol {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.successActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.successWhatsappBtn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: #25D366;
+  color: #ffffff;
+  padding: 0.95rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+  transition: transform 0.15s ease;
+}
+
+.successWhatsappBtn:hover {
+  transform: translateY(-2px);
+  background: #1EBE5D;
+}
+
+.resetBtn {
+  background: transparent;
+  color: #64748B;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}

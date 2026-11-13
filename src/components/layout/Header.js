@@ -7,6 +7,7 @@
  */
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
 
 const navLinks = [
@@ -18,6 +19,11 @@ const navLinks = [
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  if (pathname?.startsWith('/store') || pathname?.startsWith('/solarsystem')) {
+    return null;
+  }
 
   return (
     <header className={styles.header} role="banner">

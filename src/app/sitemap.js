@@ -48,6 +48,12 @@ export default function sitemap() {
 
   const staticEntries = [
     {
+      url: `${siteUrl}/solarsystem`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${siteUrl}/guides/pdf-to-jpg-kaise-kare`,
       lastModified: now,
       changeFrequency: 'monthly',

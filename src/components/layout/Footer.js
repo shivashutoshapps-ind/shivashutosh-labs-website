@@ -1,7 +1,10 @@
+'use client';
+
 /**
  * Shivashutosh Labs — Site Footer
  */
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './Footer.module.css';
 
 const footerSections = [
@@ -36,7 +39,12 @@ const footerSections = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
   const currentYear = new Date().getFullYear();
+
+  if (pathname?.startsWith('/store') || pathname?.startsWith('/solarsystem')) {
+    return null;
+  }
 
   return (
     <footer className={styles.footer} role="contentinfo">
