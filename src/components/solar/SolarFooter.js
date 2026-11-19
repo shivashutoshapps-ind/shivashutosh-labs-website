@@ -14,16 +14,32 @@ export default function SolarFooter() {
             <div className={styles.brandRow}>
               <div className={styles.logoBadge}>☀️</div>
               <div>
-                <h3 className={styles.brandTitle}>शिवआशुतोष सोलर सिस्टम्स</h3>
-                <span className={styles.brandSub}>SHIVASHUTOSH SOLAR SYSTEMS</span>
+                <h3 className={styles.brandTitle}>शिवआशुतोष सोलर एजेंसी</h3>
+                <span className={styles.brandSub}>SHIVASHUTOSH SOLAR AGENCY</span>
               </div>
             </div>
             <p className={styles.tagline}>
               &quot;हर घर सौर ऊर्जा, हर घर खुशहाली&quot;
             </p>
             <p className={styles.parentOrg}>
-              शिवआशुतोष लैब्स (Shivashutosh Labs) का एक समर्पित हरित ऊर्जा उपक्रम। अलीगढ़ एवं संपूर्ण उत्तर प्रदेश के घरों और व्यावसायिक प्रतिष्ठानों को सोलर समाधान समर्पित।
+              शिवआशुतोष लैब्स (Shivashutosh Labs) का समर्पित हरित ऊर्जा उपक्रम। UPNEDA एम्पैनल्ड वेंडर <strong>राधा एंटरप्राइजेज (वेंडर कोड: AGC2609282705)</strong> के अधिकृत चैनल पार्टनर के रूप में संपूर्ण उत्तर प्रदेश के घरों और व्यावसायिक प्रतिष्ठानों को प्रमाणित सोलर समाधान समर्पित।
             </p>
+
+            {/* Compact Vendor Credential Box */}
+            <div className={styles.vendorCredBox}>
+              <div className={styles.vendorCredRow}>
+                <span className={styles.vendorCredLabel}>UPNEDA Empanelled Vendor:</span>
+                <span className={styles.vendorCredVal}>Radha Enterprises</span>
+              </div>
+              <div className={styles.vendorCredRow}>
+                <span className={styles.vendorCredLabel}>UPNEDA Vendor Code:</span>
+                <code className={styles.vendorCodePill}>AGC2609282705</code>
+              </div>
+              <div className={styles.vendorCredRow}>
+                <span className={styles.vendorCredLabel}>Shivashutosh Solar Agency:</span>
+                <span className={styles.vendorCredPartner}>Authorized Channel Partner</span>
+              </div>
+            </div>
           </div>
 
           {/* Col 2: Contact & Service Area */}
@@ -48,13 +64,19 @@ export default function SolarFooter() {
                 </a>
               </li>
               <li>
+                <strong>ईमेल:</strong>{' '}
+                <a href="mailto:enquiry@shivashutoshlabs.com" className={styles.link}>
+                  enquiry@shivashutoshlabs.com
+                </a>
+              </li>
+              <li>
                 <strong>वेबसाइट:</strong>{' '}
                 <a href="https://shivashutoshlabs.com/solarsystem" className={styles.link}>
                   shivashutoshlabs.com/solarsystem
                 </a>
               </li>
               <li>
-                <strong>प्राथमिक सेवा क्षेत्र:</strong> अलीगढ़, हाथरस, मथुरा, आगरा, बुलंदशहर, कासगंज, एटा एवं उत्तर प्रदेश।
+                <strong>सेवा क्षेत्र:</strong> संपूर्ण उत्तर प्रदेश (घरेलू, दुकान, संस्थान एवं व्यावसायिक सोलर सिस्टम)।
               </li>
             </ul>
           </div>
@@ -64,6 +86,8 @@ export default function SolarFooter() {
             <h4 className={styles.colTitle}>त्वरित लिंक (Quick Links)</h4>
             <ul className={styles.linkList}>
               <li><a href="#hero" className={styles.link}>होम (Home)</a></li>
+              <li><a href="#solar-brands" className={styles.link}>ब्रांड विकल्प (TATA, Adani, UTL)</a></li>
+              <li><a href="#coverage" className={styles.link}>यूपी सेवा क्षेत्र (UP Coverage)</a></li>
               <li><a href="#packages" className={styles.link}>सोलर पैकेज (Solar Packages)</a></li>
               <li><a href="#subsidy" className={styles.link}>सरकारी सब्सिडी (PM Surya Ghar)</a></li>
               <li><a href="#why-us" className={styles.link}>विशेषताएं (Why Choose Us)</a></li>
@@ -106,6 +130,9 @@ export default function SolarFooter() {
         <div className={styles.disclaimerBox}>
           <h5 className={styles.disclaimerHeading}>महत्वपूर्ण कानूनी अस्वीकरण (Important Legal Disclaimers):</h5>
           <p className={styles.disclaimerText}>
+            <strong>* UPNEDA वेंडर कोड एवं चैनल पार्टनरशिप:</strong> UPNEDA Vendor Code <code>AGC2609282705</code> मूल रूप से उत्तर प्रदेश सरकार के एम्पैनल्ड वेंडर <strong>Radha Enterprises (राधा एंटरप्राइजेज)</strong> का है। शिवआशुतोष सोलर एजेंसी (Shivashutosh Solar Agency), राधा एंटरप्राइजेज की वैध अधिकृत चैनल पार्टनर (Authorized Channel Partner) के रूप में कार्य करती है तथा समस्त तकनीकी स्थापना व सब्सिडी समन्वय अधिकृत वेंडर के माध्यम से निष्पादित किए जाते हैं।
+          </p>
+          <p className={styles.disclaimerText}>
             <strong>* प्रभावी लागत ₹0 तक:</strong> प्रभावी लागत ₹0 तक का अर्थ है कि लागू सरकारी सब्सिडी एवं ग्राहक की पात्रता के बाद अनुमानित प्रभावी लागत शून्य तक हो सकती है। वास्तविक लागत, ग्राहक का भुगतान, सिस्टम कॉन्फिगरेशन और सब्सिडी स्वीकृति योजना की शर्तों एवं ग्राहक की स्थिति पर निर्भर करेंगे।
           </p>
           <p className={styles.disclaimerText}>
@@ -118,6 +145,11 @@ export default function SolarFooter() {
 
         {/* Bottom Bar */}
         <div className={styles.bottomBar}>
+          <div className={styles.vendorFooterNotice}>
+            <span>UPNEDA Empanelled Vendor: <strong>Radha Enterprises</strong> (Vendor Code: <code>AGC2609282705</code>)</span>
+            <span className={styles.noticeSep}>|</span>
+            <span>Authorized Channel Partner: <strong>Shivashutosh Solar Agency</strong></span>
+          </div>
           <p className={styles.copy}>
             © {currentYear} Shivashutosh Solar Systems (A division of Shivashutosh Labs). सर्वाधिकार सुरक्षित।
           </p>

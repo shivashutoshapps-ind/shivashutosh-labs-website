@@ -83,6 +83,59 @@
   margin: 0;
 }
 
+.parentOrg strong {
+  color: #E2E8F0;
+}
+
+/* Vendor Credential Box in Col 1 */
+.vendorCredBox {
+  margin-top: 1rem;
+  background: #0F172A;
+  border: 1px solid #1E293B;
+  border-left: 3px solid #10B981;
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.vendorCredRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.vendorCredLabel {
+  color: #94A3B8;
+  font-weight: 600;
+}
+
+.vendorCredVal {
+  color: #F8FAFC;
+  font-weight: 700;
+}
+
+.vendorCodePill {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #6EE7B7;
+  background: #064E3B;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #059669;
+}
+
+.vendorCredPartner {
+  color: #FCD34D;
+  font-weight: 700;
+}
+
 .colTitle {
   font-size: 1rem;
   font-weight: 700;
@@ -154,6 +207,46 @@
   padding-top: 1.5rem;
   border-top: 1px solid #1E293B;
   text-align: center;
+}
+
+.vendorFooterNotice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: 0.825rem;
+  color: #CBD5E1;
+  margin-bottom: 0.75rem;
+  line-height: 1.45;
+}
+
+.vendorFooterNotice strong {
+  color: #FFFFFF;
+}
+
+.vendorFooterNotice code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 800;
+  color: #6EE7B7;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.noticeSep {
+  color: #475569;
+  font-weight: 400;
+}
+
+.disclaimerText code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 700;
+  color: #A7F3D0;
+  background: #1E293B;
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
 }
 
 .copy {

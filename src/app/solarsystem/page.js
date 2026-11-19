@@ -1,6 +1,8 @@
 import React from 'react';
 import SolarHeader from '@/components/solar/SolarHeader';
 import SolarHero from '@/components/solar/SolarHero';
+import SolarBrands from '@/components/solar/SolarBrands';
+import SolarCoverage from '@/components/solar/SolarCoverage';
 import SolarPackages from '@/components/solar/SolarPackages';
 import SolarWhyChoose from '@/components/solar/SolarWhyChoose';
 import SolarSubsidy from '@/components/solar/SolarSubsidy';
@@ -14,18 +16,18 @@ import SolarFloatingActions from '@/components/solar/SolarFloatingActions';
 import SolarStructuredData from '@/components/solar/SolarStructuredData';
 
 export const metadata = {
-  title: 'Shivashutosh Solar Systems | 3 KW Solar System in Uttar Pradesh',
+  title: 'Shivashutosh Solar Agency | Authorized Solar Services Across Uttar Pradesh | TATA, Adani, UTL Brands',
   description:
-    'घर और व्यवसाय के लिए सोलर पैनल, इन्वर्टर और बैटरी सहित संपूर्ण सोलर समाधान। सरकारी सब्सिडी की जानकारी और मुफ्त साइट सर्वे के लिए संपर्क करें।',
+    'संपूर्ण उत्तर प्रदेश में अधिकृत सोलर सेवाएँ। TATA, Adani, UTL और अन्य प्रमुख ब्रांड्स के सोलर सिस्टम विकल्प। ₹78,000 तक सरकारी सब्सिडी सहायता व मुफ्त साइट सर्वे।',
   alternates: {
     canonical: 'https://shivashutoshlabs.com/solarsystem',
   },
   openGraph: {
-    title: 'Shivashutosh Solar Systems | 3 KW Solar System in Uttar Pradesh',
+    title: 'Shivashutosh Solar Agency | Authorized Solar Services Across Uttar Pradesh',
     description:
-      'घर और व्यवसाय के लिए सोलर पैनल, इन्वर्टर और बैटरी सहित संपूर्ण सोलर समाधान। सरकारी सब्सिडी की जानकारी और मुफ्त साइट सर्वे के लिए संपर्क करें।',
+      'संपूर्ण उत्तर प्रदेश में अधिकृत सोलर सेवाएँ। TATA, Adani, UTL और अन्य प्रमुख ब्रांड्स के सोलर पैनल, इन्वर्टर और बैटरी। ₹78,000 तक सरकारी सब्सिडी सहायता व मुफ्त साइट सर्वे।',
     url: 'https://shivashutoshlabs.com/solarsystem',
-    siteName: 'Shivashutosh Solar Systems',
+    siteName: 'Shivashutosh Solar Agency',
     locale: 'hi_IN',
     alternateLocale: 'en_IN',
     type: 'website',
@@ -34,15 +36,15 @@ export const metadata = {
         url: 'https://shivashutoshlabs.com/solar/rooftop-installation.jpg',
         width: 1200,
         height: 675,
-        alt: 'Shivashutosh Solar Systems - 3 KW Rooftop Solar Installation',
+        alt: 'Shivashutosh Solar Agency - Authorized Solar Services Across Uttar Pradesh',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shivashutosh Solar Systems | 3 KW Solar System in Uttar Pradesh',
+    title: 'Shivashutosh Solar Agency | Authorized Solar Services Across Uttar Pradesh',
     description:
-      'घर और व्यवसाय के लिए सोलर पैनल, इन्वर्टर और बैटरी सहित संपूर्ण सोलर समाधान। सरकारी सब्सिडी की जानकारी और मुफ्त साइट सर्वे के लिए संपर्क करें।',
+      'संपूर्ण उत्तर प्रदेश में अधिकृत सोलर सेवाएँ। TATA, Adani, UTL और अन्य प्रमुख ब्रांड्स के सोलर सिस्टम विकल्प। ₹78,000 तक सरकारी सब्सिडी सहायता व मुफ्त साइट सर्वे।',
     images: ['https://shivashutoshlabs.com/solar/rooftop-installation.jpg'],
   },
   robots: {
@@ -67,35 +69,41 @@ export default function SolarSystemPage() {
 
       {/* Main Content Sections */}
       <main id="main-content" style={{ flexGrow: 1 }}>
-        {/* SECTION B – HERO SECTION */}
+        {/* SECTION B – HERO SECTION (Above the fold: Statewide + Brand Choice + Subsidy + CTAs) */}
         <SolarHero />
 
-        {/* SECTION C – COMPLETE SOLAR PACKAGE */}
+        {/* SECTION C – DEDICATED MULTI-BRAND CHOICE SECTION */}
+        <SolarBrands />
+
+        {/* SECTION D – STATEWIDE UTTAR PRADESH SERVICE COVERAGE */}
+        <SolarCoverage />
+
+        {/* SECTION E – COMPLETE SOLAR PACKAGE (Panels, Inverters, Battery) */}
         <SolarPackages />
 
-        {/* SECTION D – WHY CHOOSE SHIVASHUTOSH SOLAR SYSTEMS */}
+        {/* SECTION F – WHY CHOOSE SHIVASHUTOSH SOLAR AGENCY */}
         <SolarWhyChoose />
 
-        {/* SECTION E – GOVERNMENT SUBSIDY INFORMATION (PM SURYA GHAR) */}
+        {/* SECTION G – GOVERNMENT SUBSIDY INFORMATION (PM SURYA GHAR) */}
         <SolarSubsidy />
 
-        {/* SECTION F – LEAD GENERATION FORM */}
+        {/* SECTION H – LEAD GENERATION FORM */}
         <SolarLeadForm />
 
-        {/* SECTION G – 4-STEP INSTALLATION PROCESS */}
+        {/* SECTION I – 4-STEP INSTALLATION PROCESS */}
         <SolarProcess />
 
-        {/* SECTION H – CUSTOMER INSTALLATION GALLERY */}
+        {/* SECTION J – CUSTOMER INSTALLATION GALLERY */}
         <SolarGallery />
 
-        {/* SECTION I – FREQUENTLY ASKED QUESTIONS (FAQ) */}
+        {/* SECTION K – FREQUENTLY ASKED QUESTIONS (FAQ) */}
         <SolarFaq />
 
-        {/* SECTION J – FINAL CALL TO ACTION (CTA) */}
+        {/* SECTION L – FINAL CALL TO ACTION (CTA) */}
         <SolarFinalCta />
       </main>
 
-      {/* SECTION K – FOOTER */}
+      {/* SECTION M – FOOTER */}
       <SolarFooter />
 
       {/* FLOATING MOBILE ACTION BUTTONS */}
@@ -103,4 +111,3 @@ export default function SolarSystemPage() {
     </div>
   );
 }
-

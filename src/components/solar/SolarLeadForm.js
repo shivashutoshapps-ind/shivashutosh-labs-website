@@ -5,7 +5,7 @@ import styles from './SolarLeadForm.module.css';
 import { trackEvent, getTrackingContext } from '@/lib/solar/tracking';
 
 const DISTRICTS_UP = [
-  { value: 'aligarh', label: 'अलीगढ़ (Aligarh) — प्राथमिक सेवा क्षेत्र' },
+  { value: 'aligarh', label: 'अलीगढ़ (Aligarh)' },
   { value: 'hathras', label: 'हाथरस (Hathras)' },
   { value: 'mathura', label: 'मथुरा (Mathura)' },
   { value: 'agra', label: 'आगरा (Agra)' },
@@ -20,7 +20,11 @@ const DISTRICTS_UP = [
   { value: 'moradabad', label: 'मुरादाबाद (Moradabad)' },
   { value: 'lucknow', label: 'लखनऊ (Lucknow)' },
   { value: 'kanpur', label: 'कानपुर (Kanpur)' },
-  { value: 'other_up', label: 'अन्य जिला (उत्तर प्रदेश)' },
+  { value: 'prayagraj', label: 'प्रयागराज (Prayagraj)' },
+  { value: 'varanasi', label: 'वाराणसी (Varanasi)' },
+  { value: 'gorakhpur', label: 'गोरखपुर (Gorakhpur)' },
+  { value: 'ayodhya', label: 'अयोध्या (Ayodhya)' },
+  { value: 'other_up', label: 'अन्य जिला (संपूर्ण उत्तर प्रदेश)' },
 ];
 
 export default function SolarLeadForm() {
@@ -42,12 +46,7 @@ export default function SolarLeadForm() {
   const [statusMessage, setStatusMessage] = useState('');
   const [submittedLead, setSubmittedLead] = useState(null);
 
-  // Capture tracking params on mount
-  const [trackingParams, setTrackingParams] = useState({});
-  useEffect(() => {
-    setTrackingParams(getTrackingContext());
-  }, []);
-
+  // Capture tracking params on submission
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
@@ -100,7 +99,7 @@ export default function SolarLeadForm() {
     try {
       const payload = {
         ...formData,
-        ...trackingParams,
+        ...getTrackingContext(),
       };
 
       const res = await fetch('/api/solar/leads', {
@@ -140,7 +139,7 @@ export default function SolarLeadForm() {
   };
 
   const fallbackWhatsappText = encodeURIComponent(
-    `नमस्ते शिवआशुतोष सोलर सिस्टम्स, मैंने वेबसाइट पर 3 KW सोलर सिस्टम एवं सब्सिडी जानकारी हेतु संपर्क किया है।\nनाम: ${formData.fullName || 'ग्राहक'}\nमोबाइल: ${formData.mobile || 'मोबाइल'}\nजिला: ${formData.district || 'अलीगढ़'}\nसिस्टम: ${formData.preferredSystem}`
+    `नमस्ते शिवआशुतोष सोलर एजेंसी, मैंने वेबसाइट पर सोलर सिस्टम, ब्रांड्स एवं सब्सिडी जानकारी हेतु संपर्क किया है।\nनाम: ${formData.fullName || 'ग्राहक'}\nमोबाइल: ${formData.mobile || 'मोबाइल'}\nजिला: ${formData.district || 'उत्तर प्रदेश'}\nसिस्टम: ${formData.preferredSystem}`
   );
   const fallbackWhatsappUrl = `https://wa.me/919719543259?text=${fallbackWhatsappText}`;
 

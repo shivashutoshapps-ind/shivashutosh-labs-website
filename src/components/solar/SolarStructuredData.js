@@ -5,10 +5,10 @@ export default function SolarStructuredData() {
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'HomeAndConstructionBusiness',
-    name: 'Shivashutosh Solar Systems',
-    alternateName: 'शिवआशुतोष सोलर सिस्टम्स',
+    name: 'Shivashutosh Solar Agency',
+    alternateName: 'शिवआशुतोष सोलर एजेंसी',
     description:
-      'घर और व्यवसाय के लिए 3 KW संपूर्ण सोलर सिस्टम, सोलर पैनल, इन्वर्टर एवं बैटरी समाधान तथा पीएम सूर्य घर योजना के तहत सरकारी सब्सिडी सहायता।',
+      'संपूर्ण उत्तर प्रदेश में अधिकृत सोलर सेवाएँ। TATA, Adani, UTL और अन्य प्रमुख ब्रांड्स के सोलर पैनल, इन्वर्टर और बैटरी समाधान तथा पीएम सूर्य घर योजना के तहत सरकारी सब्सिडी सहायता।',
     url: 'https://shivashutoshlabs.com/solarsystem',
     telephone: '+919719543259',
     image: 'https://shivashutoshlabs.com/solar/rooftop-installation.jpg',
@@ -25,13 +25,17 @@ export default function SolarStructuredData() {
       longitude: '78.0880',
     },
     areaServed: [
-      { '@type': 'AdministrativeArea', name: 'Aligarh' },
-      { '@type': 'AdministrativeArea', name: 'Hathras' },
-      { '@type': 'AdministrativeArea', name: 'Mathura' },
-      { '@type': 'AdministrativeArea', name: 'Agra' },
-      { '@type': 'AdministrativeArea', name: 'Bulandshahr' },
-      { '@type': 'AdministrativeArea', name: 'Kasganj' },
       { '@type': 'AdministrativeArea', name: 'Uttar Pradesh' },
+      { '@type': 'AdministrativeArea', name: 'Aligarh' },
+      { '@type': 'AdministrativeArea', name: 'Agra' },
+      { '@type': 'AdministrativeArea', name: 'Mathura' },
+      { '@type': 'AdministrativeArea', name: 'Lucknow' },
+      { '@type': 'AdministrativeArea', name: 'Kanpur' },
+      { '@type': 'AdministrativeArea', name: 'Meerut' },
+      { '@type': 'AdministrativeArea', name: 'Ghaziabad' },
+      { '@type': 'AdministrativeArea', name: 'Gautam Buddha Nagar' },
+      { '@type': 'AdministrativeArea', name: 'Varanasi' },
+      { '@type': 'AdministrativeArea', name: 'Prayagraj' },
     ],
     openingHoursSpecification: [
       {
