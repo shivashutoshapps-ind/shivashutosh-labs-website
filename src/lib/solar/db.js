@@ -82,7 +82,44 @@ export function getSolarDb() {
 }
 
 /**
+ * Format ISO UTC timestamp to Indian Standard Time (Asia/Kolkata) in 24-hour format.
+ * Format: DD-MM-YYYY, HH:MM
+ * If missing or unrecoverable: returns 'पुराना रिकॉर्ड – समय उपलब्ध नहीं'
+ * @param {string|null} isoString
+ * @returns {string}
+ */
+export function formatIndianDateTime(isoString) {
+  if (!isoString) return 'पुराना रिकॉर्ड – समय उपलब्ध नहीं';
+  try {
+    const d = new Date(isoString);
+    if (isNaN(d.getTime())) return 'पुराना रिकॉर्ड – समय उपलब्ध नहीं';
+    const formatter = new Intl.DateTimeFormat('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    });
+    const parts = formatter.formatToParts(d);
+    let day = '', month = '', year = '', hour = '', minute = '';
+    for (const p of parts) {
+      if (p.type === 'day') day = p.value;
+      if (p.type === 'month') month = p.value;
+      if (p.type === 'year') year = p.value;
+      if (p.type === 'hour') hour = p.value;
+      if (p.type === 'minute') minute = p.value;
+    }
+    return day + '-' + month + '-' + year + ', ' + hour + ':' + minute;
+  } catch (e) {
+    return 'पुराना रिकॉर्ड – समय उपलब्ध नहीं';
+  }
+}
+
+/**
  * Insert a new lead into the database.
+ * Mandatory server-generated UTC ISO 8601 timestamp.
  * @param {Object} lead
  * @returns {Object} inserted lead summary
  */
@@ -90,6 +127,10 @@ export function insertSolarLead(lead) {
   const db = getSolarDb();
   const id = crypto.randomUUID();
   const now = new Date().toISOString();
+
+  if (!now || typeof now !== 'string') {
+    throw new Error('Server timestamp generation failed');
+  }
 
   const brand = (lead.brand || 'general').trim().toLowerCase();
   const capacity = lead.capacity || lead.preferredSystem || 'consultation';
@@ -142,7 +183,15 @@ export function insertSolarLead(lead) {
     now
   );
 
-  return { id, createdAt: now, brand, fullName: lead.fullName.trim(), mobile: lead.mobile.trim() };
+  return {
+    id,
+    createdAt: now,
+    created_at: now,
+    createdAtIST: formatIndianDateTime(now),
+    brand,
+    fullName: lead.fullName.trim(),
+    mobile: lead.mobile.trim(),
+  };
 }
 
 /**
@@ -208,7 +257,22 @@ export function getSolarLeads({ status, brand, district, limit = 100, offset = 0
   params.push(Number(offset) || 0);
 
   const stmt = db.prepare(query);
-  return stmt.all(...params);
+  const rows = stmt.all(...params);
+
+  return rows.map((r) => ({
+    ...r,
+    fullName: r.full_name,
+    cityVillage: r.city_village,
+    customerType: r.customer_type,
+    monthlyBill: r.monthly_bill,
+    hasRooftop: r.has_rooftop,
+    preferredSystem: r.preferred_system,
+    privacyConsent: r.privacy_consent,
+    ipAddress: r.ip_address,
+    utmSource: r.utm_source,
+    createdAt: r.created_at,
+    createdAtIST: formatIndianDateTime(r.created_at),
+  }));
 }
 
 /**

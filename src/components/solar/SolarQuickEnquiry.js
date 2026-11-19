@@ -129,7 +129,13 @@ export default function SolarQuickEnquiry() {
           <div className={`${styles.brandCard} ${mode === 'tata' ? styles.cardActive_tata : ''}`}>
             <div>
               <div className={styles.cardHeader}>
-                <span className={styles.brandLogoTitle}>⚡ TATA Solar</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>
+                  <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <circle cx="16" cy="16" r="15" fill="#005A9C" />
+                    <path d="M8 11h16M16 11v12" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" />
+                  </svg>
+                  <span className={styles.brandLogoTitle}>TATA Solar</span>
+                </div>
                 <span className={`${styles.brandBadge} ${styles.badgeTata}`}>Tier-1 Brand</span>
               </div>
               <p className={styles.cardDesc}>
@@ -140,9 +146,9 @@ export default function SolarQuickEnquiry() {
               type="button"
               onClick={() => handleSelectMode('tata')}
               className={`${styles.enquiryBtn} ${styles.btnTata}`}
-              aria-label="TATA Solar – Enquiry फॉर्म खोलें"
+              aria-label="TATA Solar Enquiry फॉर्म खोलें"
             >
-              <span>TATA Solar – Enquiry</span>
+              <span>TATA Solar Enquiry</span>
               <span aria-hidden="true">→</span>
             </button>
           </div>
@@ -151,7 +157,14 @@ export default function SolarQuickEnquiry() {
           <div className={`${styles.brandCard} ${mode === 'adani' ? styles.cardActive_adani : ''}`}>
             <div>
               <div className={styles.cardHeader}>
-                <span className={styles.brandLogoTitle}>☀️ Adani Solar</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>
+                  <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <circle cx="16" cy="16" r="15" fill="#EA580C" />
+                    <circle cx="16" cy="16" r="6" fill="#F59E0B" />
+                    <path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" />
+                  </svg>
+                  <span className={styles.brandLogoTitle}>Adani Solar</span>
+                </div>
                 <span className={`${styles.brandBadge} ${styles.badgeAdani}`}>TOPCon / Bifacial</span>
               </div>
               <p className={styles.cardDesc}>
@@ -162,9 +175,9 @@ export default function SolarQuickEnquiry() {
               type="button"
               onClick={() => handleSelectMode('adani')}
               className={`${styles.enquiryBtn} ${styles.btnAdani}`}
-              aria-label="Adani Solar – Enquiry फॉर्म खोलें"
+              aria-label="Adani Solar Enquiry फॉर्म खोलें"
             >
-              <span>Adani Solar – Enquiry</span>
+              <span>Adani Solar Enquiry</span>
               <span aria-hidden="true">→</span>
             </button>
           </div>
@@ -182,12 +195,12 @@ export default function SolarQuickEnquiry() {
             </div>
             <div className={styles.callActionsWrap}>
               <a
-                href="tel:7906904706"
+                href="tel:9719543259"
                 className={styles.btnCallNow}
                 onClick={() => trackEvent('quick_call_now_click')}
-                aria-label="Call Now - 7906904706 पर अभी कॉल करें"
+                aria-label="Call Now - 9719543259 पर अभी कॉल करें"
               >
-                <span>📞 Call Now (7906904706)</span>
+                <span>📞 Call Now</span>
               </a>
               <button
                 type="button"
@@ -252,7 +265,7 @@ export default function SolarQuickEnquiry() {
                 {/* 1. Customer Name (Required) */}
                 <div className={styles.formGroup}>
                   <label htmlFor="quickFullName" className={styles.label}>
-                    1. आपका नाम <span className={styles.required}>*</span>
+                    1. ग्राहक का नाम (Customer Name) <span className={styles.required}>*</span>
                   </label>
                   <input
                     type="text"
@@ -272,7 +285,7 @@ export default function SolarQuickEnquiry() {
                 {/* 2. Mobile Number (Required) */}
                 <div className={styles.formGroup}>
                   <label htmlFor="quickMobile" className={styles.label}>
-                    2. मोबाइल नंबर <span className={styles.required}>*</span>
+                    2. मोबाइल नंबर (Mobile Number) <span className={styles.required}>*</span>
                   </label>
                   <div className={styles.mobileInputWrap}>
                     <span className={styles.countryCode}>+91</span>
@@ -308,13 +321,7 @@ export default function SolarQuickEnquiry() {
                 disabled={status === 'submitting'}
                 className={styles.submitBtn}
               >
-                {status === 'submitting' ? (
-                  'अनुरोध दर्ज हो रहा है...'
-                ) : mode === 'callback' ? (
-                  'Request Callback'
-                ) : (
-                  'Submit Enquiry'
-                )}
+                {status === 'submitting' ? 'अनुरोध दर्ज हो रहा है...' : 'Submit Enquiry'}
               </button>
             </form>
           )}

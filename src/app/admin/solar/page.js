@@ -3,6 +3,40 @@
 import React, { useState, useEffect } from 'react';
 import styles from './admin.module.css';
 
+/**
+ * Format ISO UTC timestamp to Indian Standard Time (Asia/Kolkata) in 24-hour format.
+ * Format: DD-MM-YYYY, HH:MM
+ * If missing or unrecoverable: returns 'पुराना रिकॉर्ड – समय उपलब्ध नहीं'
+ */
+function formatIndianDateTime(isoString) {
+  if (!isoString) return 'पुराना रिकॉर्ड – समय उपलब्ध नहीं';
+  try {
+    const d = new Date(isoString);
+    if (isNaN(d.getTime())) return 'पुराना रिकॉर्ड – समय उपलब्ध नहीं';
+    const formatter = new Intl.DateTimeFormat('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    });
+    const parts = formatter.formatToParts(d);
+    let day = '', month = '', year = '', hour = '', minute = '';
+    for (const p of parts) {
+      if (p.type === 'day') day = p.value;
+      if (p.type === 'month') month = p.value;
+      if (p.type === 'year') year = p.value;
+      if (p.type === 'hour') hour = p.value;
+      if (p.type === 'minute') minute = p.value;
+    }
+    return `${day}-${month}-${year}, ${hour}:${minute}`;
+  } catch (e) {
+    return 'पुराना रिकॉर्ड – समय उपलब्ध नहीं';
+  }
+}
+
 export default function SolarAdminDashboard() {
   const [adminKey, setAdminKey] = useState('');
   const [inputKey, setInputKey] = useState('');
@@ -102,6 +136,50 @@ export default function SolarAdminDashboard() {
     if (typeof window !== 'undefined') sessionStorage.removeItem('solar_admin_key');
   };
 
+  const handleExportCsv = () => {
+    if (!leads || leads.length === 0) return;
+    const headers = [
+      'ID (रेफरेंस)',
+      'दिनांक व समय (IST)',
+      'ब्रांड (Brand)',
+      'ग्राहक का नाम (Customer Name)',
+      'मोबाइल नंबर (Mobile)',
+      'जिला (District)',
+      'स्थान / गांव (City/Village)',
+      'मांग / सिस्टम (System/Capacity)',
+      'मासिक बिल (Monthly Bill)',
+      'लीड स्रोत (Lead Source)',
+      'स्थिति (Status)',
+      'नोट्स (Notes)',
+    ];
+
+    const rows = leads.map((l) => [
+      `"${l.id}"`,
+      `"${formatIndianDateTime(l.createdAt || l.created_at)}"`,
+      `"${(l.brand || 'general').toUpperCase()}"`,
+      `"${(l.fullName || l.full_name || '').replace(/"/g, '""')}"`,
+      `"${l.mobile || ''}"`,
+      `"${(l.district || '').replace(/"/g, '""')}"`,
+      `"${(l.cityVillage || l.city_village || '').replace(/"/g, '""')}"`,
+      `"${(l.capacity || l.preferredSystem || l.preferred_system || '').replace(/"/g, '""')}"`,
+      `"${(l.monthlyBill || l.monthly_bill || '').replace(/"/g, '""')}"`,
+      `"${l.utmSource || l.utm_source || 'website'}"`,
+      `"${l.status || 'NEW'}"`,
+      `"${(l.notes || '').replace(/"/g, '""')}"`,
+    ]);
+
+    const csvContent = '\uFEFF' + [headers.join(','), ...rows.map((r) => r.join(','))].join('\r\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `solar_leads_export_${new Date().toISOString().slice(0, 10)}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
   const handleStatusChange = async (leadId, newStatus) => {
     try {
       const res = await fetch('/api/solar/leads/admin', {
@@ -184,6 +262,9 @@ export default function SolarAdminDashboard() {
             <p>Shivashutosh Solar Agency — Real-time Leads & Brand Analytics</p>
           </div>
           <div className={styles.authBadge}>
+            <button onClick={handleExportCsv} className={styles.exportBtn} title="सभी लीड्स का डाटा CSV में डाउनलोड करें">
+              📥 CSV डाउनलोड
+            </button>
             <button onClick={() => loadDashboard(adminKey)} className={styles.refreshBtn}>
               🔄 {isLoading ? 'रिफ्रेश हो रहा...' : 'रिफ्रेश'}
             </button>
@@ -313,12 +394,14 @@ export default function SolarAdminDashboard() {
                 {filteredLeads.map((lead) => {
                   const brandKey = (lead.brand || 'general').toLowerCase();
                   const cleanPhone = (lead.mobile || '').replace(/\D/g, '');
-                  const waUrl = `https://wa.me/91${cleanPhone}?text=${encodeURIComponent(`नमस्ते ${lead.fullName || 'जी'}, शिवआशुतोष सोलर एजेंसी से संपर्क किया जा रहा है। आपने ${lead.brand?.toUpperCase() || 'सोलर'} सिस्टम हेतु इन्क्वायरी दर्ज की थी।`)}`;
+                  const customerName = lead.fullName || lead.full_name || 'ग्राहक';
+                  const formattedDateTime = formatIndianDateTime(lead.createdAt || lead.created_at);
+                  const waUrl = `https://wa.me/91${cleanPhone}?text=${encodeURIComponent(`नमस्ते ${customerName} जी, शिवआशुतोष सोलर एजेंसी से संपर्क किया जा रहा है। आपने ${lead.brand?.toUpperCase() || 'सोलर'} सिस्टम हेतु इन्क्वायरी दर्ज की थी।`)}`;
 
                   return (
                     <tr key={lead.id}>
-                      <td style={{ whiteSpace: 'nowrap', color: '#94A3B8', fontSize: '0.8rem' }}>
-                        {lead.createdAt ? new Date(lead.createdAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }) : '—'}
+                      <td style={{ whiteSpace: 'nowrap', color: '#F1F5F9', fontSize: '0.85rem', fontWeight: 600 }}>
+                        {formattedDateTime}
                       </td>
                       <td>
                         <span className={`${styles.badgeBrand} ${styles[`badgeBrand_${brandKey}`] || styles.badgeBrand_general}`}>
@@ -326,7 +409,7 @@ export default function SolarAdminDashboard() {
                         </span>
                       </td>
                       <td>
-                        <div className={styles.leadName}>{lead.fullName}</div>
+                        <div className={styles.leadName}>{customerName}</div>
                         <div className={styles.leadMobile}>
                           <span>+91 {lead.mobile}</span>
                           <a href={`tel:+91${cleanPhone}`} className={styles.actionIcon} title="कॉल करें">
@@ -338,9 +421,9 @@ export default function SolarAdminDashboard() {
                         </div>
                       </td>
                       <td>
-                        <strong style={{ color: '#F1F5F9' }}>{lead.district}</strong>
-                        {lead.cityVillage && (
-                          <div style={{ color: '#94A3B8', fontSize: '0.8rem' }}>{lead.cityVillage}</div>
+                        <strong style={{ color: '#F1F5F9' }}>{lead.district || 'उत्तर प्रदेश'}</strong>
+                        {(lead.cityVillage || lead.city_village) && (
+                          <div style={{ color: '#94A3B8', fontSize: '0.8rem' }}>{lead.cityVillage || lead.city_village}</div>
                         )}
                       </td>
                       <td>
@@ -388,11 +471,11 @@ export default function SolarAdminDashboard() {
                           </span>
                         ) : null}
                         <div style={{ color: '#38BDF8', fontWeight: 700 }}>
-                          {lead.capacity || lead.preferredSystem || 'सलाह चाहिए'}
+                          {lead.capacity || lead.preferredSystem || lead.preferred_system || 'सलाह चाहिए'}
                         </div>
-                        {lead.monthlyBill && (
+                        {(lead.monthlyBill || lead.monthly_bill) && (
                           <div style={{ color: '#94A3B8', fontSize: '0.75rem' }}>
-                            बिल: {lead.monthlyBill}
+                            बिल: {lead.monthlyBill || lead.monthly_bill}
                           </div>
                         )}
                         {lead.notes && (

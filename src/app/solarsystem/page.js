@@ -71,11 +71,11 @@ export default function SolarSystemPage() {
 
       {/* Main Content Sections */}
       <main id="main-content" style={{ flexGrow: 1 }}>
-        {/* SECTION B – HERO SECTION (Above the fold: Statewide + Brand Choice + Subsidy + CTAs) */}
-        <SolarHero />
-
-        {/* SECTION B.2 – TOP-LEVEL QUICK BRAND ENQUIRY & CALL OPTIONS */}
+        {/* SECTION 1 – TOP-LEVEL TATA & ADANI BRAND ENQUIRY & CALL/CALLBACK (ABOVE HERO) */}
         <SolarQuickEnquiry />
+
+        {/* SECTION B – HERO SECTION (Statewide + Brand Choice + Subsidy + CTAs) */}
+        <SolarHero />
 
         {/* SECTION C – DEDICATED MULTI-BRAND CHOICE SECTION */}
         <SolarBrands />
