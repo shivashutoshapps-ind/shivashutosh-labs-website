@@ -165,7 +165,7 @@ export default function SolarBrands() {
                 </button>
 
                 <a
-                  href={`https://wa.me/919719543259?text=${encodeURIComponent(brand.waMessage)}`}
+                  href={`https://wa.me/917906904706?text=${encodeURIComponent(brand.waMessage)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => handleWhatsappBrand(brand.name)}

@@ -24,7 +24,7 @@ export default function SolarFinalCta() {
   const whatsappMessage = encodeURIComponent(
     'नमस्ते शिवआशुतोष सोलर सिस्टम्स, मुझे अपने घर/दुकान के लिए सोलर सिस्टम और सरकारी सब्सिडी की जानकारी चाहिए।'
   );
-  const whatsappUrl = `https://wa.me/919719543259?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/917906904706?text=${whatsappMessage}`;
 
   return (
     <section className={styles.section}>
@@ -41,15 +41,15 @@ export default function SolarFinalCta() {
           <div className={styles.btnRow}>
             {/* 1. Call Now */}
             <a
-              href="tel:9719543259"
+              href="tel:7906904706"
               onClick={handlePhoneClick}
               className={styles.callBtn}
-              aria-label="Call Now at 9719543259"
+              aria-label="Call Now at 7906904706"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
-              <span>Call Now – 9719543259</span>
+              <span>Call Now – 7906904706</span>
             </a>
 
             {/* 2. WhatsApp Now */}

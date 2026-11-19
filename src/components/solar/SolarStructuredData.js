@@ -10,7 +10,7 @@ export default function SolarStructuredData() {
     description:
       'संपूर्ण उत्तर प्रदेश में अधिकृत सोलर सेवाएँ। TATA, Adani, UTL और अन्य प्रमुख ब्रांड्स के सोलर पैनल, इन्वर्टर और बैटरी समाधान तथा पीएम सूर्य घर योजना के तहत सरकारी सब्सिडी सहायता।',
     url: 'https://shivashutoshlabs.com/solarsystem',
-    telephone: '+919719543259',
+    telephone: '+917906904706',
     image: 'https://shivashutoshlabs.com/solar/rooftop-installation.jpg',
     priceRange: '₹₹',
     address: {

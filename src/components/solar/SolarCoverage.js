@@ -166,11 +166,11 @@ export default function SolarCoverage() {
               <span aria-hidden="true">→</span>
             </button>
             <a
-              href="tel:9719543259"
+              href="tel:7906904706"
               onClick={handlePhoneCta}
               className={styles.bannerPhoneBtn}
             >
-              📞 <strong>9719543259</strong>
+              📞 <strong>7906904706</strong>
             </a>
           </div>
         </div>

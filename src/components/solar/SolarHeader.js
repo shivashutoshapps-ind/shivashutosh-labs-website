@@ -36,8 +36,8 @@ export default function SolarHeader() {
             ☀️ &quot;हर घर सौर ऊर्जा, हर घर खुशहाली&quot; — संपूर्ण उत्तर प्रदेश में अधिकृत सोलर सेवाएँ
           </span>
           <div className={styles.topBarContact}>
-            <a href="tel:9719543259" onClick={handlePhoneClick} className={styles.topBarPhone}>
-              📞 <strong>9719543259</strong>
+            <a href="tel:7906904706" onClick={handlePhoneClick} className={styles.topBarPhone}>
+              📞 <strong>7906904706</strong>
             </a>
           </div>
         </div>
@@ -82,15 +82,15 @@ export default function SolarHeader() {
           {/* Call Now Button */}
           <div className={styles.headerCtaWrap}>
             <a
-              href="tel:9719543259"
+              href="tel:7906904706"
               onClick={handlePhoneClick}
               className={styles.callNowBtn}
-              aria-label="Call Shivashutosh Solar Agency at 9719543259"
+              aria-label="Call Shivashutosh Solar Agency at 7906904706"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
-              <span>कॉल करें: 9719543259</span>
+              <span>कॉल करें: 7906904706</span>
             </a>
 
             {/* Mobile Menu Toggle Button */}
@@ -131,11 +131,11 @@ export default function SolarHeader() {
           </ul>
           <div className={styles.mobileCtaWrap}>
             <a
-              href="tel:9719543259"
+              href="tel:7906904706"
               onClick={handlePhoneClick}
               className={styles.mobileCallBtn}
             >
-              📞 9719543259 पर कॉल करें
+              📞 7906904706 पर कॉल करें
             </a>
           </div>
         </div>

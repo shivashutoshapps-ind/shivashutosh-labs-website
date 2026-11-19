@@ -48,19 +48,19 @@ export default function SolarFooter() {
             <ul className={styles.contactList}>
               <li>
                 <strong>हेल्पलाइन / फोन:</strong>{' '}
-                <a href="tel:9719543259" className={styles.link}>
-                  9719543259
+                <a href="tel:7906904706" className={styles.link}>
+                  7906904706
                 </a>
               </li>
               <li>
                 <strong>WhatsApp:</strong>{' '}
                 <a
-                  href="https://wa.me/919719543259"
+                  href="https://wa.me/917906904706"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.link}
                 >
-                  +91 9719543259
+                  +91 7906904706
                 </a>
               </li>
               <li>

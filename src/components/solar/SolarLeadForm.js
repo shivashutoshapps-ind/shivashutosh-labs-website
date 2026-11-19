@@ -181,7 +181,7 @@ export default function SolarLeadForm() {
   const fallbackWhatsappText = encodeURIComponent(
     `नमस्ते शिवआशुतोष सोलर एजेंसी, मैंने वेबसाइट पर सोलर सिस्टम इन्क्वायरी दर्ज की है।\nब्रांड पसंद: ${currentBrandObj.name}\nनाम: ${formData.fullName || 'ग्राहक'}\nमोबाइल: ${formData.mobile || ''}\nजिला: ${formData.district || 'उत्तर प्रदेश'}\nक्षमता: ${formData.preferredSystem}`
   );
-  const fallbackWhatsappUrl = `https://wa.me/919719543259?text=${fallbackWhatsappText}`;
+  const fallbackWhatsappUrl = `https://wa.me/917906904706?text=${fallbackWhatsappText}`;
 
   return (
     <section id="enquiry-form" className={styles.section}>
@@ -329,7 +329,7 @@ export default function SolarLeadForm() {
                       maxLength={10}
                       value={formData.mobile}
                       onChange={handleChange}
-                      placeholder="10 अंकों का नंबर (जैसे: 9719543259)"
+                      placeholder="10 अंकों का नंबर (जैसे: 7906904706)"
                       className={`${styles.input} ${styles.inputMobile} ${errors.mobile ? styles.inputError : ''}`}
                       required
                     />
@@ -492,7 +492,7 @@ export default function SolarLeadForm() {
                   rel="noopener noreferrer"
                   className={styles.whatsappFallbackLink}
                 >
-                  💬 919719543259 पर चैट करें
+                  💬 917906904706 पर चैट करें
                 </a>
               </div>
             </form>
