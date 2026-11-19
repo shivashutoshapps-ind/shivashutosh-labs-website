@@ -107,7 +107,7 @@ export default function SolarMiddleQuickEnquiry() {
           <span className={styles.eyebrowBadge}>⚡ त्वरित ब्रांड इन्क्वायरी | Quick Brand Enquiry</span>
           <h2 className={styles.heading}>TATA Solar या Adani Solar – तुरंत इन्क्वायरी दर्ज करें</h2>
           <p className={styles.subtitle}>
-            अपनी पसंद का ब्रांड चुनें और केवल 2 विवरण भरें। हमारे सोलर इंजीनियर आपकी आवश्यकता व छत अनुसार निःशुल्क परामर्श प्रदान करेंगे।
+            अपनी पसंद का ब्रांड चुनें और केवल 2 विवरण भरें। केंद्र (₹78,000) व यूपी सरकार (₹30,000) से अधिकतम ₹1,08,000 तक की कुल सब्सिडी व तकनीकी परामर्श प्राप्त करें।
           </p>
         </div>
 

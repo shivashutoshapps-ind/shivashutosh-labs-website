@@ -100,29 +100,36 @@ export default function SolarHero() {
                   <span className={styles.benefitIcon}>🏛️</span>
                 </div>
                 <div className={styles.benefitText}>
-                  <strong className={styles.benefitTitle}>सरकारी सब्सिडी सहायता</strong>
-                  <span className={styles.benefitDesc}>पात्रता और सरकारी नियमों के अनुसार आवेदन सहायता।</span>
+                  <strong className={styles.benefitTitle}>अधिकतम ₹1,08,000 सब्सिडी</strong>
+                  <span className={styles.benefitDesc}>केंद्र (₹78,000) + यूपी राज्य (₹30,000) सहायता।*</span>
                 </div>
               </div>
             </div>
 
-            {/* Promotional Subsidy Card with Transparent Effective Cost */}
+            {/* Promotional Subsidy Card with Maximum Subsidy Breakdown */}
             <div className={styles.offerCard}>
               <div className={styles.offerHeader}>
-                <span className={styles.offerTag}>पीएम सूर्य घर योजना</span>
-                <span className={styles.warrantyTag}>🛡️ 25 साल तक सोलर पैनल वारंटी*</span>
+                <span className={styles.offerTag}>पीएम सूर्य घर + यूपी सौर नीति</span>
+                <span className={styles.warrantyTag}>🛡️ 25 साल तक पैनल वारंटी*</span>
               </div>
 
               <div className={styles.priceRow}>
-                <span className={styles.priceLabel}>प्रभावी लागत</span>
-                <div className={styles.priceValue}>
-                  ₹0 <span className={styles.priceAsterisk}>तक*</span>
+                <span className={styles.priceLabel}>कुल संभावित सरकारी सब्सिडी:</span>
+                <div className={styles.subsidyHeroTotal}>
+                  <span className={styles.subsidyPrefix}>अधिकतम</span>
+                  <span className={styles.subsidyAmountBig}>₹1,08,000</span>
+                  <span className={styles.subsidySuffix}>तक*</span>
                 </div>
-                <span className={styles.subsidyNote}>₹78,000 तक केंद्रीय सब्सिडी लागू</span>
+              </div>
+
+              <div className={styles.subsidyBreakdownRow}>
+                <span className={styles.subsidyItem}>🏛️ केंद्र सरकार: <strong>₹78,000 तक</strong></span>
+                <span className={styles.subsidyPlus}>+</span>
+                <span className={styles.subsidyItem}>🏛️ यूपी सरकार: <strong>₹30,000 तक</strong></span>
               </div>
 
               <p className={styles.offerDisclaimer}>
-                * प्रभावी लागत ₹0 तक का अर्थ है कि लागू सरकारी सब्सिडी एवं ग्राहक की पात्रता के बाद अनुमानित प्रभावी लागत न्यूनतम अथवा शून्य तक हो सकती है। वास्तविक लागत व सब्सिडी स्वीकृति योजना की शर्तों एवं ग्राहक की श्रेणी पर निर्भर है।
+                * ₹1,08,000 तक की कुल सब्सिडी पात्र घरेलू (Residential) Rooftop Solar उपभोक्ताओं के लिए लागू सरकारी योजनाओं के अंतर्गत संभावित अधिकतम राशि है। केंद्र एवं उत्तर प्रदेश सरकार की सब्सिडी ग्राहक की पात्रता, स्वीकृत सोलर क्षमता, लागू नियमों व डिस्कॉम सत्यापन पर निर्भर है। सब्सिडी की गारंटी नहीं दी जाती।
               </p>
             </div>
 
