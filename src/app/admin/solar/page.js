@@ -344,12 +344,46 @@ export default function SolarAdminDashboard() {
                         )}
                       </td>
                       <td>
+                        {(lead.utm_source === 'top_callback_request' || (lead.notes && lead.notes.includes('Callback Request'))) ? (
+                          <span style={{
+                            display: 'inline-block',
+                            background: '#FEF3C7',
+                            color: '#92400E',
+                            border: '1px solid #FDE68A',
+                            padding: '0.2rem 0.55rem',
+                            borderRadius: '6px',
+                            fontWeight: 800,
+                            fontSize: '0.75rem',
+                            marginBottom: '0.35rem'
+                          }}>
+                            📞 कॉलबैक अनुरोध
+                          </span>
+                        ) : lead.utm_source === 'top_quick_enquiry' ? (
+                          <span style={{
+                            display: 'inline-block',
+                            background: '#E0F2FE',
+                            color: '#0369A1',
+                            border: '1px solid #BAE6FD',
+                            padding: '0.2rem 0.55rem',
+                            borderRadius: '6px',
+                            fontWeight: 800,
+                            fontSize: '0.75rem',
+                            marginBottom: '0.35rem'
+                          }}>
+                            ⚡ त्वरित इन्क्वायरी
+                          </span>
+                        ) : null}
                         <div style={{ color: '#38BDF8', fontWeight: 700 }}>
                           {lead.capacity || lead.preferredSystem || 'सलाह चाहिए'}
                         </div>
                         {lead.monthlyBill && (
                           <div style={{ color: '#94A3B8', fontSize: '0.75rem' }}>
                             बिल: {lead.monthlyBill}
+                          </div>
+                        )}
+                        {lead.notes && (
+                          <div style={{ color: '#CBD5E1', fontSize: '0.75rem', marginTop: '0.25rem', fontStyle: 'italic' }}>
+                            {lead.notes}
                           </div>
                         )}
                       </td>

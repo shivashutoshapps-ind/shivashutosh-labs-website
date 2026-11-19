@@ -1,6 +1,7 @@
 import React from 'react';
 import SolarHeader from '@/components/solar/SolarHeader';
 import SolarHero from '@/components/solar/SolarHero';
+import SolarQuickEnquiry from '@/components/solar/SolarQuickEnquiry';
 import SolarBrands from '@/components/solar/SolarBrands';
 import SolarCoverage from '@/components/solar/SolarCoverage';
 import SolarPackages from '@/components/solar/SolarPackages';
@@ -71,6 +72,9 @@ export default function SolarSystemPage() {
       <main id="main-content" style={{ flexGrow: 1 }}>
         {/* SECTION B – HERO SECTION (Above the fold: Statewide + Brand Choice + Subsidy + CTAs) */}
         <SolarHero />
+
+        {/* SECTION B.2 – TOP-LEVEL QUICK BRAND ENQUIRY & CALL OPTIONS */}
+        <SolarQuickEnquiry />
 
         {/* SECTION C – DEDICATED MULTI-BRAND CHOICE SECTION */}
         <SolarBrands />

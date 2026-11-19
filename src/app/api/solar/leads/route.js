@@ -94,6 +94,8 @@ export async function POST(request) {
       hasRooftop,
       preferredSystem,
       privacyConsent,
+      leadSource,
+      notes,
       utmSource,
       utmMedium,
       utmCampaign,
@@ -120,21 +122,13 @@ export async function POST(request) {
       );
     }
 
-    // 4. District Validation (Required)
-    if (!district || typeof district !== 'string' || district.trim().length === 0) {
-      return Response.json(
-        { error: 'कृपया अपना जिला चुनें या दर्ज करें।' },
-        { status: 400 }
-      );
-    }
+    // 4. District Handling (Defaults to Uttar Pradesh statewide if not provided in quick enquiry)
+    const effectiveDistrict = (district && typeof district === 'string' && district.trim().length > 0)
+      ? district.trim()
+      : 'उत्तर प्रदेश (संपूर्ण राज्य)';
 
-    // 5. Privacy Consent Validation (Required)
-    if (!privacyConsent) {
-      return Response.json(
-        { error: 'आगे बढ़ने के लिए कृपया सहमति बॉक्स पर सही का निशान लगाएं।' },
-        { status: 400 }
-      );
-    }
+    // 5. Privacy Consent Handling
+    const effectiveConsent = privacyConsent !== undefined ? !!privacyConsent : true;
 
     // 6. Anti-duplicate check (within 5 minutes)
     if (hasRecentSubmission(cleanMobile, 5)) {
@@ -163,27 +157,39 @@ export async function POST(request) {
       else cleanBrand = b;
     }
 
-    // 9. Insert Lead into SQLite
+    // 9. Process Lead Source and Notes
+    const effectiveSource = leadSource || utmSource || 'website';
+    let effectiveNotes = notes || '';
+    if (leadSource === 'top_callback_request' && !effectiveNotes.includes('Callback Request')) {
+      effectiveNotes = `[Callback Request] ${effectiveNotes}`.trim();
+    } else if (leadSource === 'top_quick_enquiry' && !effectiveNotes.includes('Quick Enquiry')) {
+      effectiveNotes = `[Quick Enquiry - ${cleanBrand.toUpperCase()}] ${effectiveNotes}`.trim();
+    }
+
+    const effectiveCapacity = capacity || preferredSystem || (leadSource === 'top_callback_request' ? 'कॉलबैक अनुरोध' : 'त्वरित इन्क्वायरी');
+
+    // 10. Insert Lead into SQLite
     const result = insertSolarLead({
-      fullName,
+      fullName: fullName.trim(),
       mobile: cleanMobile,
-      district,
+      district: effectiveDistrict,
       cityVillage: cityVillage || '',
       brand: cleanBrand,
-      capacity: capacity || preferredSystem || 'consultation',
+      capacity: effectiveCapacity,
       customerType: customerType || 'residential',
       monthlyBill: monthlyBill || '',
       hasRooftop: hasRooftop || 'yes',
-      preferredSystem: preferredSystem || capacity || 'consultation',
-      privacyConsent: !!privacyConsent,
+      preferredSystem: effectiveCapacity,
+      privacyConsent: effectiveConsent,
       ipAddress,
-      utmSource,
+      utmSource: effectiveSource,
       utmMedium,
       utmCampaign,
       utmTerm,
       utmContent,
       referrer,
       userAgent,
+      notes: effectiveNotes,
     });
 
     return Response.json(

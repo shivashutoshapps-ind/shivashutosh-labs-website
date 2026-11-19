@@ -98,6 +98,7 @@ export function insertSolarLead(lead) {
   const monthlyBill = lead.monthlyBill || '';
   const hasRooftop = lead.hasRooftop || 'yes';
   const preferredSystem = lead.preferredSystem || capacity;
+  const notes = lead.notes || null;
 
   const stmt = db.prepare(`
     INSERT INTO solar_leads (
@@ -105,13 +106,13 @@ export function insertSolarLead(lead) {
       customer_type, monthly_bill, has_rooftop, preferred_system,
       brand, capacity, privacy_consent, ip_address, utm_source, utm_medium,
       utm_campaign, utm_term, utm_content, referrer, user_agent,
-      status, created_at
+      status, notes, created_at
     ) VALUES (
       ?, ?, ?, ?, ?,
       ?, ?, ?, ?,
       ?, ?, ?, ?, ?, ?,
       ?, ?, ?, ?, ?,
-      ?, ?
+      ?, ?, ?
     )
   `);
 
@@ -137,6 +138,7 @@ export function insertSolarLead(lead) {
     lead.referrer || null,
     lead.userAgent || null,
     'NEW',
+    notes,
     now
   );
 
