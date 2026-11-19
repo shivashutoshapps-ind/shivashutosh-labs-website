@@ -195,10 +195,10 @@ export default function SolarQuickEnquiry() {
             </div>
             <div className={styles.callActionsWrap}>
               <a
-                href="tel:9719543259"
+                href="tel:7906904706"
                 className={styles.btnCallNow}
                 onClick={() => trackEvent('quick_call_now_click')}
-                aria-label="Call Now - 9719543259 पर अभी कॉल करें"
+                aria-label="Call Now - 7906904706 पर अभी कॉल करें"
               >
                 <span>📞 Call Now</span>
               </a>

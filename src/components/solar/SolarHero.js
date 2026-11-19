@@ -33,7 +33,7 @@ export default function SolarHero() {
   const whatsappMessage = encodeURIComponent(
     'नमस्ते शिवआशुतोष सोलर एजेंसी, मुझे अपने घर के लिए प्रभावी लागत ₹0 / Zero Down Payment सोलर सिस्टम, ब्रांड्स (TATA/Adani/UTL) और ₹1,08,000 तक सरकारी सब्सिडी की जानकारी चाहिए।'
   );
-  const whatsappUrl = `https://wa.me/919719543259?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/917906904706?text=${whatsappMessage}`;
 
   return (
     <section id="hero" className={styles.heroSection}>
@@ -188,12 +188,12 @@ export default function SolarHero() {
             {/* Quick Contact & Trust Bar */}
             <div className={styles.quickContactBar}>
               <a
-                href="tel:9719543259"
+                href="tel:7906904706"
                 onClick={handlePhoneCta}
                 className={styles.phoneChip}
               >
                 <span className={styles.phoneIcon} aria-hidden="true">📞</span>
-                <span>कॉल: <strong>9719543259</strong></span>
+                <span>कॉल: <strong>7906904706</strong></span>
               </a>
 
               <a
