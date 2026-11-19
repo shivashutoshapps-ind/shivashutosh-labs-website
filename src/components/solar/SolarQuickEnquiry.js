@@ -61,8 +61,8 @@ export default function SolarQuickEnquiry() {
         preferredSystem: isCallback
           ? 'कॉलबैक अनुरोध (Callback Request)'
           : mode === 'tata'
-          ? 'TATA Solar Quick Enquiry'
-          : 'Adani Solar Quick Enquiry',
+            ? 'TATA Solar Quick Enquiry'
+            : 'Adani Solar Quick Enquiry',
         notes: isCallback
           ? '[Callback Request] Customer requested a return call'
           : `[Quick Enquiry - ${selectedBrand.toUpperCase()}] Top quick enquiry submitted`,
@@ -119,7 +119,7 @@ export default function SolarQuickEnquiry() {
           <span className={styles.eyebrowBadge}>⚡ त्वरित सेवा | Quick Brand Enquiry & Direct Call</span>
           <h2 className={styles.heading}>त्वरित सोलर इन्क्वायरी एवं कॉल सेवा</h2>
           <p className={styles.subtitle}>
-            TATA Solar या Adani Solar की तत्काल जानकारी प्राप्त करें (अधिकतम ₹1,08,000 तक सरकारी सब्सिडी सहायता उपलब्ध) अथवा हमारे तकनीकी विशेषज्ञ से सीधे फ़ोन पर बात करें।
+            TATA Solar या Adani Solar की तत्काल जानकारी प्राप्त करें अथवा हमारे तकनीकी विशेषज्ञ से सीधे फ़ोन पर बात करें।
           </p>
         </div>
 

@@ -203,13 +203,13 @@ export function insertSolarLead(lead) {
 export function hasRecentSubmission(mobile, windowMinutes = 5) {
   const db = getSolarDb();
   const cutoff = new Date(Date.now() - windowMinutes * 60 * 1000).toISOString();
-  
+
   const stmt = db.prepare(`
     SELECT id FROM solar_leads 
     WHERE mobile = ? AND created_at >= ? 
     LIMIT 1
   `);
-  
+
   const rows = stmt.all(mobile.trim(), cutoff);
   return rows.length > 0;
 }
@@ -286,7 +286,7 @@ export function getSolarLeadStats() {
   const newRow = db.prepare("SELECT count(id) as cnt FROM solar_leads WHERE status = 'NEW'").get();
   const contactedRow = db.prepare("SELECT count(id) as cnt FROM solar_leads WHERE status = 'CONTACTED'").get();
   const convertedRow = db.prepare("SELECT count(id) as cnt FROM solar_leads WHERE status = 'CONVERTED'").get();
-  
+
   const brandRows = db.prepare(`
     SELECT COALESCE(NULLIF(LOWER(brand), ''), 'general') as brand, count(id) as count 
     FROM solar_leads 
