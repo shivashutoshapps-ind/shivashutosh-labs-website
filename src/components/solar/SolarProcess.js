@@ -7,9 +7,9 @@ export default function SolarProcess() {
   const steps = [
     {
       num: '01',
-      title: 'ग्राहक की जानकारी प्राप्त करना',
+      title: 'ग्राहक की जानकारी एवं परामर्श',
       subtitle: 'Enquiry & Consultation',
-      desc: 'आप ऑनलाइन फॉर्म भरते हैं या हमें कॉल/व्हाट्सएप करते हैं। हमारी टीम आपकी बिजली खपत और प्राथमिक आवश्यकताओं को समझती है।',
+      desc: 'आप ऑनलाइन फॉर्म भरते हैं या हमें कॉल/व्हाट्सएप करते हैं। हमारी टीम प्रभावी लागत ₹0 एवं Zero Down Payment विकल्पों के साथ आपकी प्राथमिक आवश्यकताओं को समझती है।',
       icon: '📞',
     },
     {
@@ -21,9 +21,9 @@ export default function SolarProcess() {
     },
     {
       num: '03',
-      title: 'कोटेशन, पात्रता एवं सब्सिडी जानकारी',
-      subtitle: 'Quotation & Subsidy Plan',
-      desc: 'आपकी आवश्यकता अनुसार सटीक सिस्टम डिज़ाइन, कोटेशन तथा केंद्र एवं यूपी सरकार से मिलने वाली अधिकतम ₹1,08,000 तक की कुल सब्सिडी का पारदर्शी विवरण।',
+      title: 'कोटेशन, ZERO DOWN PAYMENT एवं सब्सिडी',
+      subtitle: 'Quotation, Zero Down & Subsidy',
+      desc: 'आपकी आवश्यकता अनुसार सटीक सिस्टम डिज़ाइन, ZERO DOWN PAYMENT वित्तीय विकल्प*, तथा केंद्र व यूपी सरकार से अधिकतम ₹1,08,000 तक की कुल सब्सिडी का पारदर्शी विवरण जिससे प्रभावी लागत ₹0 तक आ सके।',
       icon: '📋',
     },
     {
@@ -39,12 +39,12 @@ export default function SolarProcess() {
     <section id="process" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.badge}>आसान एवं पारदर्शी प्रक्रिया</span>
+          <span className={styles.badge}>⚡ प्रभावी लागत ₹0 तक | आसान एवं पारदर्शी प्रक्रिया</span>
           <h2 className={styles.heading}>
-            सोलर इंस्टॉलेशन के 4 सरल चरण
+            सोलर इंस्टॉलेशन के 4 सरल चरण – प्रभावी लागत ₹0 तक!
           </h2>
           <p className={styles.subtext}>
-            पहली कॉल से लेकर बिजली बिल में बचत शुरू होने तक की पूरी प्रक्रिया सहज, पारदर्शी और तनाव-मुक्त है।
+            पहली कॉल से लेकर ZERO DOWN PAYMENT विकल्प एवं बिजली बिल में भारी बचत शुरू होने तक की पूरी प्रक्रिया सहज, पारदर्शी और तनाव-मुक्त है।
           </p>
         </div>
 

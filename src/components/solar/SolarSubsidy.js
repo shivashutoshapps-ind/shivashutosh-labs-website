@@ -27,10 +27,20 @@ export default function SolarSubsidy() {
             <span className={styles.officialTag}>केंद्र सरकार (MNRE) + उत्तर प्रदेश सरकार (UPNEDA)</span>
           </div>
           <h2 className={styles.heading}>
-            उत्तर प्रदेश में Rooftop Solar लगवाने पर अधिकतम ₹1,08,000 तक की सब्सिडी!
+            उत्तर प्रदेश में Rooftop Solar लगवाने पर अधिकतम ₹1,08,000 तक की सब्सिडी – प्रभावी लागत ₹0 तक!
           </h2>
           <p className={styles.subtext}>
             पीएम सूर्य घर: मुफ्त बिजली योजना (केंद्र सरकार) एवं उत्तर प्रदेश सौर ऊर्जा नीति (राज्य सरकार) के अंतर्गत पात्र आवासीय उपभोक्ताओं को मिलने वाली संभावित अधिकतम सब्सिडी का विस्तृत एवं पारदर्शी विवरण।
+          </p>
+        </div>
+
+        {/* Zero Cost Formula Banner */}
+        <div className={styles.zeroCostFormulaBanner}>
+          <div className={styles.zeroCostFormulaTitle}>
+            💡 सरकारी सब्सिडी (₹1,08,000 तक) + Zero Down Payment = <strong>प्रभावी लागत ₹0!</strong>
+          </div>
+          <p className={styles.zeroCostFormulaText}>
+            केंद्र सरकार की ₹78,000 तक सब्सिडी + यूपी सरकार की ₹30,000 तक अतिरिक्त सहायता (कुल ₹1,08,000) तथा उपलब्ध आसान वित्तीय/EMI विकल्पों के संयोजन से आपके घर पर सोलर सिस्टम लगवाने की <strong>प्रभावी लागत ₹0 तक</strong> संभव है!
           </p>
         </div>
 

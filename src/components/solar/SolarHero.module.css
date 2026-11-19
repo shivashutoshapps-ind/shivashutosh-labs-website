@@ -173,6 +173,17 @@
   display: inline-block;
 }
 
+.highlightZeroCost {
+  color: #059669;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 900;
+  text-decoration: underline wavy #10B981 3px;
+  text-underline-offset: 6px;
+}
+
 .subheading {
   font-size: 1.15rem;
   color: #334155;
@@ -299,6 +310,89 @@
   color: #34D399;
   font-size: 0.8rem;
   font-weight: 700;
+}
+
+.zeroCostHighlightWrap {
+  margin: 0.6rem 0 1rem;
+}
+
+.zeroCostLabel {
+  display: block;
+  font-size: 0.95rem;
+  color: #CBD5E1;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.zeroCostHeroAmount {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.zeroCostText {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #FBBF24;
+}
+
+.zeroCostNum {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #34D399;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-shadow: 0 4px 20px rgba(52, 211, 153, 0.4);
+}
+
+.zeroCostSuffix {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #FDE68A;
+}
+
+.heroCampaignGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  background: rgba(15, 23, 42, 0.7);
+  padding: 0.85rem;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 500px) {
+  .heroCampaignGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.heroCampaignItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: #E2E8F0;
+}
+
+.campaignIcon {
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.heroCampaignItem strong {
+  display: block;
+  color: #FBBF24;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.heroCampaignItem span {
+  display: block;
+  font-size: 0.75rem;
+  color: #CBD5E1;
 }
 
 .priceRow {

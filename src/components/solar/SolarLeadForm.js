@@ -187,12 +187,12 @@ export default function SolarLeadForm() {
     <section id="enquiry-form" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.badge}>मुफ्त साइट सर्वे एवं पारदर्शी कोटेशन</span>
+          <span className={styles.badge}>⚡ ZERO EFFECTIVE COST | प्रभावी लागत ₹0 तक</span>
           <h2 className={styles.heading}>
-            सोलर सिस्टम इन्क्वायरी एवं सब्सिडी फॉर्म
+            सोलर लगवाएं – प्रभावी लागत ₹0 तक (विस्तृत इन्क्वायरी फॉर्म)
           </h2>
           <p className={styles.subtext}>
-            अपनी आवश्यकता दर्ज करें। हमारे सोलर विशेषज्ञ आपकी छत व बिजली बिल अनुसार <strong>केंद्र (₹78,000) + यूपी सरकार (₹30,000) से अधिकतम ₹1,08,000 तक की कुल सब्सिडी</strong> व विस्तृत कोटेशन 24 घंटे के भीतर प्रदान करेंगे।
+            अपनी आवश्यकता दर्ज करें। हमारे सोलर विशेषज्ञ आपकी छत अनुसार <strong>ZERO DOWN PAYMENT विकल्प*</strong>, केंद्र (₹78,000) + यूपी सरकार (₹30,000) से <strong>अधिकतम ₹1,08,000 तक की कुल सब्सिडी</strong> और प्रभावी लागत ₹0 तक का विस्तृत कोटेशन 24 घंटे में प्रदान करेंगे।
           </p>
         </div>
 

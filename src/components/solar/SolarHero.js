@@ -31,9 +31,9 @@ export default function SolarHero() {
   };
 
   const whatsappMessage = encodeURIComponent(
-    'नमस्ते शिवआशुतोष सोलर एजेंसी, मुझे उत्तर प्रदेश में अपने घर/दुकान के लिए सोलर सिस्टम, ब्रांड्स (TATA/Adani/UTL) और सरकारी सब्सिडी की जानकारी चाहिए।'
+    'नमस्ते शिवआशुतोष सोलर एजेंसी, मुझे अपने घर के लिए प्रभावी लागत ₹0 / Zero Down Payment सोलर सिस्टम, ब्रांड्स (TATA/Adani/UTL) और ₹1,08,000 तक सरकारी सब्सिडी की जानकारी चाहिए।'
   );
-  const whatsappUrl = `https://wa.me/917906904706?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/919719543259?text=${whatsappMessage}`;
 
   return (
     <section id="hero" className={styles.heroSection}>
@@ -60,14 +60,14 @@ export default function SolarHero() {
               </span>
             </div>
 
-            {/* Main Headline */}
+            {/* Main Headline - ZERO EFFECTIVE COST CAMPAIGN */}
             <h1 className={styles.headline}>
-              अब पूरे उत्तर प्रदेश में लगवाएं <span className={styles.highlightGreen}>अपनी पसंद का</span> सोलर सिस्टम!
+              अब Solar लगवाने की <span className={styles.highlightZeroCost}>प्रभावी लागत ₹0 तक!</span>
             </h1>
 
             {/* Supporting Text */}
             <p className={styles.subheading}>
-              सरकारी सब्सिडी सहायता के साथ <strong>TATA, Adani, UTL</strong> और अन्य प्रमुख ब्रांड्स के सोलर सिस्टम विकल्प।
+              <strong>ZERO DOWN PAYMENT</strong> का विकल्प* • <strong>₹1,08,000 तक</strong> संभावित सरकारी सब्सिडी* • हर महीने <strong>बिजली बिल में बड़ी बचत</strong> के साथ अपने घर पर Solar लगवाने का सबसे आसान विकल्प!
             </p>
 
             {/* Three Prominent Benefit Cards */}
@@ -94,42 +94,68 @@ export default function SolarHero() {
                 </div>
               </div>
 
-              {/* CARD 3: Subsidy Assistance */}
+              {/* CARD 3: Subsidy & Zero Cost */}
               <div role="listitem" className={styles.benefitCard}>
                 <div className={styles.benefitIconWrap}>
                   <span className={styles.benefitIcon}>🏛️</span>
                 </div>
                 <div className={styles.benefitText}>
-                  <strong className={styles.benefitTitle}>अधिकतम ₹1,08,000 सब्सिडी</strong>
-                  <span className={styles.benefitDesc}>केंद्र (₹78,000) + यूपी राज्य (₹30,000) सहायता।*</span>
+                  <strong className={styles.benefitTitle}>प्रभावी लागत ₹0 & सब्सिडी</strong>
+                  <span className={styles.benefitDesc}>केंद्र (₹78k) + यूपी (₹30k) = ₹1.08 लाख सब्सिडी।*</span>
                 </div>
               </div>
             </div>
 
-            {/* Promotional Subsidy Card with Maximum Subsidy Breakdown */}
+            {/* Promotional Subsidy & Zero Cost Card */}
             <div className={styles.offerCard}>
               <div className={styles.offerHeader}>
-                <span className={styles.offerTag}>पीएम सूर्य घर + यूपी सौर नीति</span>
+                <span className={styles.offerTag}>🔥 महा-अभियान | ZERO EFFECTIVE COST</span>
                 <span className={styles.warrantyTag}>🛡️ 25 साल तक पैनल वारंटी*</span>
               </div>
 
-              <div className={styles.priceRow}>
-                <span className={styles.priceLabel}>कुल संभावित सरकारी सब्सिडी:</span>
-                <div className={styles.subsidyHeroTotal}>
-                  <span className={styles.subsidyPrefix}>अधिकतम</span>
-                  <span className={styles.subsidyAmountBig}>₹1,08,000</span>
-                  <span className={styles.subsidySuffix}>तक*</span>
+              <div className={styles.zeroCostHighlightWrap}>
+                <span className={styles.zeroCostLabel}>अपने घर पर Solar लगवाएं:</span>
+                <div className={styles.zeroCostHeroAmount}>
+                  <span className={styles.zeroCostText}>प्रभावी लागत</span>
+                  <span className={styles.zeroCostNum}>₹0</span>
+                  <span className={styles.zeroCostSuffix}>तक*</span>
                 </div>
               </div>
 
-              <div className={styles.subsidyBreakdownRow}>
-                <span className={styles.subsidyItem}>🏛️ केंद्र सरकार: <strong>₹78,000 तक</strong></span>
-                <span className={styles.subsidyPlus}>+</span>
-                <span className={styles.subsidyItem}>🏛️ यूपी सरकार: <strong>₹30,000 तक</strong></span>
+              {/* 4 Supporting Pillars Grid */}
+              <div className={styles.heroCampaignGrid}>
+                <div className={styles.heroCampaignItem}>
+                  <span className={styles.campaignIcon}>💳</span>
+                  <div>
+                    <strong>ZERO DOWN PAYMENT</strong>
+                    <span>शुरुआती भुगतान ₹0 का विकल्प*</span>
+                  </div>
+                </div>
+                <div className={styles.heroCampaignItem}>
+                  <span className={styles.campaignIcon}>🏛️</span>
+                  <div>
+                    <strong>₹1,08,000 तक सरकारी सब्सिडी*</strong>
+                    <span>केंद्र (₹78,000) + यूपी राज्य (₹30,000)</span>
+                  </div>
+                </div>
+                <div className={styles.heroCampaignItem}>
+                  <span className={styles.campaignIcon}>📉</span>
+                  <div>
+                    <strong>बिजली बिल में बड़ी बचत</strong>
+                    <span>ग्रिड बिजली खरीद की जरूरत कम करें</span>
+                  </div>
+                </div>
+                <div className={styles.heroCampaignItem}>
+                  <span className={styles.campaignIcon}>☀️</span>
+                  <div>
+                    <strong>आसान सोलर विकल्प</strong>
+                    <span>TATA, Adani, UTL प्रमुख ब्रांड्स</span>
+                  </div>
+                </div>
               </div>
 
               <p className={styles.offerDisclaimer}>
-                * ₹1,08,000 तक की कुल सब्सिडी पात्र घरेलू (Residential) Rooftop Solar उपभोक्ताओं के लिए लागू सरकारी योजनाओं के अंतर्गत संभावित अधिकतम राशि है। केंद्र एवं उत्तर प्रदेश सरकार की सब्सिडी ग्राहक की पात्रता, स्वीकृत सोलर क्षमता, लागू नियमों व डिस्कॉम सत्यापन पर निर्भर है। सब्सिडी की गारंटी नहीं दी जाती।
+                * प्रभावी लागत ग्राहक की पात्रता, स्वीकृत सरकारी सब्सिडी, वास्तविक इंस्टॉलेशन लागत और लागू वित्तीय शर्तों पर निर्भर करती है। ZERO DOWN PAYMENT वित्तीय साझेदारों की स्वीकृति, पात्रता एवं ईएमआई शर्तों के अधीन है। सब्सिडी केंद्र (₹78,000) व यूपी सरकार (₹30,000) के सत्यापन पर देय है।
               </p>
             </div>
 
@@ -162,12 +188,12 @@ export default function SolarHero() {
             {/* Quick Contact & Trust Bar */}
             <div className={styles.quickContactBar}>
               <a
-                href="tel:7906904706"
+                href="tel:9719543259"
                 onClick={handlePhoneCta}
                 className={styles.phoneChip}
               >
                 <span className={styles.phoneIcon} aria-hidden="true">📞</span>
-                <span>कॉल: <strong>7906904706</strong></span>
+                <span>कॉल: <strong>9719543259</strong></span>
               </a>
 
               <a
@@ -180,6 +206,10 @@ export default function SolarHero() {
                 <span className={styles.whatsappIcon} aria-hidden="true">💬</span>
                 <span>WhatsApp पर पूछें</span>
               </a>
+
+              <span className={styles.trustTag}>
+                ✓ प्रभावी लागत ₹0 विकल्प
+              </span>
 
               <span className={styles.trustTag}>
                 ✓ 100% निशुल्क साइट सर्वे

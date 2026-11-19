@@ -18,16 +18,16 @@ import SolarFloatingActions from '@/components/solar/SolarFloatingActions';
 import SolarStructuredData from '@/components/solar/SolarStructuredData';
 
 export const metadata = {
-  title: 'Shivashutosh Solar Agency | Authorized Solar Services Across Uttar Pradesh | TATA, Adani, UTL Brands | Up to ₹1,08,000 Subsidy',
+  title: 'अपने घर पर Solar लगवाएं – प्रभावी लागत ₹0 तक | Shivashutosh Solar Agency Uttar Pradesh',
   description:
-    'संपूर्ण उत्तर प्रदेश में अधिकृत सोलर सेवाएँ। TATA, Adani, UTL और अन्य प्रमुख ब्रांड्स के सोलर सिस्टम विकल्प। केंद्र (₹78,000) व यूपी सरकार (₹30,000) से अधिकतम ₹1,08,000 तक सरकारी सब्सिडी सहायता व मुफ्त साइट सर्वे।',
+    'अब पूरे उत्तर प्रदेश में Solar लगवाने की प्रभावी लागत ₹0 तक! ZERO DOWN PAYMENT विकल्प, ₹1,08,000 तक सरकारी सब्सिडी (केंद्र ₹78,000 + यूपी ₹30,000) तथा TATA, Adani, UTL ब्रांड्स के साथ हर महीने बिजली बिल में भारी बचत।',
   alternates: {
     canonical: 'https://shivashutoshlabs.com/solarsystem',
   },
   openGraph: {
-    title: 'Shivashutosh Solar Agency | Authorized Solar Services Across Uttar Pradesh | Up to ₹1,08,000 Subsidy',
+    title: 'अपने घर पर Solar लगवाएं – प्रभावी लागत ₹0 तक | Shivashutosh Solar Agency',
     description:
-      'संपूर्ण उत्तर प्रदेश में अधिकृत सोलर सेवाएँ। TATA, Adani, UTL और अन्य प्रमुख ब्रांड्स के सोलर पैनल, इन्वर्टर और बैटरी। केंद्र (₹78,000) व यूपी सरकार (₹30,000) से अधिकतम ₹1,08,000 तक सरकारी सब्सिडी सहायता व मुफ्त साइट सर्वे।',
+      'अब पूरे उत्तर प्रदेश में Solar लगवाने की प्रभावी लागत ₹0 तक! ZERO DOWN PAYMENT का विकल्प, अधिकतम ₹1,08,000 तक सरकारी सब्सिडी (केंद्र ₹78,000 + यूपी ₹30,000) और हर महीने बिजली बिल में बड़ी बचत।',
     url: 'https://shivashutoshlabs.com/solarsystem',
     siteName: 'Shivashutosh Solar Agency',
     locale: 'hi_IN',
@@ -38,15 +38,15 @@ export const metadata = {
         url: 'https://shivashutoshlabs.com/solar/rooftop-installation.jpg',
         width: 1200,
         height: 675,
-        alt: 'Shivashutosh Solar Agency - Authorized Solar Services Across Uttar Pradesh - Up to ₹1,08,000 Subsidy',
+        alt: 'अपने घर पर Solar लगवाएं – प्रभावी लागत ₹0 तक - Shivashutosh Solar Agency',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shivashutosh Solar Agency | Authorized Solar Services Across Uttar Pradesh | Up to ₹1,08,000 Subsidy',
+    title: 'अपने घर पर Solar लगवाएं – प्रभावी लागत ₹0 तक | Shivashutosh Solar Agency',
     description:
-      'संपूर्ण उत्तर प्रदेश में अधिकृत सोलर सेवाएँ। TATA, Adani, UTL और अन्य प्रमुख ब्रांड्स के सोलर सिस्टम विकल्प। केंद्र (₹78,000) व यूपी सरकार (₹30,000) से अधिकतम ₹1,08,000 तक सरकारी सब्सिडी सहायता व मुफ्त साइट सर्वे।',
+      'अब पूरे उत्तर प्रदेश में Solar लगवाने की प्रभावी लागत ₹0 तक! ZERO DOWN PAYMENT का विकल्प, अधिकतम ₹1,08,000 तक सरकारी सब्सिडी और हर महीने बिजली बिल में बड़ी बचत।',
     images: ['https://shivashutoshlabs.com/solar/rooftop-installation.jpg'],
   },
   robots: {

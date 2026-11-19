@@ -104,10 +104,10 @@ export default function SolarMiddleQuickEnquiry() {
       <div className={styles.container}>
         {/* Section Header */}
         <div className={styles.header}>
-          <span className={styles.eyebrowBadge}>⚡ त्वरित ब्रांड इन्क्वायरी | Quick Brand Enquiry</span>
-          <h2 className={styles.heading}>TATA Solar या Adani Solar – तुरंत इन्क्वायरी दर्ज करें</h2>
+          <span className={styles.eyebrowBadge}>⚡ ZERO EFFECTIVE COST | महा-अभियान</span>
+          <h2 className={styles.heading}>अपने घर पर Solar लगवाएं – प्रभावी लागत ₹0 तक!</h2>
           <p className={styles.subtitle}>
-            अपनी पसंद का ब्रांड चुनें और केवल 2 विवरण भरें। केंद्र (₹78,000) व यूपी सरकार (₹30,000) से अधिकतम ₹1,08,000 तक की कुल सब्सिडी व तकनीकी परामर्श प्राप्त करें।
+            ZERO DOWN PAYMENT का विकल्प*, केंद्र (₹78,000) + यूपी सरकार (₹30,000) से अधिकतम ₹1,08,000 तक की कुल सब्सिडी और बिजली बिल में भारी बचत के साथ अपनी पसंद का TATA या Adani सोलर सिस्टम चुनें।
           </p>
         </div>
 

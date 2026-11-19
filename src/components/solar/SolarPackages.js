@@ -18,12 +18,12 @@ export default function SolarPackages() {
     <section id="packages" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
-          <span className={styles.badge}>संपूर्ण सोलर समाधान</span>
+          <span className={styles.badge}>⚡ प्रभावी लागत ₹0 | संपूर्ण सोलर समाधान</span>
           <h2 className={styles.heading}>
-            3 KW संपूर्ण सोलर सिस्टम — उच्च गुणवत्ता वाले मुख्य घटक
+            3 KW संपूर्ण सोलर सिस्टम – प्रभावी लागत ₹0 तक!
           </h2>
           <p className={styles.subtext}>
-            शिवआशुतोष सोलर सिस्टम्स आपके घर और व्यवसाय के लिए केवल प्रमाणित, टिकाऊ और उच्च दक्षता वाले सोलर उपकरण प्रदान करता है।
+            ZERO DOWN PAYMENT विकल्प* एवं ₹1,08,000 तक सरकारी सब्सिडी सहायता के साथ प्रमाणित सोलर पैनल्स, इन्वर्टर एवं बैटरी बैकअप का उच्च दक्षता वाला संपूर्ण पैकेज।
           </p>
         </div>
 

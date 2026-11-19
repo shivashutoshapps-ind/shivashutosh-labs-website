@@ -8,7 +8,7 @@ export default function SolarStructuredData() {
     name: 'Shivashutosh Solar Agency',
     alternateName: 'शिवआशुतोष सोलर एजेंसी',
     description:
-      'संपूर्ण उत्तर प्रदेश में अधिकृत सोलर सेवाएँ। TATA, Adani, UTL और अन्य प्रमुख ब्रांड्स के सोलर पैनल, इन्वर्टर और बैटरी समाधान तथा पीएम सूर्य घर योजना व यूपी सौर नीति के तहत अधिकतम ₹1,08,000 तक सरकारी सब्सिडी सहायता।',
+      'अपने घर पर Solar लगवाएं – प्रभावी लागत ₹0! ZERO DOWN PAYMENT विकल्प, ₹1,08,000 तक सरकारी सब्सिडी (केंद्र ₹78,000 + यूपी ₹30,000) तथा TATA, Adani, UTL ब्रांड्स के साथ हर महीने बिजली बिल में भारी बचत।',
     url: 'https://shivashutoshlabs.com/solarsystem',
     telephone: '+917906904706',
     image: 'https://shivashutoshlabs.com/solar/rooftop-installation.jpg',

@@ -8,6 +8,24 @@ export default function SolarFooter() {
   return (
     <footer className={styles.footer} role="contentinfo">
       <div className={styles.container}>
+        {/* Zero Cost Campaign Footer Bar */}
+        <div className={styles.campaignFooterBar}>
+          <div className={styles.campaignFooterContent}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
+              <span className={styles.campaignFooterBadge}>⚡ महा-अभियान</span>
+              <span className={styles.campaignFooterTitle}>
+                अपने घर पर Solar लगवाएं – प्रभावी लागत ₹0!
+              </span>
+            </div>
+            <span className={styles.campaignFooterSub}>
+              ZERO DOWN PAYMENT का विकल्प* • केंद्र व यूपी सरकार की ₹1,08,000 तक सब्सिडी* • बिजली बिल में भारी बचत!
+            </span>
+          </div>
+          <a href="#quick-enquiry" className={styles.campaignFooterBtn}>
+            अभी इन्क्वायरी दर्ज करें ↗
+          </a>
+        </div>
+
         <div className={styles.topGrid}>
           {/* Col 1: Brand Info */}
           <div className={styles.colBrand}>
@@ -133,7 +151,7 @@ export default function SolarFooter() {
             <strong>* UPNEDA वेंडर कोड एवं चैनल पार्टनरशिप:</strong> UPNEDA Vendor Code <code>AGC2609282705</code> मूल रूप से उत्तर प्रदेश सरकार के एम्पैनल्ड वेंडर <strong>Radha Enterprises (राधा एंटरप्राइजेज)</strong> का है। शिवआशुतोष सोलर एजेंसी (Shivashutosh Solar Agency), राधा एंटरप्राइजेज की वैध अधिकृत चैनल पार्टनर (Authorized Channel Partner) के रूप में कार्य करती है तथा समस्त तकनीकी स्थापना व सब्सिडी समन्वय अधिकृत वेंडर के माध्यम से निष्पादित किए जाते हैं।
           </p>
           <p className={styles.disclaimerText}>
-            <strong>* प्रभावी लागत ₹0 तक:</strong> प्रभावी लागत ₹0 तक का अर्थ है कि लागू सरकारी सब्सिडी एवं ग्राहक की पात्रता के बाद अनुमानित प्रभावी लागत शून्य तक हो सकती है। वास्तविक लागत, ग्राहक का भुगतान, सिस्टम कॉन्फिगरेशन और सब्सिडी स्वीकृति योजना की शर्तों एवं ग्राहक की स्थिति पर निर्भर करेंगे।
+            <strong>* प्रभावी लागत ₹0 एवं ZERO DOWN PAYMENT:</strong> *प्रभावी लागत ग्राहक की पात्रता, स्वीकृत सरकारी सब्सिडी, वास्तविक इंस्टॉलेशन लागत और लागू वित्तीय शर्तों पर निर्भर करती है। ZERO DOWN PAYMENT वित्तीय योजनाओं के अंतर्गत पात्र आवासीय ग्राहकों को बिना शुरुआती अग्रिम भुगतान के इंस्टॉलेशन का विकल्प मिलता है। सब्सिडी स्वीकृति योजना की शर्तों एवं डिस्कॉम सत्यापन पर निर्भर है। किसी भी ग्राहक को अंतिम शून्य देय राशि अथवा शून्य बिजली बिल की झूठी गारंटी नहीं दी जाती।
           </p>
           <p className={styles.disclaimerText}>
             <strong>* वारंटी नियम:</strong> सोलर पैनल की परफॉर्मेंस वारंटी निर्माता की नियम एवं शर्तों के अनुसार लागू होगी। इन्वर्टर और बैटरी की वारंटी अलग-अलग होगी।

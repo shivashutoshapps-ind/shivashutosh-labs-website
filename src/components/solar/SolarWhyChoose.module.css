@@ -110,3 +110,98 @@
   line-height: 1.55;
   margin: 0;
 }
+
+/* ─── Electricity Bill Savings Highlight Banner ───────────────────────── */
+.savingsBanner {
+  background: linear-gradient(135deg, #064E3B 0%, #065F46 100%);
+  border-radius: 18px;
+  padding: 2.25rem 1.5rem;
+  color: #ffffff;
+  margin-top: 3.5rem;
+  box-shadow: 0 10px 30px rgba(6, 78, 59, 0.2);
+}
+
+@media (min-width: 768px) {
+  .savingsBanner {
+    padding: 2.75rem 2.25rem;
+  }
+}
+
+.savingsBannerHeader {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 1.75rem;
+}
+
+.savingsBadge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  color: #FBBF24;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.6rem;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.savingsTitle {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.35;
+}
+
+@media (min-width: 768px) {
+  .savingsTitle {
+    font-size: 1.85rem;
+  }
+}
+
+.savingsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .savingsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.savingsItem {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.925rem;
+  color: #E2E8F0;
+  line-height: 1.5;
+}
+
+.savingsItem strong {
+  color: #FDE68A;
+}
+
+.savingsCheck {
+  color: #34D399;
+  font-weight: 900;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.savingsDisclaimer {
+  font-size: 0.775rem;
+  color: #A7F3D0;
+  line-height: 1.45;
+  margin: 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 1rem;
+}

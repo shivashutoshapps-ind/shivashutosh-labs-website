@@ -116,10 +116,10 @@ export default function SolarQuickEnquiry() {
       <div className={styles.container}>
         {/* Section Header */}
         <div className={styles.header}>
-          <span className={styles.eyebrowBadge}>⚡ त्वरित सेवा | Quick Brand Enquiry & Direct Call</span>
-          <h2 className={styles.heading}>त्वरित सोलर इन्क्वायरी एवं कॉल सेवा</h2>
+          <span className={styles.eyebrowBadge}>⚡ ZERO DOWN PAYMENT | प्रभावी लागत ₹0 अभियान</span>
+          <h2 className={styles.heading}>अपना Solar लगवाएं – प्रभावी लागत ₹0 तक!</h2>
           <p className={styles.subtitle}>
-            TATA Solar या Adani Solar की तत्काल जानकारी प्राप्त करें अथवा हमारे तकनीकी विशेषज्ञ से सीधे फ़ोन पर बात करें।
+            TATA Solar या Adani Solar की तत्काल जानकारी प्राप्त करें (ZERO DOWN PAYMENT का विकल्प* एवं ₹1,08,000 तक संभावित सरकारी सब्सिडी) अथवा हमारे तकनीकी विशेषज्ञ से सीधे बात करें।
           </p>
         </div>
 
