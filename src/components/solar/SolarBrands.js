@@ -7,13 +7,13 @@ import { trackEvent } from '@/lib/solar/tracking';
 export default function SolarBrands() {
   const brands = [
     {
-      id: 'tata-solar',
+      id: 'tata',
       name: 'TATA Solar',
-      fullName: 'TATA Power Solar',
+      fullName: 'Tata Power Solar Systems',
       tag: 'प्रीमियम टियर-1 ब्रांड',
       tagColor: 'blue',
       badge: 'सर्वाधिक भरोसेमंद',
-      desc: 'भारत का अग्रणी व सबसे प्रतिष्ठित सोलर ब्रांड। प्रीमियम क्वालिटी मोनो पर्क सेल्स, उच्च स्थायित्व और हर मौसम में लगातार उच्च विद्युत उत्पादन।',
+      desc: 'भारत का अग्रणी व सबसे प्रतिष्ठित सोलर ब्रांड। प्रीमियम क्वालिटी मोनो पर्क व टॉपकॉन सेल्स, उच्च स्थायित्व और हर मौसम में लगातार उच्च विद्युत उत्पादन।',
       capacity: '1 KW से 10 KW+ (घरेलू व व्यावसायिक)',
       highlights: [
         'टियर-1 श्रेणी की उच्च सेल दक्षता',
@@ -21,9 +21,11 @@ export default function SolarBrands() {
         'मजबूत एल्युमिनियम फ्रेम व ओला-रोधी ग्लास',
         'भारतीय जलवायु और उच्च तापमान के लिए श्रेष्ठ',
       ],
+      btnText: 'Tata Solar Enquiry',
+      waMessage: 'नमस्ते शिवआशुतोष सोलर एजेंसी, मुझे Tata Power Solar सिस्टम की कीमत, मॉडल और सब्सिडी विवरण चाहिए।',
     },
     {
-      id: 'adani-solar',
+      id: 'adani',
       name: 'Adani Solar',
       fullName: 'Adani Solar PV Modules',
       tag: 'अत्याधुनिक TOPCon / Mono',
@@ -37,9 +39,11 @@ export default function SolarBrands() {
         '25 वर्ष निर्माता परफॉर्मेंस वारंटी*',
         'आवासीय, दुकान व इंडस्ट्रियल रूफटॉप के लिए अनुकूल',
       ],
+      btnText: 'Adani Solar Enquiry',
+      waMessage: 'नमस्ते शिवआशुतोष सोलर एजेंसी, मुझे Adani Solar सिस्टम की कीमत, मॉडल और सब्सिडी विवरण चाहिए।',
     },
     {
-      id: 'utl-solar',
+      id: 'utl',
       name: 'UTL Solar',
       fullName: 'UTL Solar Systems & Inverters',
       tag: 'किफायती व लोकप्रिय',
@@ -53,9 +57,11 @@ export default function SolarBrands() {
         'आसान मेंटेनेंस और पूरे उत्तर प्रदेश में पार्ट्स उपलब्धता',
         'किफायती बजट में संपूर्ण सिस्टम विकल्प',
       ],
+      btnText: 'UTL Solar Enquiry',
+      waMessage: 'नमस्ते शिवआशुतोष सोलर एजेंसी, मुझे UTL Solar सिस्टम की कीमत, मॉडल और सब्सिडी विवरण चाहिए।',
     },
     {
-      id: 'other-brands',
+      id: 'general',
       name: 'अन्य प्रमुख ब्रांड्स',
       fullName: 'Luminous, Microtek, Loom Solar आदि',
       tag: 'विविध विकल्प',
@@ -69,11 +75,20 @@ export default function SolarBrands() {
         'प्रमाणित निर्माता वारंटी और तकनीकी अनुकूलता',
         'पारदर्शी कोटेशन — बिना किसी छिपे शुल्क के',
       ],
+      btnText: 'सामान्य सोलर परामर्श',
+      waMessage: 'नमस्ते शिवआशुतोष सोलर एजेंसी, मुझे सोलर सिस्टम, ब्रांड चयन और सब्सिडी की जानकारी चाहिए।',
     },
   ];
 
-  const handleBrandInquiry = (brandName) => {
-    trackEvent('brand_inquiry_click', { brand: brandName, location: 'brands_section' });
+  const handleBrandSelect = (brandId, brandName) => {
+    trackEvent('brand_inquiry_click', { brand: brandId, brand_name: brandName, location: 'brands_section' });
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(
+        new CustomEvent('solar-select-brand', {
+          detail: { brand: brandId, name: brandName },
+        })
+      );
+    }
     const target = document.getElementById('enquiry-form');
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
@@ -91,15 +106,15 @@ export default function SolarBrands() {
         <div className={styles.header}>
           <span className={styles.eyebrowBadge}>आपकी पसंद, आपका सोलर ब्रांड!</span>
           <h2 id="brands-heading" className={styles.heading}>
-            आपकी पसंद के प्रमुख सोलर ब्रांड
+            अपनी पसंद का Solar Brand चुनें
           </h2>
           <p className={styles.subtitle}>
-            भारत के प्रमुख सोलर ब्रांड्स में से अपनी पसंद चुनें — एक ही जगह पर कई प्रमुख ब्रांड्स के विकल्प, अपनी जरूरत और बजट के अनुसार।
+            Tata Power Solar, Adani Solar, और UTL Solar — अपनी पसंद के अनुसार सोलर सिस्टम इन्क्वायरी भेजें
           </p>
           <div className={styles.customerNotice}>
             <span className={styles.noticeIcon} aria-hidden="true">💡</span>
             <p className={styles.noticeText}>
-              <strong>ग्राहक हित में स्पष्ट नीति:</strong> हम आपकी जरूरत, बजट और पसंद के अनुसार अलग-अलग प्रमुख ब्रांड्स के सोलर पैनल, इन्वर्टर और अन्य सिस्टम विकल्प उपलब्ध कराने में सहायता करते हैं। हम किसी एक ब्रांड की बाध्यता नहीं रखते।
+              <strong>ग्राहक हित में स्पष्ट नीति:</strong> हम आपकी जरूरत, बजट और पसंद के अनुसार अलग-अलग प्रमुख ब्रांड्स (Tata Power Solar, Adani Solar, UTL Solar आदि) के सोलर उपकरण उपलब्ध कराने में तकनीकी सहायता और कोटेशन प्रदान करते हैं। हम किसी एक ब्रांड की बाध्यता नहीं रखते।
             </p>
           </div>
         </div>
@@ -107,7 +122,7 @@ export default function SolarBrands() {
         {/* 4 Brand Cards Grid */}
         <div className={styles.grid}>
           {brands.map((brand) => (
-            <div key={brand.id} className={styles.brandCard}>
+            <div key={brand.id} className={`${styles.brandCard} ${styles[`card_${brand.tagColor}`]}`}>
               <div className={styles.cardTop}>
                 <div className={styles.brandBadgeWrap}>
                   <span className={`${styles.tagBadge} ${styles[`tag_${brand.tagColor}`]}`}>
@@ -141,15 +156,16 @@ export default function SolarBrands() {
               <div className={styles.cardActions}>
                 <button
                   type="button"
-                  onClick={() => handleBrandInquiry(brand.name)}
-                  className={styles.inquiryBtn}
-                  aria-label={`${brand.name} की जानकारी और कोटेशन प्राप्त करें`}
+                  onClick={() => handleBrandSelect(brand.id, brand.name)}
+                  className={`${styles.inquiryBtn} ${styles[`btn_${brand.tagColor}`]}`}
+                  aria-label={`${brand.btnText} - फॉर्म पर जाएं`}
                 >
-                  <span>जानकारी प्राप्त करें</span>
+                  <span>{brand.btnText}</span>
                   <span aria-hidden="true">→</span>
                 </button>
+
                 <a
-                  href={`https://wa.me/919719543259?text=${encodeURIComponent(`नमस्ते शिवआशुतोष सोलर एजेंसी, मुझे ${brand.name} सोलर सिस्टम की कीमत, मॉडल और सब्सिडी विवरण चाहिए।`)}`}
+                  href={`https://wa.me/919719543259?text=${encodeURIComponent(brand.waMessage)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => handleWhatsappBrand(brand.name)}
@@ -200,9 +216,11 @@ export default function SolarBrands() {
         </div>
 
         {/* Regulatory & Legal Compliance Note */}
-        <p className={styles.disclaimerText}>
-          * ब्रांड विकल्प स्थानीय उपलब्धता एवं तकनीकी अनुकूलता के अनुसार उपलब्ध कराए जाते हैं। हम ग्राहकों को उनकी पसंद अनुसार उपकरण चयन में तकनीकी परामर्श एवं इंस्टॉलेशन सहायता प्रदान करते हैं। सभी ट्रेडमार्क, लोगो एवं ब्रांड नाम उनके संबंधित विधिक स्वामियों की संपत्ति हैं।
-        </p>
+        <div className={styles.disclaimerBox}>
+          <p className={styles.disclaimerText}>
+            * <strong>महत्वपूर्ण सूचना एवं स्पष्टीकरण:</strong> ब्रांड विकल्प स्थानीय उपलब्धता, तकनीकी अनुकूलता, व्यवहार्यता एवं कोटेशन पर निर्भर हैं। शिवआशुतोष सोलर एजेंसी (Authorized Channel Partner of Radha Enterprises, UPNEDA Vendor Code: AGC2609282705) ग्राहकों को उनकी आवश्यकतानुसार उपयुक्त ब्रांड और मॉडल चयन में तकनीकी सहायता व निष्पक्ष कोटेशन प्रदान करती है। किसी विशेष ब्रांड की अनन्य (exclusive) डीलरशिप या गारंटीकृत आवंटन का दावा नहीं किया जाता। सभी ट्रेडमार्क, लोगो एवं ब्रांड नाम उनके संबंधित विधिक स्वामियों की संपत्ति हैं।
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -27,12 +27,20 @@ const DISTRICTS_UP = [
   { value: 'other_up', label: 'अन्य जिला (संपूर्ण उत्तर प्रदेश)' },
 ];
 
+const BRAND_CHOICES = [
+  { id: 'tata', name: 'TATA Power Solar', shortName: 'TATA Solar', icon: '⚡' },
+  { id: 'adani', name: 'Adani Solar', shortName: 'Adani Solar', icon: '☀️' },
+  { id: 'utl', name: 'UTL Solar', shortName: 'UTL Solar', icon: '🔋' },
+  { id: 'general', name: 'अन्य / सामान्य परामर्श', shortName: 'सामान्य परामर्श', icon: '📋' },
+];
+
 export default function SolarLeadForm() {
   const [formData, setFormData] = useState({
     fullName: '',
     mobile: '',
     district: 'aligarh',
     cityVillage: '',
+    brand: 'tata',
     customerType: 'residential',
     monthlyBill: '2000_3000',
     hasRooftop: 'yes',
@@ -46,7 +54,17 @@ export default function SolarLeadForm() {
   const [statusMessage, setStatusMessage] = useState('');
   const [submittedLead, setSubmittedLead] = useState(null);
 
-  // Capture tracking params on submission
+  // Listen for brand selection events dispatched from other sections (e.g. SolarBrands)
+  useEffect(() => {
+    const handleBrandEvent = (e) => {
+      if (e.detail?.brand) {
+        setFormData((prev) => ({ ...prev, brand: e.detail.brand }));
+      }
+    };
+    window.addEventListener('solar-select-brand', handleBrandEvent);
+    return () => window.removeEventListener('solar-select-brand', handleBrandEvent);
+  }, []);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
@@ -57,6 +75,11 @@ export default function SolarLeadForm() {
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
+  };
+
+  const handleBrandSelect = (brandId) => {
+    setFormData((prev) => ({ ...prev, brand: brandId }));
+    trackEvent('lead_form_brand_change', { brand: brandId });
   };
 
   const validate = () => {
@@ -72,10 +95,6 @@ export default function SolarLeadForm() {
 
     if (!formData.district) {
       errs.district = 'कृपया अपना जिला चुनें।';
-    }
-
-    if (!formData.cityVillage.trim()) {
-      errs.cityVillage = 'कृपया अपना शहर, कस्बा या गाँव दर्ज करें।';
     }
 
     if (!formData.privacyConsent) {
@@ -98,7 +117,18 @@ export default function SolarLeadForm() {
 
     try {
       const payload = {
-        ...formData,
+        fullName: formData.fullName.trim(),
+        mobile: formData.mobile.trim(),
+        district: formData.district,
+        cityVillage: formData.cityVillage.trim(),
+        brand: formData.brand,
+        capacity: formData.preferredSystem,
+        customerType: formData.customerType,
+        monthlyBill: formData.monthlyBill,
+        hasRooftop: formData.hasRooftop,
+        preferredSystem: formData.preferredSystem,
+        privacyConsent: formData.privacyConsent,
+        website_check: formData.website_check,
         ...getTrackingContext(),
       };
 
@@ -116,7 +146,7 @@ export default function SolarLeadForm() {
 
       // Track lead conversion event
       trackEvent('lead_form_submitted', {
-        customer_type: formData.customerType,
+        brand: formData.brand,
         preferred_system: formData.preferredSystem,
         district: formData.district,
         lead_id: data.leadId || '',
@@ -127,6 +157,7 @@ export default function SolarLeadForm() {
       setSubmittedLead({
         name: formData.fullName,
         mobile: formData.mobile,
+        brand: formData.brand,
         system: formData.preferredSystem,
         district: formData.district,
         leadId: data.leadId,
@@ -138,8 +169,17 @@ export default function SolarLeadForm() {
     }
   };
 
+  const currentBrandObj = BRAND_CHOICES.find((b) => b.id === formData.brand) || BRAND_CHOICES[0];
+
+  const getSubmitButtonLabel = () => {
+    if (formData.brand === 'tata') return 'Tata Solar Enquiry भेजें';
+    if (formData.brand === 'adani') return 'Adani Solar Enquiry भेजें';
+    if (formData.brand === 'utl') return 'UTL Solar Enquiry भेजें';
+    return 'अपनी Solar Enquiry भेजें';
+  };
+
   const fallbackWhatsappText = encodeURIComponent(
-    `नमस्ते शिवआशुतोष सोलर एजेंसी, मैंने वेबसाइट पर सोलर सिस्टम, ब्रांड्स एवं सब्सिडी जानकारी हेतु संपर्क किया है।\nनाम: ${formData.fullName || 'ग्राहक'}\nमोबाइल: ${formData.mobile || 'मोबाइल'}\nजिला: ${formData.district || 'उत्तर प्रदेश'}\nसिस्टम: ${formData.preferredSystem}`
+    `नमस्ते शिवआशुतोष सोलर एजेंसी, मैंने वेबसाइट पर सोलर सिस्टम इन्क्वायरी दर्ज की है।\nब्रांड पसंद: ${currentBrandObj.name}\nनाम: ${formData.fullName || 'ग्राहक'}\nमोबाइल: ${formData.mobile || ''}\nजिला: ${formData.district || 'उत्तर प्रदेश'}\nक्षमता: ${formData.preferredSystem}`
   );
   const fallbackWhatsappUrl = `https://wa.me/919719543259?text=${fallbackWhatsappText}`;
 
@@ -147,12 +187,12 @@ export default function SolarLeadForm() {
     <section id="enquiry-form" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.badge}>मुफ्त साइट सर्वे एवं परामर्श</span>
+          <span className={styles.badge}>मुफ्त साइट सर्वे एवं पारदर्शी कोटेशन</span>
           <h2 className={styles.heading}>
-            सोलर सिस्टम इन्क्वायरी एवं सब्सिडी पात्रता फॉर्म
+            सोलर सिस्टम इन्क्वायरी एवं सब्सिडी फॉर्म
           </h2>
           <p className={styles.subtext}>
-            नीचे दिया गया संक्षिप्त फॉर्म भरें। हमारे सोलर इंजीनियर आपकी आवश्यकता और छत की जांच कर <strong>24 घंटे के भीतर विस्तृत कोटेशन</strong> प्रदान करेंगे।
+            अपनी आवश्यकता दर्ज करें। हमारे सोलर विशेषज्ञ आपकी छत व बिजली बिल अनुसार <strong>24 घंटे के भीतर विस्तृत कोटेशन</strong> प्रदान करेंगे।
           </p>
         </div>
 
@@ -162,7 +202,7 @@ export default function SolarLeadForm() {
               <div className={styles.successIcon}>✓</div>
               <h3 className={styles.successTitle}>धन्यवाद, {submittedLead?.name || 'ग्राहक जी'}!</h3>
               <p className={styles.successMsg}>
-                आपकी सोलर सिस्टम इन्क्वायरी सुरक्षित रूप से दर्ज कर ली गई है।
+                आपकी <strong>{currentBrandObj.name}</strong> सोलर इन्क्वायरी सुरक्षित रूप से दर्ज कर ली गई है।
               </p>
               {submittedLead?.leadId && (
                 <div className={styles.leadIdBadge}>
@@ -172,9 +212,9 @@ export default function SolarLeadForm() {
               <div className={styles.nextStepsBox}>
                 <h4>आगे क्या होगा?</h4>
                 <ol>
-                  <li>हमारी तकनीकी टीम आपके दिए गए नंबर <strong>{submittedLead?.mobile}</strong> पर संपर्क करेगी।</li>
-                  <li>आपकी छत और बिजली बिल के अनुसार सोलर क्षमता और पीएम सूर्य घर सब्सिडी की सटीक गणना समझाई जाएगी।</li>
-                  <li>सुविधाजनक समय पर एक मुफ्त ऑन-साइट सर्वे निर्धारित किया जाएगा।</li>
+                  <li>हमारी तकनीकी टीम आपके दिए गए नंबर <strong>{submittedLead?.mobile}</strong> पर शीघ्र संपर्क करेगी।</li>
+                  <li>चुने गए ब्रांड (<strong>{currentBrandObj.name}</strong>) एवं क्षमता अनुसार कोटेशन व पीएम सूर्य घर सब्सिडी विवरण साझा किया जाएगा।</li>
+                  <li>आपकी सुविधा अनुसार ऑन-साइट या डिजिटल सर्वे की व्यवस्था की जाएगी।</li>
                 </ol>
               </div>
 
@@ -185,8 +225,8 @@ export default function SolarLeadForm() {
                   rel="noopener noreferrer"
                   className={styles.successWhatsappBtn}
                 >
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffffff">
-                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
+                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z" />
                   </svg>
                   <span>व्हाट्सएप पर तुरंत पुष्टि प्राप्त करें</span>
                 </a>
@@ -215,6 +255,32 @@ export default function SolarLeadForm() {
                 tabIndex={-1}
                 autoComplete="off"
               />
+
+              {/* Brand Selector Chips (Phase 2 & 3 Integration) */}
+              <div className={styles.brandSelectorBox}>
+                <span className={styles.brandSelectorTitle}>
+                  <span>🎯</span> अपनी पसंद का सोलर ब्रांड चुनें:
+                </span>
+                <div className={styles.brandChips} role="group" aria-label="सोलर ब्रांड विकल्प">
+                  {BRAND_CHOICES.map((b) => (
+                    <button
+                      key={b.id}
+                      type="button"
+                      onClick={() => handleBrandSelect(b.id)}
+                      className={`${styles.brandChip} ${formData.brand === b.id ? styles[`brandChipActive_${b.id}`] : ''}`}
+                    >
+                      <span aria-hidden="true">{b.icon}</span>
+                      <span>{b.shortName}</span>
+                    </button>
+                  ))}
+                </div>
+                <div className={styles.brandActiveNote}>
+                  <span>✓</span>
+                  <span>
+                    चयनित ब्रांड: <strong>{currentBrandObj.name}</strong> (बदलने के लिए ऊपर दिए गए विकल्पों पर टैप करें)
+                  </span>
+                </div>
+              </div>
 
               {status === 'error' && (
                 <div className={styles.errorAlert}>
@@ -293,10 +359,10 @@ export default function SolarLeadForm() {
                   {errors.district && <span className={styles.errorText}>{errors.district}</span>}
                 </div>
 
-                {/* 4. City / Village */}
+                {/* 4. City / Village / Locality (Optional) */}
                 <div className={styles.formGroup}>
                   <label htmlFor="cityVillage" className={styles.label}>
-                    4. शहर / कस्बा / गाँव <span className={styles.required}>*</span>
+                    4. शहर / कस्बा / गाँव या पता <span style={{ color: '#64748B', fontWeight: 400, fontSize: '0.825rem' }}>(वैकल्पिक)</span>
                   </label>
                   <input
                     type="text"
@@ -305,46 +371,46 @@ export default function SolarLeadForm() {
                     value={formData.cityVillage}
                     onChange={handleChange}
                     placeholder="जैसे: सिविल लाइन्स, अलीगढ़"
-                    className={`${styles.input} ${errors.cityVillage ? styles.inputError : ''}`}
-                    required
+                    className={styles.input}
                   />
-                  {errors.cityVillage && <span className={styles.errorText}>{errors.cityVillage}</span>}
                 </div>
               </div>
 
-              {/* 5. Customer Type */}
+              {/* 5. Preferred Capacity */}
               <div className={styles.formSection}>
                 <label className={styles.sectionLabel}>
-                  5. सोलर स्थापना का प्रकार <span className={styles.required}>*</span>
+                  5. आवश्यक सोलर क्षमता <span style={{ color: '#64748B', fontWeight: 400, fontSize: '0.825rem' }}>(वैकल्पिक)</span>
                 </label>
-                <div className={styles.radioPills}>
-                  <label className={`${styles.radioPill} ${formData.customerType === 'residential' ? styles.radioPillActive : ''}`}>
-                    <input
-                      type="radio"
-                      name="customerType"
-                      value="residential"
-                      checked={formData.customerType === 'residential'}
-                      onChange={handleChange}
-                    />
-                    <span>🏠 आवासीय (घर/मकान)</span>
-                  </label>
-                  <label className={`${styles.radioPill} ${formData.customerType === 'commercial' ? styles.radioPillActive : ''}`}>
-                    <input
-                      type="radio"
-                      name="customerType"
-                      value="commercial"
-                      checked={formData.customerType === 'commercial'}
-                      onChange={handleChange}
-                    />
-                    <span>🏢 व्यावसायिक (दुकान / शोरूम / स्कूल)</span>
-                  </label>
+                <div className={styles.radioGrid}>
+                  {[
+                    { id: '1kw', label: '1 KW (छोटे लोड हेतु)' },
+                    { id: '2kw', label: '2 KW (मध्यम लोड)' },
+                    { id: '3kw', label: '3 KW (सर्वाधिक लोकप्रिय)' },
+                    { id: '5kw', label: '5 KW (हेवी लोड / एसी)' },
+                    { id: '10kw_plus', label: '10 KW+ (व्यावसायिक)' },
+                    { id: 'consultation', label: 'सलाह चाहिए (सर्वोत्तम बताएं)' },
+                  ].map((sys) => (
+                    <label
+                      key={sys.id}
+                      className={`${styles.radioPill} ${formData.preferredSystem === sys.id ? styles.radioPillActive : ''}`}
+                    >
+                      <input
+                        type="radio"
+                        name="preferredSystem"
+                        value={sys.id}
+                        checked={formData.preferredSystem === sys.id}
+                        onChange={handleChange}
+                      />
+                      <span>{sys.label}</span>
+                    </label>
+                  ))}
                 </div>
               </div>
 
-              {/* 6. Monthly Electricity Bill */}
+              {/* 6. Monthly Electricity Bill (Optional) */}
               <div className={styles.formSection}>
                 <label className={styles.sectionLabel}>
-                  6. आपका औसत मासिक बिजली बिल <span className={styles.required}>*</span>
+                  6. औसत मासिक बिजली बिल <span style={{ color: '#64748B', fontWeight: 400, fontSize: '0.825rem' }}>(वैकल्पिक)</span>
                 </label>
                 <div className={styles.radioGrid}>
                   {[
@@ -371,65 +437,6 @@ export default function SolarLeadForm() {
                 </div>
               </div>
 
-              {/* 7. Rooftop Space Available */}
-              <div className={styles.formSection}>
-                <label className={styles.sectionLabel}>
-                  7. क्या छत पर पर्याप्त धूप वाली जगह उपलब्ध है? <span className={styles.required}>*</span>
-                </label>
-                <div className={styles.radioPills}>
-                  <label className={`${styles.radioPill} ${formData.hasRooftop === 'yes' ? styles.radioPillActive : ''}`}>
-                    <input
-                      type="radio"
-                      name="hasRooftop"
-                      value="yes"
-                      checked={formData.hasRooftop === 'yes'}
-                      onChange={handleChange}
-                    />
-                    <span>☀️ हाँ, पर्याप्त खुली छत उपलब्ध है</span>
-                  </label>
-                  <label className={`${styles.radioPill} ${formData.hasRooftop === 'no' ? styles.radioPillActive : ''}`}>
-                    <input
-                      type="radio"
-                      name="hasRooftop"
-                      value="no"
-                      checked={formData.hasRooftop === 'no'}
-                      onChange={handleChange}
-                    />
-                    <span>☁️ नहीं / सीमित या छायादार स्थान</span>
-                  </label>
-                </div>
-              </div>
-
-              {/* 8. Preferred System */}
-              <div className={styles.formSection}>
-                <label className={styles.sectionLabel}>
-                  8. आपकी पसंदीदा सोलर सिस्टम क्षमता <span className={styles.required}>*</span>
-                </label>
-                <div className={styles.radioGrid}>
-                  {[
-                    { id: '1kw', label: '1 KW (छोटे लोड हेतु)' },
-                    { id: '2kw', label: '2 KW (मध्यम लोड)' },
-                    { id: '3kw', label: '3 KW (सर्वाधिक लोकप्रिय)' },
-                    { id: '5kw', label: '5 KW (हेवी लोड / एसी)' },
-                    { id: 'consultation', label: 'सलाह चाहिए (सर्वोत्तम बताएं)' },
-                  ].map((sys) => (
-                    <label
-                      key={sys.id}
-                      className={`${styles.radioPill} ${formData.preferredSystem === sys.id ? styles.radioPillActive : ''}`}
-                    >
-                      <input
-                        type="radio"
-                        name="preferredSystem"
-                        value={sys.id}
-                        checked={formData.preferredSystem === sys.id}
-                        onChange={handleChange}
-                      />
-                      <span>{sys.label}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
               {/* Privacy Consent Checkbox */}
               <div className={styles.consentWrap}>
                 <label className={styles.checkboxLabel}>
@@ -441,14 +448,14 @@ export default function SolarLeadForm() {
                     className={styles.checkbox}
                   />
                   <span>
-                    मैं शिवआशुतोष सोलर सिस्टम्स से सोलर सिस्टम विवरण, सरकारी सब्सिडी जानकारी एवं मुफ्त साइट सर्वे हेतु कॉल या व्हाट्सएप संदेश प्राप्त करने की सहमति देता हूँ।
+                    मैं शिवआशुतोष सोलर एजेंसी से सोलर सिस्टम विवरण, कोटेशन एवं सब्सिडी सहायता हेतु कॉल या व्हाट्सएप संदेश प्राप्त करने की सहमति देता हूँ।
                   </span>
                 </label>
                 {errors.privacyConsent && (
                   <span className={styles.errorText}>{errors.privacyConsent}</span>
                 )}
                 <p className={styles.privacyNote}>
-                  🔒 हम आपकी गोपनीयता का सम्मान करते हैं। आपकी जानकारी किसी भी तीसरे पक्ष के साथ साझा नहीं की जाती है।
+                  🔒 हम आपकी गोपनीयता का सम्मान करते हैं। आपकी जानकारी सुरक्षित रखी जाती है और किसी तीसरे पक्ष के साथ साझा नहीं की जाती।
                 </p>
               </div>
 
@@ -466,8 +473,8 @@ export default function SolarLeadForm() {
                     </span>
                   ) : (
                     <>
-                      <span>मुफ्त जानकारी एवं साइट सर्वे प्राप्त करें</span>
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <span>{getSubmitButtonLabel()}</span>
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                       </svg>

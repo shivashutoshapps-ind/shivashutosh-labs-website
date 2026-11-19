@@ -1,23 +1,66 @@
-import { insertSolarLead, hasRecentSubmission } from '@/lib/solar/db';
+import { insertSolarLead, hasRecentSubmission, getSolarLeads, getSolarLeadStats } from '@/lib/solar/db';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-const VALID_CUSTOMER_TYPES = ['residential', 'commercial'];
-const VALID_SYSTEMS = ['1kw', '2kw', '3kw', '5kw', 'consultation'];
-const VALID_BILL_RANGES = [
-  'below_1000',
-  '1000_2000',
-  '2000_3000',
-  '3000_5000',
-  'above_5000'
-];
+const ADMIN_SECRET = process.env.SOLAR_ADMIN_KEY || 'shivashutosh@solar2026';
+
+function verifyAdminAuth(request) {
+  const adminKey = request.headers.get('x-admin-key');
+  if (adminKey && adminKey === ADMIN_SECRET) return true;
+
+  const authHeader = request.headers.get('authorization');
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    const token = authHeader.slice(7);
+    if (token === ADMIN_SECRET) return true;
+  }
+
+  const cookieHeader = request.headers.get('cookie') || '';
+  if (cookieHeader.includes(`solar_admin_token=${ADMIN_SECRET}`)) {
+    return true;
+  }
+
+  return false;
+}
+
+export async function GET(request) {
+  if (!verifyAdminAuth(request)) {
+    return Response.json(
+      { error: 'Unauthorized: Admin authentication required to access solar leads.' },
+      { status: 401 }
+    );
+  }
+
+  try {
+    const { searchParams } = new URL(request.url);
+    const status = searchParams.get('status') || undefined;
+    const brand = searchParams.get('brand') || undefined;
+    const district = searchParams.get('district') || undefined;
+    const limit = searchParams.get('limit') ? parseInt(searchParams.get('limit'), 10) : 100;
+    const offset = searchParams.get('offset') ? parseInt(searchParams.get('offset'), 10) : 0;
+
+    const leads = getSolarLeads({ status, brand, district, limit, offset });
+    const stats = getSolarLeadStats();
+
+    return Response.json({
+      success: true,
+      stats,
+      leads,
+    });
+  } catch (err) {
+    console.error('Error retrieving solar leads:', err);
+    return Response.json(
+      { error: 'सर्वर में त्रुटि उत्पन्न हुई।' },
+      { status: 500 }
+    );
+  }
+}
 
 export async function POST(request) {
   try {
     const body = await request.json();
 
-    // Honeypot spam check
+    // 1. Honeypot spam check
     if (body.website_check || body.company_fax) {
       return Response.json(
         { error: 'Invalid submission' },
@@ -30,6 +73,8 @@ export async function POST(request) {
       mobile,
       district,
       cityVillage,
+      brand,
+      capacity,
       customerType,
       monthlyBill,
       hasRooftop,
@@ -43,7 +88,7 @@ export async function POST(request) {
       referrer,
     } = body;
 
-    // 1. Full Name Validation
+    // 2. Full Name Validation (Required)
     if (!fullName || typeof fullName !== 'string' || fullName.trim().length < 2 || fullName.trim().length > 100) {
       return Response.json(
         { error: 'कृपया अपना पूरा नाम दर्ज करें (कम से कम 2 अक्षर)।' },
@@ -51,7 +96,7 @@ export async function POST(request) {
       );
     }
 
-    // 2. Mobile Validation (Indian 10-digit starting with 6, 7, 8, or 9)
+    // 3. Mobile Validation (Required, Indian 10-digit starting with 6, 7, 8, or 9)
     const cleanMobile = String(mobile || '').replace(/\D/g, '');
     const mobileRegex = /^[6-9]\d{9}$/;
     if (!mobileRegex.test(cleanMobile)) {
@@ -61,7 +106,7 @@ export async function POST(request) {
       );
     }
 
-    // 3. District Validation
+    // 4. District Validation (Required)
     if (!district || typeof district !== 'string' || district.trim().length === 0) {
       return Response.json(
         { error: 'कृपया अपना जिला चुनें या दर्ज करें।' },
@@ -69,47 +114,7 @@ export async function POST(request) {
       );
     }
 
-    // 4. City / Village Validation
-    if (!cityVillage || typeof cityVillage !== 'string' || cityVillage.trim().length === 0) {
-      return Response.json(
-        { error: 'कृपया अपना शहर, कस्बा या गाँव दर्ज करें।' },
-        { status: 400 }
-      );
-    }
-
-    // 5. Customer Type Validation
-    if (!customerType || !VALID_CUSTOMER_TYPES.includes(customerType)) {
-      return Response.json(
-        { error: 'कृपया ग्राहक का प्रकार चुनें (आवासीय या व्यावसायिक)।' },
-        { status: 400 }
-      );
-    }
-
-    // 6. Monthly Bill Validation
-    if (!monthlyBill || !VALID_BILL_RANGES.includes(monthlyBill)) {
-      return Response.json(
-        { error: 'कृपया अपना अनुमानित मासिक बिजली बिल चुनें।' },
-        { status: 400 }
-      );
-    }
-
-    // 7. Rooftop Validation
-    if (!hasRooftop || (hasRooftop !== 'yes' && hasRooftop !== 'no')) {
-      return Response.json(
-        { error: 'कृपया छत की उपलब्धता बताएं।' },
-        { status: 400 }
-      );
-    }
-
-    // 8. Preferred System Validation
-    if (!preferredSystem || !VALID_SYSTEMS.includes(preferredSystem)) {
-      return Response.json(
-        { error: 'कृपया पसंदीदा सोलर सिस्टम क्षमता चुनें।' },
-        { status: 400 }
-      );
-    }
-
-    // 9. Privacy Consent Validation
+    // 5. Privacy Consent Validation (Required)
     if (!privacyConsent) {
       return Response.json(
         { error: 'आगे बढ़ने के लिए कृपया सहमति बॉक्स पर सही का निशान लगाएं।' },
@@ -117,7 +122,7 @@ export async function POST(request) {
       );
     }
 
-    // Duplicate check within 5 minutes
+    // 6. Anti-duplicate check (within 5 minutes)
     if (hasRecentSubmission(cleanMobile, 5)) {
       return Response.json(
         {
@@ -129,21 +134,33 @@ export async function POST(request) {
       );
     }
 
-    // Extract IP and User Agent
+    // 7. Extract Request Metadata
     const forwarded = request.headers.get('x-forwarded-for');
     const ipAddress = forwarded ? forwarded.split(',')[0].trim() : request.headers.get('x-real-ip') || 'unknown';
     const userAgent = request.headers.get('user-agent') || 'unknown';
 
-    // Insert lead
-    const result = await insertSolarLead({
+    // 8. Sanitize Brand
+    let cleanBrand = 'general';
+    if (brand && typeof brand === 'string') {
+      const b = brand.trim().toLowerCase();
+      if (b.includes('tata')) cleanBrand = 'tata';
+      else if (b.includes('adani')) cleanBrand = 'adani';
+      else if (b.includes('utl')) cleanBrand = 'utl';
+      else cleanBrand = b;
+    }
+
+    // 9. Insert Lead into SQLite
+    const result = insertSolarLead({
       fullName,
       mobile: cleanMobile,
       district,
-      cityVillage,
-      customerType,
-      monthlyBill,
-      hasRooftop,
-      preferredSystem,
+      cityVillage: cityVillage || '',
+      brand: cleanBrand,
+      capacity: capacity || preferredSystem || 'consultation',
+      customerType: customerType || 'residential',
+      monthlyBill: monthlyBill || '',
+      hasRooftop: hasRooftop || 'yes',
+      preferredSystem: preferredSystem || capacity || 'consultation',
       privacyConsent: !!privacyConsent,
       ipAddress,
       utmSource,
@@ -159,7 +176,8 @@ export async function POST(request) {
       {
         success: true,
         leadId: result.id,
-        message: 'धन्यवाद! आपकी जानकारी सफलतापूर्वक दर्ज कर ली गई है। हमारी तकनीकी टीम 24 घंटे के भीतर आपसे संपर्क करेगी।'
+        brand: cleanBrand,
+        message: 'धन्यवाद! आपकी Solar Enquiry सफलतापूर्वक दर्ज कर ली गई है। हमारी तकनीकी टीम 24 घंटे के भीतर आपसे संपर्क करेगी।'
       },
       { status: 200 }
     );

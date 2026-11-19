@@ -277,13 +277,86 @@
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.15s ease, transform 0.15s ease;
+  transition: all 0.2s ease;
   min-height: 44px;
 }
 
 .inquiryBtn:hover {
   background: #059669;
   transform: translateY(-1px);
+}
+
+.btn_blue {
+  background: #0284C7;
+}
+
+.btn_blue:hover {
+  background: #0369A1;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+.btn_green {
+  background: #059669;
+}
+
+.btn_green:hover {
+  background: #047857;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+}
+
+.btn_orange {
+  background: #EA580C;
+}
+
+.btn_orange:hover {
+  background: #C2410C;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+}
+
+.btn_purple {
+  background: #475569;
+}
+
+.btn_purple:hover {
+  background: #334155;
+  box-shadow: 0 4px 12px rgba(71, 85, 105, 0.25);
+}
+
+.card_blue:hover {
+  border-color: #0284C7;
+  box-shadow: 0 12px 28px rgba(2, 132, 199, 0.12);
+}
+
+.card_green:hover {
+  border-color: #059669;
+  box-shadow: 0 12px 28px rgba(5, 150, 105, 0.12);
+}
+
+.card_orange:hover {
+  border-color: #EA580C;
+  box-shadow: 0 12px 28px rgba(234, 88, 12, 0.12);
+}
+
+.card_purple:hover {
+  border-color: #7C3AED;
+  box-shadow: 0 12px 28px rgba(124, 58, 237, 0.12);
+}
+
+.disclaimerBox {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.disclaimerText {
+  font-size: 0.8rem;
+  color: #64748B;
+  line-height: 1.55;
+  text-align: center;
+  margin: 0;
 }
 
 .whatsappIconBtn {

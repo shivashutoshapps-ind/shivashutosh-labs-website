@@ -67,6 +67,99 @@
   }
 }
 
+.brandSelectorBox {
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.brandSelectorTitle {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brandChips {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .brandChips {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.brandChip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.85rem;
+  border: 1.5px solid #CBD5E1;
+  background: #ffffff;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  text-align: center;
+}
+
+.brandChip:hover {
+  border-color: #0284C7;
+  background: #F0F9FF;
+}
+
+.brandChipActive_tata {
+  background: #EFF6FF !important;
+  border-color: #0284C7 !important;
+  color: #0369A1 !important;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
+}
+
+.brandChipActive_adani {
+  background: #F0FDF4 !important;
+  border-color: #059669 !important;
+  color: #047857 !important;
+  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.15);
+}
+
+.brandChipActive_utl {
+  background: #FFF7ED !important;
+  border-color: #EA580C !important;
+  color: #C2410C !important;
+  box-shadow: 0 0 0 2px rgba(234, 88, 12, 0.15);
+}
+
+.brandChipActive_general {
+  background: #F8FAFC !important;
+  border-color: #475569 !important;
+  color: #1E293B !important;
+  box-shadow: 0 0 0 2px rgba(71, 85, 105, 0.15);
+}
+
+.brandActiveNote {
+  font-size: 0.825rem;
+  color: #0369A1;
+  background: #E0F2FE;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .formGrid {
   display: grid;
   grid-template-columns: 1fr;
