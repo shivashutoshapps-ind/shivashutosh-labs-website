@@ -1,22 +1,36 @@
 import { insertSolarLead, hasRecentSubmission, getSolarLeads, getSolarLeadStats } from '@/lib/solar/db';
+import crypto from 'node:crypto';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-const ADMIN_SECRET = process.env.SOLAR_ADMIN_KEY || 'shivashutosh@solar2026';
+function safeCompare(provided, expected) {
+  if (typeof provided !== 'string' || typeof expected !== 'string') return false;
+  const bufProvided = Buffer.from(provided);
+  const bufExpected = Buffer.from(expected);
+  if (bufProvided.length !== bufExpected.length) return false;
+  return crypto.timingSafeEqual(bufProvided, bufExpected);
+}
 
 function verifyAdminAuth(request) {
+  const secret = process.env.SOLAR_ADMIN_KEY;
+  // Strict requirement: Secret must exist and have at least 32 characters of entropy
+  if (!secret || typeof secret !== 'string' || secret.length < 32) {
+    return false;
+  }
+
   const adminKey = request.headers.get('x-admin-key');
-  if (adminKey && adminKey === ADMIN_SECRET) return true;
+  if (adminKey && safeCompare(adminKey, secret)) return true;
 
   const authHeader = request.headers.get('authorization');
   if (authHeader && authHeader.startsWith('Bearer ')) {
     const token = authHeader.slice(7);
-    if (token === ADMIN_SECRET) return true;
+    if (safeCompare(token, secret)) return true;
   }
 
   const cookieHeader = request.headers.get('cookie') || '';
-  if (cookieHeader.includes(`solar_admin_token=${ADMIN_SECRET}`)) {
+  const match = cookieHeader.match(/solar_admin_token=([^;]+)/);
+  if (match && safeCompare(decodeURIComponent(match[1]), secret)) {
     return true;
   }
 
