@@ -164,9 +164,15 @@ export async function POST(request) {
       effectiveNotes = `[Callback Request] ${effectiveNotes}`.trim();
     } else if (leadSource === 'top_quick_enquiry' && !effectiveNotes.includes('Quick Enquiry')) {
       effectiveNotes = `[Quick Enquiry - ${cleanBrand.toUpperCase()}] ${effectiveNotes}`.trim();
+    } else if (leadSource === 'middle_brand_quick_enquiry' && !effectiveNotes.includes('Middle Quick Enquiry')) {
+      effectiveNotes = `[Middle Quick Enquiry - ${cleanBrand.toUpperCase()}] ${effectiveNotes}`.trim();
     }
 
-    const effectiveCapacity = capacity || preferredSystem || (leadSource === 'top_callback_request' ? 'कॉलबैक अनुरोध' : 'त्वरित इन्क्वायरी');
+    const effectiveCapacity = capacity || preferredSystem || (
+      leadSource === 'top_callback_request' ? 'कॉलबैक अनुरोध' :
+      leadSource === 'middle_brand_quick_enquiry' ? `${cleanBrand.toUpperCase()} सोलर त्वरित इन्क्वायरी (Middle)` :
+      'त्वरित इन्क्वायरी'
+    );
 
     // 10. Insert Lead into SQLite
     const result = insertSolarLead({

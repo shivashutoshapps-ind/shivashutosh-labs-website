@@ -3,6 +3,7 @@ import SolarHeader from '@/components/solar/SolarHeader';
 import SolarHero from '@/components/solar/SolarHero';
 import SolarQuickEnquiry from '@/components/solar/SolarQuickEnquiry';
 import SolarBrands from '@/components/solar/SolarBrands';
+import SolarMiddleQuickEnquiry from '@/components/solar/SolarMiddleQuickEnquiry';
 import SolarCoverage from '@/components/solar/SolarCoverage';
 import SolarPackages from '@/components/solar/SolarPackages';
 import SolarWhyChoose from '@/components/solar/SolarWhyChoose';
@@ -78,6 +79,9 @@ export default function SolarSystemPage() {
 
         {/* SECTION C – DEDICATED MULTI-BRAND CHOICE SECTION */}
         <SolarBrands />
+
+        {/* SECTION C.2 – TATA & ADANI QUICK ENQUIRY (MIDDLE OF FIRST PAGE) */}
+        <SolarMiddleQuickEnquiry />
 
         {/* SECTION D – STATEWIDE UTTAR PRADESH SERVICE COVERAGE */}
         <SolarCoverage />

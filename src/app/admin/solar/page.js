@@ -358,6 +358,20 @@ export default function SolarAdminDashboard() {
                           }}>
                             📞 कॉलबैक अनुरोध
                           </span>
+                        ) : (lead.utm_source === 'middle_brand_quick_enquiry' || (lead.notes && lead.notes.includes('Middle Quick Enquiry'))) ? (
+                          <span style={{
+                            display: 'inline-block',
+                            background: '#EDE9FE',
+                            color: '#6D28D9',
+                            border: '1px solid #DDD6FE',
+                            padding: '0.2rem 0.55rem',
+                            borderRadius: '6px',
+                            fontWeight: 800,
+                            fontSize: '0.75rem',
+                            marginBottom: '0.35rem'
+                          }}>
+                            ⚡ मिडिल ब्रांड इन्क्वायरी
+                          </span>
                         ) : lead.utm_source === 'top_quick_enquiry' ? (
                           <span style={{
                             display: 'inline-block',
